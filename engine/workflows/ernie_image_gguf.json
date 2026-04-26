@@ -1,0 +1,150 @@
+{
+  "73": {
+    "inputs": {
+      "filename_prefix": "Ernie-Image-Turbo\\ComfyUI-2026-04-25",
+      "images": [
+        "106",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "104": {
+    "inputs": {
+      "width": [
+        "128",
+        0
+      ],
+      "height": [
+        "129",
+        0
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyFlux2LatentImage",
+    "_meta": {
+      "title": "空Latent图像（Flux2）"
+    }
+  },
+  "106": {
+    "inputs": {
+      "samples": [
+        "107",
+        0
+      ],
+      "vae": [
+        "110",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "107": {
+    "inputs": {
+      "seed": 1034755741693886,
+      "steps": 50,
+      "cfg": 4,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "130",
+        0
+      ],
+      "positive": [
+        "108",
+        0
+      ],
+      "negative": [
+        "111",
+        0
+      ],
+      "latent_image": [
+        "104",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "108": {
+    "inputs": {
+      "text": "\n  \"lighting_setup\": \n    \"type\": \"Commercial Food Photography Lighting\",\n    \"sources\": [\n      \n        \"type\": \"Key Light\",\n        \"effect\": \"Creates specular highlights on the bun and tomatoes\",\n        \"position\": \"Top-left softbox\"\n      ,\n      \n        \"type\": \"Fill Light\",\n        \"effect\": \"Illuminates the textures of the meat and lettuce shadows\",\n        \"position\": \"Front-right reflector\"\n      ,\n      \n        \"type\": \"Rim Light\",\n        \"effect\": \"Separates edges from the white background, enhancing dimensionality\",\n        \"position\": \"Back\"\n      \n    ],\n    \"highlights\": \"Glistening moisture on vegetables and oil sheen on the patty\"\n  ,\n  \"technical_specs\": \n    \"focus\": \"Deep depth of field ensuring all layers are sharp (f/16 equivalent)\",\n    \"resolution\": \"4K Ultra HD\",\n    \"aspect_ratio\": \"3:4 (Vertical Portrait)\",\n    \"render_style\": \"Hyper-realistic CGI or composite photography\",\n    \"color_grading\": \"High vibrance, slightly warm tone for appetite appeal, clean white balance\"\n  ,\n  \"scene_description\": \n    \"type\": \"Exploded View Product Photography\",\n    \"subject\": \"Deconstructed Gourmet Hamburger\",\n    \"background\": \n      \"type\": \"Pure White Studio Backdrop\",\n      \"color\": \"#FFFFFF\",\n      \"shadows\": \"Soft, diffuse drop shadow beneath the bottom bun to ground the image\"\n    ,\n    \"composition\": \n      \"style\": \"Vertical Levitation Stacking\",\n      \"spacing\": \"Even vertical distribution allowing visibility of texture on top and bottom surfaces of ingredients\",\n      \"alignment\": \"Center-aligned ingredients\",\n      \"perspective\": \"Slightly elevated front angle (approx 15 degrees) to show depth of layers\"\n    \n  ,\n  \"layers_top_to_bottom\": [\n    \n      \"item\": \"Sesame Bun Crown\",\n      \"annotation\": \n        \"text\": \"SESAME BUN CROWN\",\n        \"position\": \"Left\",\n        \"connector\": \"Straight black line pointing to the crust\"\n      ,\n      \"visual_details\": \n        \"shape\": \"Hemispherical dome\",\n        \"surface\": \"Scattered white sesame seeds, evenly distributed\",\n        \"texture\": \"Baked dough with a golden-brown gradient crust\",\n        \"interior_face\": \"Visible porous crumb structure where sliced\",\n        \"lighting_interaction\": \"Soft gloss on the curvature\"\n      \n    ,\n    \n      \"item\": \"Fresh Lettuce\",\n      \"annotation\": \n        \"text\": \"FRESH LETTUCE\",\n        \"position\": \"Left\",\n        \"connector\": \"Straight black line pointing to the leaf edge\"\n      ,\n      \"visual_details\": \n        \"form\": \"Ruffled, wavy edges, organic and voluminous\",\n        \"type\": \"Green Leaf or Batavian\",\n        \"color\": \"Vibrant light to medium green\",\n        \"details\": \"Small water droplets (condensation) clinging to the leaves to imply freshness\",\n        \"texture\": \"Crisp, with visible venation\"\n      \n    ,\n    \n      \"item\": \"Ripe Tomato\",\n      \"annotation\": \n        \"text\": \"RIPE TOMATO\",\n        \"position\": \"Left\",\n        \"connector\": \"Straight black line pointing to the top slice\"\n      ,\n      \"visual_details\": \n        \"skin\": \"Smooth, taut red skin on the outer edge\",\n        \"color\": \"Rich ruby red\",\n        \"surface\": \"Wet, reflective cut surface showing juice\",\n        \"quantity\": \"Two distinct slices\",\n        \"structure\": \"Visible internal chambers, seeds, and gelatinous pulp\"\n      \n    ,\n    \n      \"item\": \"Melted Cheese\",\n      \"annotation\": \n        \"text\": \"MELTED CHEESE\",\n        \"position\": \"Left\",\n        \"connector\": \"Straight black line pointing to the drooping corner\"\n      ,\n      \"visual_details\": \n        \"type\": \"American Cheddar Slice\",\n        \"color\": \"Saturated yellow-orange\",\n        \"state\": \"Semi-solid/melting\",\n        \"physics\": \"Corners drooping downwards due to gravity and simulated heat\",\n        \"texture\": \"Smooth, waxy sheen, plastic deformation over the patty below\"\n      \n    ,\n    \n      \"item\": \"Grilled Beef Patty\",\n      \"annotation\": \n        \"text\": \"GRILLED BEEF PATTY\",\n        \"position\": \"Left\",\n        \"connector\": \"Straight black line pointing to the side of the patty\"\n      ,\n      \"visual_details\": \n        \"color\": \"Deep brown with darker char marks\",\n        \"shape\": \"Thick, irregular disc\",\n        \"details\": \"Distinct parallel grill marks, glistening surface oil/juice, visible texture variation\",\n        \"texture\": \"Coarse ground beef, caramelized exterior\",\n        \"thickness\": \"Substantial, representing a 1/4lb or 1/3lb patty\"\n      \n    ,\n    \n      \"item\": \"Onions & Pickles Layer\",\n      \"annotation\": \n        \"text\": \"ONIONS & PICKLES\",\n        \"position\": \"Left\",\n        \"connector\": \"Straight black line pointing to a red onion ring\"\n      ,\n      \"components\": [\n        \n          \"form\": \"Two concentric rings\",\n          \"name\": \"Red Onion\",\n          \"color\": \"Purple skin with white/translucent interior layers\"\n        ,\n        \n          \"form\": \"Crinkle-cut chips\",\n          \"name\": \"Pickles\",\n          \"color\": \"Pickle green with lighter seed areas\",\n          \"texture\": \"Wet, bumpy surface\"\n        \n      ],\n      \"arrangement\": \"Interleaved, floating just below the patty\"\n    ,\n    \n      \"item\": \"Bun Base\",\n      \"annotation\": \n        \"text\": \"BUN BASE\",\n        \"position\": \"Left\",\n        \"connector\": \"Straight black line pointing to the side crust\"\n      ,\n      \"visual_details\": \n        \"color\": \"Consistent gradient matching the top bun\",\n        \"shape\": \"Flat-bottomed disc\",\n        \"surface\": \"Micro-texture of bread pores\",\n        \"texture\": \"Golden brown side crust, soft interior face\"\n      \n    \n  ],\n  \"typography_and_graphics\": \n    \"lines\": \n      \"style\": \"Solid thin black lines\",\n      \"endpoints\": \"Small circular dot on the text side (optional), direct termination on the object side\",\n      \"orientation\": \"Horizontal lines connecting text to ingredients\"\n    ,\n    \"layout\": \n      \"margin\": \"Text column positioned on the left third of the canvas\",\n      \"spacing\": \"Vertical rhythm matches the ingredient spacing\"\n    ,\n    \"font_style\": \n      \"color\": \"#000000\",\n      \"casing\": \"UPPERCASE\",\n      \"family\": \"Sans-serif (e.g., Helvetica or Arial)\",\n      \"weight\": \"Regular/Medium\",\n      \"alignment\": \"Left-aligned text blocks\"\n    \n  \n",
+      "clip": [
+        "109",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "109": {
+    "inputs": {
+      "clip_name": "ministral-3-3b.safetensors",
+      "type": "flux2",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "加载CLIP"
+    }
+  },
+  "110": {
+    "inputs": {
+      "vae_name": "flux2-vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "加载VAE"
+    }
+  },
+  "111": {
+    "inputs": {
+      "conditioning": [
+        "108",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "条件零化"
+    }
+  },
+  "128": {
+    "inputs": {
+      "value": 848
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Width"
+    }
+  },
+  "129": {
+    "inputs": {
+      "value": 1264
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Height"
+    }
+  },
+  "130": {
+    "inputs": {
+      "unet_name": "ernie-image-Q8_0.gguf"
+    },
+    "class_type": "UnetLoaderGGUF",
+    "_meta": {
+      "title": "Unet Loader (GGUF)"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "comfyui_host": "127.0.0.1",
+  "comfyui_port": 8188,
+  "output_dir": "~/image-gen-output",
+  "vision_model": {
+    "type": "openai",
+    "base_url": "https://openai.ai/v1",
+    "model": "gpt-5.4",
+    "api_key_env": "youApiKey"
+  },
+  "vision_api_url": "https://openai.ai/v1/chat/completions",
+  "vision_model": "gpt-5.4",
+  "vision_api_key": "youApiKey",
+  "max_iterations": 3,
+  "score_threshold": 8,
+  "default_workflow": "workflows/ernie_image_gguf.json"
+}
