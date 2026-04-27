@@ -11,7 +11,7 @@ import urllib.error
 import urllib.request
 
 # ── Entity catalog ────────────────────────────────────────
-# Loaded from prompt-graph.json at init time. Used to ground
+# Loaded from prompt_graph.json at init time. Used to ground
 # extraction to known entities while still allowing unknowns.
 
 _ENTITY_CATALOG = None
@@ -23,7 +23,7 @@ def _load_catalog():
     if _ENTITY_CATALOG is not None:
         return
     from pathlib import Path
-    graph_path = Path(__file__).parent / "kg" / "data" / "prompt-graph.json"
+    graph_path = Path(__file__).parent / "kg" / "data" / "prompt_graph.json"
     with open(graph_path, "r", encoding="utf-8") as f:
         data = json.load(f)
     _ENTITY_CATALOG = data.get("entities", {})

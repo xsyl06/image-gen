@@ -10,7 +10,7 @@ import sys
 from itertools import combinations
 from pathlib import Path
 
-GRAPH_PATH = Path(__file__).parent / "kg" / "data" / "prompt-graph.json"
+GRAPH_PATH = Path(__file__).parent / "kg" / "data" / "prompt_graph.json"
 
 
 def update_kg(used_entities, positive_prompt, score, threshold=8):

@@ -4,7 +4,8 @@
       "Bash(python merge.py)",
       "Bash(python3 \"e:/python/workspace/image-gen/scripts/engine/kg/data/merge.py\")",
       "Bash(conda activate *)",
-      "Bash(python \"e:/python/workspace/image-gen/scripts/engine/kg/data/merge.py\")"
+      "Bash(python \"e:/python/workspace/image-gen/scripts/engine/kg/data/merge.py\")",
+      "Bash(python image-gen-cli.py --help)"
     ]
   }
 }
