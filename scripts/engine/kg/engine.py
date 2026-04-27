@@ -16,7 +16,7 @@ from pathlib import Path
 
 _BUILTIN_DIR = Path(__file__).parent / "data"
 
-DEFAULT_GRAPH = _BUILTIN_DIR / "prompt-graph.json"
+DEFAULT_GRAPH = _BUILTIN_DIR / "prompt_graph.json"
 EXTENSIONS = _BUILTIN_DIR / "extensions.json"
 
 

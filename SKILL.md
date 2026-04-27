@@ -1,6 +1,6 @@
 ---
 name: image-gen
-description: AI image generation skill. Transforms natural language descriptions into structured prompts and generates images via ComfyUI. Use whenever the user asks to generate, create, draw, or make an image — even if they don't explicitly say "generate image". Also triggers on /img commands, when users describe a scene with a style preference, or want to produce visual content (posters, covers, illustrations, photos, art). If the user mentions ComfyUI, stable diffusion, or image generation at all, use this skill.
+description: AI image generation skill. Transforms natural language descriptions into structured prompts and generates images via ComfyUI. Use whenever the user asks to generate, create, draw, or make an image — even if they don't explicitly say "generate image". When users describe a scene with a style preference, or want to produce visual content (posters, covers, illustrations, photos, art). If the user mentions ComfyUI, stable diffusion, or image generation at all, use this skill.
 ---
 
 # Image-Gen — AI Image Generation
@@ -27,13 +27,17 @@ Parse the user's natural language description into KG entity tags. Use your own 
 | Subject | `subject:` | "a cat" → `subject:cat` |
 | Style | `style:` | "watercolor" → `style:watercolor` |
 | Mood | `mood:` | "peaceful" → `mood:peaceful` |
-| Composition | `composition:` | "close-up" → `composition:close_up` |
-| Lighting | `lighting:` | "natural light" → `lighting:natural` |
+| Composition | `composition:` | "close-up" → `composition:close-up` |
+| Lighting | `lighting:` | "sunlight" → `lighting:sunlight` |
 | Background | `background:` | "indoor" → `background:indoor` |
 | Color palette | `color_palette:` | "warm tones" → `color_palette:warm` |
+| Color | `color:` | "red" → `color:red` |
 | Genre | `genre:` | "poster" → `genre:poster` |
+| Technique | `technique:` | "origami" → `technique:origami folding` |
+| Texture | `texture:` | "rough surface" → `texture:rough` |
+| Theme | `theme:` | "cyberpunk" → `theme:cyberpunk` |
 
-3. Available entities are defined in `engine/kg/data/prompt-graph.json` — read it to see what tags exist.
+3. Available entities are defined in `scripts/engine/kg/data/prompt_graph.json` — read it to see what tags exist.
 4. If the user mentions something not in the KG, still include it — the skeleton will handle unknowns gracefully.
 
 ### Output
@@ -51,7 +55,7 @@ import sys
 from pathlib import Path
 
 # Add engine to path
-ENGINE_DIR = Path("engine")  # or full path from skill location
+ENGINE_DIR = Path("scripts/engine")  # or full path from skill location
 sys.path.insert(0, str(ENGINE_DIR))
 
 from kg.engine import PromptKG
@@ -160,7 +164,7 @@ Use the workflow loader to load and inject prompts automatically:
 ```python
 from workflow_loader import load_workflow, inject_prompts
 
-# Load from engine/workflows/ directory
+# Load from scripts/engine/workflows/ directory
 workflow = load_workflow("default_workflow.json")  # or any .json file name
 
 # Or load from config
@@ -171,12 +175,12 @@ workflow = load_workflow(workflow_name)
 workflow = inject_prompts(workflow, positive, negative)
 ```
 
-If no workflow exists in `engine/workflows/`, ask the user to export one from ComfyUI:
+If no workflow exists in `scripts/engine/workflows/`, ask the user to export one from ComfyUI:
 
 1. Open ComfyUI in browser (`http://127.0.0.1:8188`)
 2. Set up the desired workflow
 3. Click the gear icon → "Save (API format)"
-4. Save the JSON to `engine/workflows/` (e.g. `default_workflow.json`)
+4. Save the JSON to `scripts/engine/workflows/` (e.g. `default_workflow.json`)
 
 Available workflows:
 
@@ -190,7 +194,7 @@ print(list_workflows())  # e.g. ["default_workflow.json", "sdxl_workflow.json"]
 ```python
 from comfyui import check_connection, generate_image
 
-cfg = load_config()  # from engine/config.json
+cfg = load_config()  # from scripts/engine/config.json
 
 if not check_connection(cfg):
     # Tell user: ComfyUI not running. Start with: python main.py --port 8188
@@ -290,7 +294,7 @@ import json
 from pathlib import Path
 from itertools import combinations
 
-GRAPH_PATH = Path("engine/kg/data/prompt-graph.json")
+GRAPH_PATH = Path("scripts/engine/kg/data/prompt-graph.json")
 
 def update_kg(kg, used_entities, score):
     if score < cfg["score_threshold"]:
@@ -331,7 +335,7 @@ def update_kg(kg, used_entities, score):
 
 ## Configuration
 
-Read `engine/config.json` for settings:
+Read `scripts/engine/config.json` for settings:
 
 | Key | Default | Purpose |
 |-----|---------|---------|

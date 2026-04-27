@@ -1,0 +1,3066 @@
+{
+  "meta": {
+    "source": "imagejson.org",
+    "total_prompts": 106,
+    "total_entities": 121,
+    "categories": [
+      "background",
+      "color",
+      "color_palette",
+      "composition",
+      "genre",
+      "lighting",
+      "mood",
+      "style",
+      "subject",
+      "technique",
+      "texture",
+      "theme"
+    ],
+    "description": "JSON Image Prompts Knowledge Graph from imagejson.org"
+  },
+  "entities": {
+    "style:digital papercraft / 3d paper art diorama": {
+      "category": "style",
+      "name": "Digital Papercraft / 3D Paper Art Diorama",
+      "count": 1
+    },
+    "technique:quilling": {
+      "category": "technique",
+      "name": "Quilling",
+      "count": 1
+    },
+    "technique:layered cutouts": {
+      "category": "technique",
+      "name": "Layered Cutouts",
+      "count": 1
+    },
+    "technique:pop-up book engineering": {
+      "category": "technique",
+      "name": "Pop-up Book Engineering",
+      "count": 1
+    },
+    "technique:origami folding": {
+      "category": "technique",
+      "name": "Origami Folding",
+      "count": 1
+    },
+    "texture:visible pulp texture on all surfaces.": {
+      "category": "texture",
+      "name": "Visible pulp texture on all surfaces.",
+      "count": 1
+    },
+    "subject:hybrid biological warfare gas mask": {
+      "category": "subject",
+      "name": "Hybrid Biological Warfare Gas Mask",
+      "count": 1
+    },
+    "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": {
+      "category": "subject",
+      "name": "A centralized, intricate papercraft assemblage representing a fusion of a vintag",
+      "count": 1
+    },
+    "theme:wwii era": {
+      "category": "theme",
+      "name": "Wwii Era",
+      "count": 1
+    },
+    "theme:viral outbreak": {
+      "category": "theme",
+      "name": "Viral Outbreak",
+      "count": 1
+    },
+    "theme:solarpunk optimism": {
+      "category": "theme",
+      "name": "Solarpunk Optimism",
+      "count": 1
+    },
+    "lighting:sunlight": {
+      "category": "lighting",
+      "name": "sunlight",
+      "count": 1
+    },
+    "lighting:harsh": {
+      "category": "lighting",
+      "name": "harsh",
+      "count": 1
+    },
+    "lighting:glow glow": {
+      "category": "lighting",
+      "name": "glow glow",
+      "count": 1
+    },
+    "composition:dutch angle": {
+      "category": "composition",
+      "name": "dutch angle",
+      "count": 1
+    },
+    "composition:close-up": {
+      "category": "composition",
+      "name": "close-up",
+      "count": 2
+    },
+    "composition:shallow depth of field": {
+      "category": "composition",
+      "name": "shallow depth of field",
+      "count": 4
+    },
+    "color:red": {
+      "category": "color",
+      "name": "red",
+      "count": 52
+    },
+    "color:green": {
+      "category": "color",
+      "name": "green",
+      "count": 23
+    },
+    "color:purple": {
+      "category": "color",
+      "name": "purple",
+      "count": 6
+    },
+    "color:magenta": {
+      "category": "color",
+      "name": "magenta",
+      "count": 4
+    },
+    "color:neon": {
+      "category": "color",
+      "name": "neon",
+      "count": 5
+    },
+    "color:blue": {
+      "category": "color",
+      "name": "blue",
+      "count": 30
+    },
+    "color:gold": {
+      "category": "color",
+      "name": "gold",
+      "count": 21
+    },
+    "color:emerald": {
+      "category": "color",
+      "name": "emerald",
+      "count": 5
+    },
+    "color:black": {
+      "category": "color",
+      "name": "black",
+      "count": 34
+    },
+    "color:white": {
+      "category": "color",
+      "name": "white",
+      "count": 38
+    },
+    "color:pink": {
+      "category": "color",
+      "name": "pink",
+      "count": 17
+    },
+    "composition:wide": {
+      "category": "composition",
+      "name": "wide",
+      "count": 2
+    },
+    "composition:deep depth of field": {
+      "category": "composition",
+      "name": "deep depth of field",
+      "count": 1
+    },
+    "subject:a cinematic, atmospheric science fiction scene depicting a solitary figure stand": {
+      "category": "subject",
+      "name": "A cinematic, atmospheric science fiction scene depicting a solitary figure stand",
+      "count": 1
+    },
+    "color:cyan": {
+      "category": "color",
+      "name": "cyan",
+      "count": 4
+    },
+    "color:monochrome": {
+      "category": "color",
+      "name": "monochrome",
+      "count": 3
+    },
+    "color:yellow": {
+      "category": "color",
+      "name": "yellow",
+      "count": 9
+    },
+    "color:orange": {
+      "category": "color",
+      "name": "orange",
+      "count": 12
+    },
+    "subject:melancholic_clown": {
+      "category": "subject",
+      "name": "melancholic_clown",
+      "count": 1
+    },
+    "composition:slightly_low_angle": {
+      "category": "composition",
+      "name": "slightly_low_angle",
+      "count": 1
+    },
+    "subject:a high-intensity, cinematic close-up portrait of roronoa zoro from the anime one": {
+      "category": "subject",
+      "name": "A high-intensity, cinematic close-up portrait of Roronoa Zoro from the anime One",
+      "count": 1
+    },
+    "subject:roronoa zoro": {
+      "category": "subject",
+      "name": "Roronoa Zoro",
+      "count": 1
+    },
+    "color:violet": {
+      "category": "color",
+      "name": "violet",
+      "count": 1
+    },
+    "color:pastel": {
+      "category": "color",
+      "name": "pastel",
+      "count": 8
+    },
+    "style:sports graphic design": {
+      "category": "style",
+      "name": "Sports Graphic Design",
+      "count": 1
+    },
+    "style:grunge aesthetic": {
+      "category": "style",
+      "name": "Grunge Aesthetic",
+      "count": 1
+    },
+    "style:photo manipulation": {
+      "category": "style",
+      "name": "Photo Manipulation",
+      "count": 1
+    },
+    "style:mosaic art": {
+      "category": "style",
+      "name": "Mosaic Art",
+      "count": 1
+    },
+    "style:tribute poster": {
+      "category": "style",
+      "name": "Tribute Poster",
+      "count": 1
+    },
+    "style:editorial illustration": {
+      "category": "style",
+      "name": "Editorial Illustration",
+      "count": 1
+    },
+    "subject:balilleys strawberry cream liqueur (ai interpretation)": {
+      "category": "subject",
+      "name": "Balilleys Strawberry Cream Liqueur (AI interpretation)",
+      "count": 1
+    },
+    "color:cobalt": {
+      "category": "color",
+      "name": "cobalt",
+      "count": 4
+    },
+    "subject:interior visualization": {
+      "category": "subject",
+      "name": "Interior visualization",
+      "count": 1
+    },
+    "theme:serene": {
+      "category": "theme",
+      "name": "Serene",
+      "count": 1
+    },
+    "theme:warm": {
+      "category": "theme",
+      "name": "warm",
+      "count": 1
+    },
+    "theme:meditative": {
+      "category": "theme",
+      "name": "meditative",
+      "count": 1
+    },
+    "theme:ethereal": {
+      "category": "theme",
+      "name": "ethereal",
+      "count": 1
+    },
+    "theme:spa-like": {
+      "category": "theme",
+      "name": "spa-like",
+      "count": 1
+    },
+    "composition:wide-angle": {
+      "category": "composition",
+      "name": "wide-angle",
+      "count": 1
+    },
+    "composition:eye-level": {
+      "category": "composition",
+      "name": "eye-level",
+      "count": 3
+    },
+    "color:indigo": {
+      "category": "color",
+      "name": "indigo",
+      "count": 2
+    },
+    "color:teal": {
+      "category": "color",
+      "name": "teal",
+      "count": 10
+    },
+    "composition:side view": {
+      "category": "composition",
+      "name": "Side view",
+      "count": 1
+    },
+    "color:coral": {
+      "category": "color",
+      "name": "coral",
+      "count": 3
+    },
+    "color:crimson": {
+      "category": "color",
+      "name": "crimson",
+      "count": 3
+    },
+    "composition:medium shot": {
+      "category": "composition",
+      "name": "medium shot",
+      "count": 1
+    },
+    "color:silver": {
+      "category": "color",
+      "name": "silver",
+      "count": 7
+    },
+    "theme:logo typography": {
+      "category": "theme",
+      "name": "Logo Typography",
+      "count": 1
+    },
+    "theme:esoteric symbolism": {
+      "category": "theme",
+      "name": "Esoteric Symbolism",
+      "count": 1
+    },
+    "composition:3-point perspective with a low camera angle, looki": {
+      "category": "composition",
+      "name": "3-point perspective with a low camera angle, looki",
+      "count": 1
+    },
+    "lighting:multiple wax candles placed unevenly on the desk surface": {
+      "category": "lighting",
+      "name": "Multiple wax candles placed unevenly on the desk surface",
+      "count": 1
+    },
+    "color:amber": {
+      "category": "color",
+      "name": "amber",
+      "count": 2
+    },
+    "composition:low angle": {
+      "category": "composition",
+      "name": "low angle",
+      "count": 1
+    },
+    "composition:slightly_three_quarter_view": {
+      "category": "composition",
+      "name": "slightly_three_quarter_view",
+      "count": 1
+    },
+    "subject:retro-style refrigerator": {
+      "category": "subject",
+      "name": "Retro-style Refrigerator",
+      "count": 1
+    },
+    "composition:cross-section view showing both above and below th": {
+      "category": "composition",
+      "name": "Cross-section view showing both above and below th",
+      "count": 1
+    },
+    "subject:a whimsical, tactile still life composition featuring handcrafted fiber art repr": {
+      "category": "subject",
+      "name": "A whimsical, tactile still life composition featuring handcrafted fiber art repr",
+      "count": 1
+    },
+    "style:paper collage, mixed media, stop-motion animation aesthetic.": {
+      "category": "style",
+      "name": "Paper collage, mixed media, stop-motion animation aesthetic.",
+      "count": 1
+    },
+    "subject:saint nicholas / sinterklaas": {
+      "category": "subject",
+      "name": "Saint Nicholas / Sinterklaas",
+      "count": 1
+    },
+    "composition:eye_level": {
+      "category": "composition",
+      "name": "eye_level",
+      "count": 1
+    },
+    "subject:a hyper-realistic, whimsical portrait of a young woman with a vintage aesthetic,": {
+      "category": "subject",
+      "name": "A hyper-realistic, whimsical portrait of a young woman with a vintage aesthetic,",
+      "count": 1
+    },
+    "composition:intimate and personal": {
+      "category": "composition",
+      "name": "intimate and personal",
+      "count": 1
+    },
+    "style:paper-cut style with gucci color": {
+      "category": "style",
+      "name": "paper-cut style with Gucci color",
+      "count": 1
+    },
+    "composition:flat, multi-layered": {
+      "category": "composition",
+      "name": "flat, multi-layered",
+      "count": 1
+    },
+    "style:coca-cola": {
+      "category": "style",
+      "name": "Coca-Cola",
+      "count": 1
+    },
+    "style:mcdonald food": {
+      "category": "style",
+      "name": "McDonald food",
+      "count": 1
+    },
+    "style:lego": {
+      "category": "style",
+      "name": "lego",
+      "count": 1
+    },
+    "style:digital art": {
+      "category": "style",
+      "name": "Digital Art",
+      "count": 1
+    },
+    "style:stylized digital art": {
+      "category": "style",
+      "name": "Stylized Digital Art",
+      "count": 2
+    },
+    "style:glamorous product photography": {
+      "category": "style",
+      "name": "Glamorous Product Photography",
+      "count": 1
+    },
+    "style:contemporary still life": {
+      "category": "style",
+      "name": "Contemporary Still Life",
+      "count": 1
+    },
+    "style:abstract digital art": {
+      "category": "style",
+      "name": "Abstract Digital Art",
+      "count": 1
+    },
+    "style:digital art, glitch art, data moshing": {
+      "category": "style",
+      "name": "Digital Art, Glitch Art, Data Moshing",
+      "count": 1
+    },
+    "style:cubism": {
+      "category": "style",
+      "name": "Cubism",
+      "count": 1
+    },
+    "subject:cat": {
+      "category": "subject",
+      "name": "猫",
+      "count": 120
+    },
+    "subject:person": {
+      "category": "subject",
+      "name": "人物",
+      "count": 200
+    },
+    "subject:food": {
+      "category": "subject",
+      "name": "美食",
+      "count": 151
+    },
+    "subject:landscape": {
+      "category": "subject",
+      "name": "风景",
+      "count": 100
+    },
+    "subject:animal": {
+      "category": "subject",
+      "name": "动物",
+      "count": 80
+    },
+    "style:watercolor": {
+      "category": "style",
+      "name": "水彩",
+      "count": 90
+    },
+    "style:photography": {
+      "category": "style",
+      "name": "摄影",
+      "count": 180
+    },
+    "style:digital_art": {
+      "category": "style",
+      "name": "数字艺术",
+      "count": 160
+    },
+    "style:illustration": {
+      "category": "style",
+      "name": "插画",
+      "count": 140
+    },
+    "style:oil_painting": {
+      "category": "style",
+      "name": "油画",
+      "count": 70
+    },
+    "style:sketch": {
+      "category": "style",
+      "name": "素描",
+      "count": 60
+    },
+    "mood:warm": {
+      "category": "mood",
+      "name": "温馨",
+      "count": 130
+    },
+    "mood:peaceful": {
+      "category": "mood",
+      "name": "宁静",
+      "count": 100
+    },
+    "mood:energetic": {
+      "category": "mood",
+      "name": "活力",
+      "count": 80
+    },
+    "mood:mysterious": {
+      "category": "mood",
+      "name": "神秘",
+      "count": 60
+    },
+    "composition:close_up": {
+      "category": "composition",
+      "name": "特写",
+      "count": 110
+    },
+    "composition:wide_shot": {
+      "category": "composition",
+      "name": "远景",
+      "count": 90
+    },
+    "composition:centered": {
+      "category": "composition",
+      "name": "居中构图",
+      "count": 100
+    },
+    "lighting:natural": {
+      "category": "lighting",
+      "name": "自然光",
+      "count": 140
+    },
+    "lighting:studio": {
+      "category": "lighting",
+      "name": "棚拍光",
+      "count": 80
+    },
+    "lighting:golden_hour": {
+      "category": "lighting",
+      "name": "黄金时刻",
+      "count": 70
+    },
+    "background:indoor": {
+      "category": "background",
+      "name": "室内",
+      "count": 120
+    },
+    "background:outdoor": {
+      "category": "background",
+      "name": "室外",
+      "count": 100
+    },
+    "background:abstract": {
+      "category": "background",
+      "name": "抽象",
+      "count": 60
+    },
+    "color_palette:warm": {
+      "category": "color_palette",
+      "name": "暖色调",
+      "count": 130
+    },
+    "color_palette:cool": {
+      "category": "color_palette",
+      "name": "冷色调",
+      "count": 100
+    },
+    "color_palette:pastel": {
+      "category": "color_palette",
+      "name": "粉彩",
+      "count": 80
+    },
+    "genre:poster": {
+      "category": "genre",
+      "name": "海报",
+      "count": 90
+    },
+    "genre:infographic": {
+      "category": "genre",
+      "name": "信息图",
+      "count": 70
+    },
+    "genre:cover": {
+      "category": "genre",
+      "name": "封面",
+      "count": 110
+    }
+  },
+  "co_occurrence": {
+    "style:digital papercraft / 3d paper art diorama": {
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "subject:hybrid biological warfare gas mask": 1,
+      "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1
+    },
+    "lighting:sunlight": {
+      "style:digital papercraft / 3d paper art diorama": 1,
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "subject:hybrid biological warfare gas mask": 1,
+      "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1
+    },
+    "lighting:harsh": {
+      "style:digital papercraft / 3d paper art diorama": 1,
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "subject:hybrid biological warfare gas mask": 1,
+      "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1,
+      "lighting:sunlight": 1
+    },
+    "lighting:glow glow": {
+      "style:digital papercraft / 3d paper art diorama": 1,
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "subject:hybrid biological warfare gas mask": 1,
+      "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1,
+      "lighting:sunlight": 1,
+      "lighting:harsh": 1
+    },
+    "composition:dutch angle": {
+      "style:digital papercraft / 3d paper art diorama": 1,
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "subject:hybrid biological warfare gas mask": 1,
+      "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1,
+      "lighting:sunlight": 1,
+      "lighting:harsh": 1,
+      "lighting:glow glow": 1,
+      "composition:shallow depth of field": 1
+    },
+    "composition:close-up": {
+      "style:digital papercraft / 3d paper art diorama": 1,
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "subject:hybrid biological warfare gas mask": 1,
+      "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1,
+      "lighting:sunlight": 1,
+      "lighting:harsh": 1,
+      "lighting:glow glow": 1,
+      "composition:dutch angle": 1,
+      "composition:shallow depth of field": 2,
+      "composition:eye-level": 1
+    },
+    "composition:shallow depth of field": {
+      "style:digital papercraft / 3d paper art diorama": 1,
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "subject:hybrid biological warfare gas mask": 1,
+      "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1,
+      "lighting:sunlight": 1,
+      "lighting:harsh": 1,
+      "lighting:glow glow": 1,
+      "composition:slightly_three_quarter_view": 1
+    },
+    "color:red": {
+      "style:digital papercraft / 3d paper art diorama": 1,
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "subject:hybrid biological warfare gas mask": 1,
+      "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1,
+      "lighting:sunlight": 1,
+      "lighting:harsh": 1,
+      "lighting:glow glow": 1,
+      "composition:dutch angle": 1,
+      "composition:close-up": 2,
+      "composition:shallow depth of field": 4,
+      "composition:wide": 2,
+      "composition:deep depth of field": 1,
+      "color:white": 22,
+      "subject:a cinematic, atmospheric science fiction scene depicting a solitary figure stand": 1,
+      "color:yellow": 8,
+      "subject:melancholic_clown": 1,
+      "composition:slightly_low_angle": 1,
+      "subject:balilleys strawberry cream liqueur (ai interpretation)": 1,
+      "subject:interior visualization": 1,
+      "theme:serene": 1,
+      "theme:warm": 1,
+      "theme:meditative": 1,
+      "theme:ethereal": 1,
+      "theme:spa-like": 1,
+      "composition:wide-angle": 1,
+      "composition:eye-level": 3,
+      "color:teal": 5,
+      "composition:side view": 1,
+      "composition:medium shot": 1,
+      "color:silver": 5,
+      "lighting:multiple wax candles placed unevenly on the desk surface": 1,
+      "composition:low angle": 1,
+      "composition:slightly_three_quarter_view": 1,
+      "subject:retro-style refrigerator": 1,
+      "composition:eye_level": 1,
+      "subject:a hyper-realistic, whimsical portrait of a young woman with a vintage aesthetic,": 1,
+      "composition:intimate and personal": 1,
+      "style:paper-cut style with gucci color": 1,
+      "composition:flat, multi-layered": 1,
+      "style:stylized digital art": 1,
+      "style:abstract digital art": 1,
+      "style:digital art, glitch art, data moshing": 1,
+      "style:cubism": 1
+    },
+    "color:green": {
+      "style:digital papercraft / 3d paper art diorama": 1,
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "subject:hybrid biological warfare gas mask": 1,
+      "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1,
+      "lighting:sunlight": 1,
+      "lighting:harsh": 1,
+      "lighting:glow glow": 1,
+      "composition:dutch angle": 1,
+      "composition:close-up": 2,
+      "composition:shallow depth of field": 3,
+      "color:red": 13,
+      "color:purple": 4,
+      "color:magenta": 3,
+      "color:neon": 3,
+      "color:white": 8,
+      "color:yellow": 7,
+      "color:orange": 4,
+      "subject:a high-intensity, cinematic close-up portrait of roronoa zoro from the anime one": 1,
+      "subject:roronoa zoro": 1,
+      "color:violet": 1,
+      "color:pastel": 3,
+      "color:pink": 5,
+      "lighting:multiple wax candles placed unevenly on the desk surface": 1,
+      "composition:slightly_three_quarter_view": 1,
+      "color:teal": 4,
+      "composition:eye-level": 2,
+      "subject:a whimsical, tactile still life composition featuring handcrafted fiber art repr": 1,
+      "style:lego": 1,
+      "style:digital art": 1,
+      "style:abstract digital art": 1,
+      "style:cubism": 1
+    },
+    "color:purple": {
+      "style:digital papercraft / 3d paper art diorama": 1,
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "subject:hybrid biological warfare gas mask": 1,
+      "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1,
+      "lighting:sunlight": 1,
+      "lighting:harsh": 1,
+      "lighting:glow glow": 1,
+      "composition:dutch angle": 1,
+      "composition:close-up": 1,
+      "composition:shallow depth of field": 1,
+      "color:red": 2,
+      "subject:a high-intensity, cinematic close-up portrait of roronoa zoro from the anime one": 1,
+      "subject:roronoa zoro": 1,
+      "color:violet": 1,
+      "style:sports graphic design": 1,
+      "style:grunge aesthetic": 1,
+      "style:photo manipulation": 1,
+      "style:mosaic art": 1,
+      "style:tribute poster": 1,
+      "style:editorial illustration": 1,
+      "color:white": 2,
+      "subject:retro-style refrigerator": 1,
+      "color:yellow": 1,
+      "style:lego": 1,
+      "color:teal": 1
+    },
+    "color:magenta": {
+      "style:digital papercraft / 3d paper art diorama": 1,
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "subject:hybrid biological warfare gas mask": 1,
+      "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1,
+      "lighting:sunlight": 1,
+      "lighting:harsh": 1,
+      "lighting:glow glow": 1,
+      "composition:dutch angle": 1,
+      "composition:close-up": 1,
+      "composition:shallow depth of field": 1,
+      "color:red": 1,
+      "color:purple": 2,
+      "color:neon": 3,
+      "subject:a high-intensity, cinematic close-up portrait of roronoa zoro from the anime one": 1,
+      "subject:roronoa zoro": 1,
+      "color:violet": 1,
+      "style:mcdonald food": 1,
+      "color:teal": 1,
+      "color:orange": 1
+    },
+    "color:neon": {
+      "style:digital papercraft / 3d paper art diorama": 1,
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "subject:hybrid biological warfare gas mask": 1,
+      "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1,
+      "lighting:sunlight": 1,
+      "lighting:harsh": 1,
+      "lighting:glow glow": 1,
+      "composition:dutch angle": 1,
+      "composition:close-up": 1,
+      "composition:shallow depth of field": 1,
+      "color:red": 3,
+      "color:purple": 2,
+      "subject:a high-intensity, cinematic close-up portrait of roronoa zoro from the anime one": 1,
+      "subject:roronoa zoro": 1,
+      "color:violet": 1,
+      "color:white": 2,
+      "color:silver": 1,
+      "color:yellow": 1,
+      "color:pink": 1,
+      "style:mcdonald food": 1,
+      "color:teal": 1,
+      "color:orange": 1
+    },
+    "color:blue": {
+      "style:digital papercraft / 3d paper art diorama": 1,
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "subject:hybrid biological warfare gas mask": 1,
+      "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1,
+      "lighting:sunlight": 1,
+      "lighting:harsh": 1,
+      "lighting:glow glow": 1,
+      "composition:dutch angle": 1,
+      "composition:close-up": 1,
+      "composition:shallow depth of field": 1,
+      "color:red": 17,
+      "color:green": 12,
+      "color:purple": 3,
+      "color:magenta": 2,
+      "color:neon": 3,
+      "color:gold": 9,
+      "color:emerald": 1,
+      "subject:a cinematic, atmospheric science fiction scene depicting a solitary figure stand": 1,
+      "color:cyan": 2,
+      "color:pastel": 5,
+      "color:white": 17,
+      "color:cobalt": 4,
+      "subject:interior visualization": 1,
+      "theme:serene": 1,
+      "theme:warm": 1,
+      "theme:meditative": 1,
+      "theme:ethereal": 1,
+      "theme:spa-like": 1,
+      "composition:wide-angle": 1,
+      "composition:eye-level": 2,
+      "color:indigo": 2,
+      "color:teal": 3,
+      "color:pink": 10,
+      "color:yellow": 4,
+      "composition:side view": 1,
+      "composition:wide": 1,
+      "color:coral": 3,
+      "color:crimson": 1,
+      "color:silver": 3,
+      "composition:low angle": 1,
+      "composition:cross-section view showing both above and below th": 1,
+      "color:orange": 2,
+      "subject:a whimsical, tactile still life composition featuring handcrafted fiber art repr": 1,
+      "subject:a hyper-realistic, whimsical portrait of a young woman with a vintage aesthetic,": 1,
+      "style:lego": 1,
+      "style:stylized digital art": 1,
+      "style:contemporary still life": 1,
+      "style:abstract digital art": 1
+    },
+    "color:gold": {
+      "style:digital papercraft / 3d paper art diorama": 1,
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "subject:hybrid biological warfare gas mask": 1,
+      "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1,
+      "lighting:sunlight": 1,
+      "lighting:harsh": 1,
+      "lighting:glow glow": 1,
+      "composition:dutch angle": 1,
+      "composition:close-up": 1,
+      "composition:shallow depth of field": 3,
+      "color:red": 16,
+      "color:green": 6,
+      "color:purple": 3,
+      "color:magenta": 1,
+      "color:neon": 2,
+      "style:sports graphic design": 1,
+      "style:grunge aesthetic": 1,
+      "style:photo manipulation": 1,
+      "style:mosaic art": 1,
+      "style:tribute poster": 1,
+      "style:editorial illustration": 1,
+      "color:white": 10,
+      "subject:balilleys strawberry cream liqueur (ai interpretation)": 1,
+      "color:pink": 8,
+      "color:pastel": 4,
+      "subject:interior visualization": 1,
+      "theme:serene": 1,
+      "theme:warm": 1,
+      "theme:meditative": 1,
+      "theme:ethereal": 1,
+      "theme:spa-like": 1,
+      "composition:wide-angle": 1,
+      "composition:eye-level": 1,
+      "color:indigo": 1,
+      "color:teal": 2,
+      "color:orange": 2,
+      "composition:side view": 1,
+      "composition:wide": 1,
+      "color:yellow": 2,
+      "composition:slightly_three_quarter_view": 1,
+      "subject:retro-style refrigerator": 1,
+      "color:silver": 1,
+      "subject:a whimsical, tactile still life composition featuring handcrafted fiber art repr": 1,
+      "composition:eye_level": 1,
+      "subject:a hyper-realistic, whimsical portrait of a young woman with a vintage aesthetic,": 1,
+      "style:coca-cola": 1
+    },
+    "color:emerald": {
+      "style:digital papercraft / 3d paper art diorama": 1,
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "subject:hybrid biological warfare gas mask": 1,
+      "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1,
+      "lighting:sunlight": 1,
+      "lighting:harsh": 1,
+      "lighting:glow glow": 1,
+      "composition:dutch angle": 1,
+      "composition:close-up": 1,
+      "composition:shallow depth of field": 1,
+      "color:red": 2,
+      "color:green": 5,
+      "color:purple": 2,
+      "color:magenta": 2,
+      "color:neon": 2,
+      "color:gold": 1,
+      "color:white": 1,
+      "subject:a high-intensity, cinematic close-up portrait of roronoa zoro from the anime one": 1,
+      "subject:roronoa zoro": 1,
+      "color:violet": 1,
+      "style:cubism": 1
+    },
+    "technique:layered cutouts": {
+      "technique:quilling": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1
+    },
+    "technique:pop-up book engineering": {
+      "technique:quilling": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1
+    },
+    "technique:origami folding": {
+      "technique:quilling": 1,
+      "technique:pop-up book engineering": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1
+    },
+    "technique:quilling": {
+      "texture:visible pulp texture on all surfaces.": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1
+    },
+    "subject:hybrid biological warfare gas mask": {
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1
+    },
+    "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag": {
+      "technique:quilling": 1,
+      "technique:layered cutouts": 1,
+      "technique:pop-up book engineering": 1,
+      "technique:origami folding": 1,
+      "texture:visible pulp texture on all surfaces.": 1,
+      "subject:hybrid biological warfare gas mask": 1,
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1
+    },
+    "texture:visible pulp texture on all surfaces.": {
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1,
+      "theme:solarpunk optimism": 1
+    },
+    "theme:viral outbreak": {
+      "theme:wwii era": 1
+    },
+    "theme:solarpunk optimism": {
+      "theme:wwii era": 1,
+      "theme:viral outbreak": 1
+    },
+    "color:black": {
+      "color:green": 13,
+      "color:emerald": 3,
+      "color:white": 17,
+      "color:pink": 3,
+      "color:red": 24,
+      "subject:a cinematic, atmospheric science fiction scene depicting a solitary figure stand": 1,
+      "color:cyan": 3,
+      "color:blue": 12,
+      "color:yellow": 7,
+      "color:orange": 8,
+      "subject:melancholic_clown": 1,
+      "composition:slightly_low_angle": 1,
+      "color:monochrome": 2,
+      "color:pastel": 3,
+      "color:cobalt": 2,
+      "color:gold": 5,
+      "color:crimson": 1,
+      "color:neon": 1,
+      "lighting:multiple wax candles placed unevenly on the desk surface": 1,
+      "composition:cross-section view showing both above and below th": 1,
+      "color:coral": 1,
+      "color:teal": 2,
+      "color:silver": 1,
+      "composition:close-up": 1,
+      "composition:eye-level": 1,
+      "composition:shallow depth of field": 1,
+      "style:paper collage, mixed media, stop-motion animation aesthetic.": 1,
+      "subject:saint nicholas / sinterklaas": 1,
+      "style:coca-cola": 1,
+      "style:stylized digital art": 1,
+      "style:abstract digital art": 1,
+      "style:cubism": 1
+    },
+    "color:pink": {
+      "color:red": 12,
+      "color:white": 10,
+      "subject:balilleys strawberry cream liqueur (ai interpretation)": 1,
+      "subject:interior visualization": 1,
+      "theme:serene": 1,
+      "theme:warm": 1,
+      "theme:meditative": 1,
+      "theme:ethereal": 1,
+      "theme:spa-like": 1,
+      "composition:wide-angle": 1,
+      "composition:eye-level": 2,
+      "color:teal": 3,
+      "composition:medium shot": 1,
+      "color:yellow": 2,
+      "composition:slightly_three_quarter_view": 1,
+      "composition:shallow depth of field": 1,
+      "subject:retro-style refrigerator": 1,
+      "color:purple": 2,
+      "subject:a whimsical, tactile still life composition featuring handcrafted fiber art repr": 1,
+      "subject:a hyper-realistic, whimsical portrait of a young woman with a vintage aesthetic,": 1,
+      "style:glamorous product photography": 1,
+      "color:silver": 1,
+      "style:contemporary still life": 1
+    },
+    "composition:deep depth of field": {
+      "composition:wide": 1
+    },
+    "color:white": {
+      "composition:wide": 1,
+      "composition:deep depth of field": 1,
+      "color:yellow": 6,
+      "subject:melancholic_clown": 1,
+      "composition:slightly_low_angle": 1,
+      "style:sports graphic design": 1,
+      "style:grunge aesthetic": 1,
+      "style:photo manipulation": 1,
+      "style:mosaic art": 1,
+      "style:tribute poster": 1,
+      "style:editorial illustration": 1,
+      "subject:interior visualization": 1,
+      "theme:serene": 1,
+      "theme:warm": 1,
+      "theme:meditative": 1,
+      "theme:ethereal": 1,
+      "theme:spa-like": 1,
+      "composition:wide-angle": 1,
+      "composition:eye-level": 2,
+      "composition:low angle": 1,
+      "composition:close-up": 1,
+      "composition:shallow depth of field": 1,
+      "subject:a whimsical, tactile still life composition featuring handcrafted fiber art repr": 1,
+      "subject:a hyper-realistic, whimsical portrait of a young woman with a vintage aesthetic,": 1,
+      "style:stylized digital art": 1,
+      "style:glamorous product photography": 1,
+      "style:contemporary still life": 1
+    },
+    "color:cyan": {
+      "subject:a cinematic, atmospheric science fiction scene depicting a solitary figure stand": 1,
+      "color:red": 3,
+      "color:green": 2,
+      "color:pastel": 2,
+      "lighting:multiple wax candles placed unevenly on the desk surface": 1,
+      "subject:retro-style refrigerator": 1,
+      "color:pink": 1,
+      "color:purple": 1,
+      "color:gold": 1
+    },
+    "color:monochrome": {
+      "color:pink": 1,
+      "color:red": 3,
+      "color:white": 2,
+      "subject:melancholic_clown": 1,
+      "composition:slightly_low_angle": 1,
+      "color:orange": 1
+    },
+    "color:orange": {
+      "color:white": 6,
+      "color:red": 9,
+      "color:yellow": 3,
+      "composition:cross-section view showing both above and below th": 1,
+      "color:teal": 3,
+      "style:mcdonald food": 1,
+      "style:digital art, glitch art, data moshing": 1
+    },
+    "composition:slightly_low_angle": {
+      "subject:melancholic_clown": 1
+    },
+    "subject:a high-intensity, cinematic close-up portrait of roronoa zoro from the anime one": {
+      "subject:roronoa zoro": 1
+    },
+    "color:violet": {
+      "subject:a high-intensity, cinematic close-up portrait of roronoa zoro from the anime one": 1,
+      "subject:roronoa zoro": 1
+    },
+    "style:grunge aesthetic": {
+      "style:sports graphic design": 1,
+      "style:photo manipulation": 1,
+      "style:mosaic art": 1,
+      "style:tribute poster": 1
+    },
+    "style:photo manipulation": {
+      "style:sports graphic design": 1,
+      "style:tribute poster": 1
+    },
+    "style:mosaic art": {
+      "style:sports graphic design": 1,
+      "style:photo manipulation": 1,
+      "style:tribute poster": 1
+    },
+    "style:sports graphic design": {
+      "style:tribute poster": 1
+    },
+    "style:editorial illustration": {
+      "style:sports graphic design": 1,
+      "style:grunge aesthetic": 1,
+      "style:photo manipulation": 1,
+      "style:mosaic art": 1,
+      "style:tribute poster": 1
+    },
+    "color:pastel": {
+      "subject:balilleys strawberry cream liqueur (ai interpretation)": 1,
+      "color:red": 5,
+      "color:pink": 6,
+      "composition:medium shot": 1,
+      "color:teal": 1,
+      "color:white": 3,
+      "color:yellow": 2,
+      "subject:retro-style refrigerator": 1,
+      "color:purple": 2
+    },
+    "color:cobalt": {
+      "color:white": 2,
+      "color:red": 2,
+      "color:yellow": 1,
+      "color:green": 1,
+      "color:gold": 1,
+      "color:pastel": 1,
+      "color:silver": 1,
+      "color:pink": 1
+    },
+    "subject:interior visualization": {
+      "theme:serene": 1,
+      "theme:warm": 1,
+      "theme:meditative": 1,
+      "theme:ethereal": 1,
+      "theme:spa-like": 1
+    },
+    "composition:wide-angle": {
+      "subject:interior visualization": 1,
+      "theme:serene": 1,
+      "theme:warm": 1,
+      "theme:meditative": 1,
+      "theme:ethereal": 1,
+      "theme:spa-like": 1
+    },
+    "composition:eye-level": {
+      "subject:interior visualization": 1,
+      "theme:serene": 1,
+      "theme:warm": 1,
+      "theme:meditative": 1,
+      "theme:ethereal": 1,
+      "theme:spa-like": 1,
+      "composition:wide-angle": 1,
+      "composition:shallow depth of field": 1
+    },
+    "color:indigo": {
+      "subject:interior visualization": 1,
+      "theme:serene": 1,
+      "theme:warm": 1,
+      "theme:meditative": 1,
+      "theme:ethereal": 1,
+      "theme:spa-like": 1,
+      "composition:wide-angle": 1,
+      "composition:eye-level": 1,
+      "color:red": 2,
+      "color:white": 2,
+      "color:teal": 1,
+      "color:pink": 1,
+      "color:silver": 1,
+      "color:neon": 1
+    },
+    "color:teal": {
+      "subject:interior visualization": 1,
+      "theme:serene": 1,
+      "theme:warm": 1,
+      "theme:meditative": 1,
+      "theme:ethereal": 1,
+      "theme:spa-like": 1,
+      "composition:wide-angle": 1,
+      "composition:eye-level": 2,
+      "color:white": 2,
+      "composition:medium shot": 1,
+      "composition:slightly_three_quarter_view": 1,
+      "composition:shallow depth of field": 2,
+      "composition:cross-section view showing both above and below th": 1,
+      "composition:close-up": 1,
+      "color:yellow": 2,
+      "style:mcdonald food": 1,
+      "style:lego": 1,
+      "style:digital art": 1,
+      "style:digital art, glitch art, data moshing": 1
+    },
+    "theme:serene": {
+      "theme:warm": 1,
+      "theme:spa-like": 1
+    },
+    "theme:meditative": {
+      "theme:serene": 1,
+      "theme:warm": 1,
+      "theme:spa-like": 1
+    },
+    "theme:ethereal": {
+      "theme:serene": 1,
+      "theme:warm": 1,
+      "theme:meditative": 1,
+      "theme:spa-like": 1
+    },
+    "theme:spa-like": {
+      "theme:warm": 1
+    },
+    "composition:side view": {
+      "composition:wide": 1
+    },
+    "color:coral": {
+      "composition:side view": 1,
+      "composition:wide": 1,
+      "color:red": 2,
+      "color:gold": 1,
+      "composition:cross-section view showing both above and below th": 1,
+      "color:orange": 1,
+      "color:teal": 1,
+      "composition:eye-level": 1,
+      "color:pink": 1,
+      "color:green": 1
+    },
+    "color:crimson": {
+      "color:yellow": 1,
+      "color:green": 2,
+      "color:orange": 1,
+      "color:red": 3,
+      "color:white": 1,
+      "color:gold": 2,
+      "composition:slightly_three_quarter_view": 1,
+      "composition:shallow depth of field": 1,
+      "color:pink": 1,
+      "color:teal": 1
+    },
+    "color:silver": {
+      "color:white": 6,
+      "composition:low angle": 1,
+      "color:yellow": 1,
+      "style:glamorous product photography": 1
+    },
+    "theme:esoteric symbolism": {
+      "theme:logo typography": 1
+    },
+    "color:amber": {
+      "lighting:multiple wax candles placed unevenly on the desk surface": 1,
+      "color:red": 2,
+      "color:green": 1,
+      "color:black": 2,
+      "color:cyan": 1,
+      "color:orange": 1,
+      "color:monochrome": 1
+    },
+    "color:yellow": {
+      "composition:close-up": 1,
+      "composition:eye-level": 1,
+      "composition:shallow depth of field": 1,
+      "style:digital art, glitch art, data moshing": 1
+    },
+    "style:paper collage, mixed media, stop-motion animation aesthetic.": {
+      "subject:saint nicholas / sinterklaas": 1
+    },
+    "composition:eye_level": {
+      "composition:shallow depth of field": 1
+    },
+    "composition:flat, multi-layered": {
+      "style:paper-cut style with gucci color": 1
+    },
+    "subject:cat": {
+      "style:watercolor": 45,
+      "style:illustration": 39,
+      "mood:warm": 53,
+      "lighting:natural": 36,
+      "style:photography": 1,
+      "background:indoor": 1,
+      "composition:close_up": 1,
+      "color_palette:warm": 1,
+      "mood:energetic": 1
+    },
+    "style:watercolor": {
+      "mood:warm": 40,
+      "mood:peaceful": 35,
+      "color_palette:pastel": 30,
+      "subject:landscape": 25
+    },
+    "style:photography": {
+      "lighting:natural": 61,
+      "lighting:golden_hour": 40,
+      "composition:close_up": 46,
+      "subject:person": 72,
+      "mood:warm": 1,
+      "background:indoor": 3,
+      "color_palette:warm": 1,
+      "mood:energetic": 2
+    },
+    "style:digital_art": {
+      "mood:energetic": 35,
+      "mood:mysterious": 25,
+      "color_palette:warm": 30,
+      "subject:animal": 20
+    },
+    "mood:warm": {
+      "lighting:golden_hour": 30,
+      "color_palette:warm": 46,
+      "background:indoor": 36,
+      "lighting:natural": 1,
+      "composition:close_up": 1
+    },
+    "composition:close_up": {
+      "subject:person": 40,
+      "subject:cat": 25,
+      "lighting:studio": 20,
+      "color_palette:warm": 1
+    },
+    "genre:poster": {
+      "style:digital_art": 30,
+      "style:illustration": 25,
+      "mood:energetic": 20
+    },
+    "lighting:natural": {
+      "background:indoor": 1,
+      "composition:close_up": 1,
+      "color_palette:warm": 1
+    },
+    "background:indoor": {
+      "composition:close_up": 1,
+      "color_palette:warm": 1,
+      "subject:person": 2,
+      "style:photography": 2,
+      "mood:energetic": 2
+    },
+    "style:illustration": {
+      "subject:cat": 1,
+      "mood:energetic": 1
+    },
+    "mood:energetic": {
+      "subject:cat": 1,
+      "style:illustration": 1,
+      "subject:person": 2,
+      "style:photography": 2,
+      "background:indoor": 2
+    },
+    "subject:person": {
+      "style:photography": 2,
+      "mood:energetic": 2,
+      "background:indoor": 2
+    }
+  },
+  "prompt_index": [
+    {
+      "id": "ij-001",
+      "title": "Eco-Viral Gas Mask Relic",
+      "title_zh": "Eco-Viral Gas Mask Relic",
+      "tags": [
+        "style:digital papercraft / 3d paper art diorama",
+        "technique:quilling",
+        "technique:layered cutouts",
+        "technique:pop-up book engineering",
+        "technique:origami folding",
+        "texture:visible pulp texture on all surfaces.",
+        "subject:hybrid biological warfare gas mask",
+        "subject:a centralized, intricate papercraft assemblage representing a fusion of a vintag",
+        "theme:wwii era",
+        "theme:viral outbreak",
+        "theme:solarpunk optimism",
+        "lighting:sunlight",
+        "lighting:harsh",
+        "lighting:glow glow",
+        "composition:dutch angle",
+        "composition:close-up",
+        "composition:shallow depth of field",
+        "color:red",
+        "color:green",
+        "color:purple",
+        "color:magenta",
+        "color:neon",
+        "color:blue",
+        "color:gold",
+        "color:emerald"
+      ],
+      "prompt_short": "A centralized, intricate papercraft assemblage representing a fusion of a vintage WWII M17 gas mask, stylized viral protein structures, and futuristic solarpunk organic technology.",
+      "prompt_short_zh": "A centralized, intricate papercraft assemblage representing a fusion of a vintage WWII M17 gas mask, stylized viral protein structures, and futuristic solarpunk organic technology.",
+      "source": "imagejson.org",
+      "category": "Digital Papercraft / 3D Paper Art Diorama"
+    },
+    {
+      "id": "ij-002",
+      "title": "The Bio-Drifter: Pixel Portrait",
+      "title_zh": "The Bio-Drifter: Pixel Portrait",
+      "tags": [],
+      "prompt_short": "The Bio-Drifter: Pixel Portrait",
+      "prompt_short_zh": "The Bio-Drifter: Pixel Portrait",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-003",
+      "title": "Rome Colosseum Typography Poster",
+      "title_zh": "Rome Colosseum Typography Poster",
+      "tags": [
+        "color:green",
+        "color:emerald",
+        "color:black",
+        "color:white"
+      ],
+      "prompt_short": "Rome Colosseum Typography Poster",
+      "prompt_short_zh": "Rome Colosseum Typography Poster",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-004",
+      "title": "The Substance Retro Poster",
+      "title_zh": "The Substance Retro Poster",
+      "tags": [
+        "color:pink",
+        "color:black",
+        "color:red"
+      ],
+      "prompt_short": "The Substance Retro Poster",
+      "prompt_short_zh": "The Substance Retro Poster",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-005",
+      "title": "Spiral White Architecture Solitude",
+      "title_zh": "Spiral White Architecture Solitude",
+      "tags": [
+        "composition:wide",
+        "composition:deep depth of field",
+        "color:white",
+        "color:red"
+      ],
+      "prompt_short": "Spiral White Architecture Solitude",
+      "prompt_short_zh": "Spiral White Architecture Solitude",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-006",
+      "title": "The Fallen Titan's Wake",
+      "title_zh": "The Fallen Titan's Wake",
+      "tags": [
+        "subject:a cinematic, atmospheric science fiction scene depicting a solitary figure stand",
+        "color:red",
+        "color:cyan",
+        "color:black",
+        "color:blue"
+      ],
+      "prompt_short": "A cinematic, atmospheric science fiction scene depicting a solitary figure standing in a dark, marshy landscape, gazing up at a colossal, derelict spacecraft crashing or resting at a steep angle again",
+      "prompt_short_zh": "A cinematic, atmospheric science fiction scene depicting a solitary figure standing in a dark, marshy landscape, gazing up at a colossal, derelict spacecraft crashing or resting at a steep angle again",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-007",
+      "title": "Halftone Glitch Trump Collage",
+      "title_zh": "Halftone Glitch Trump Collage",
+      "tags": [
+        "color:monochrome",
+        "color:pink",
+        "color:red",
+        "color:white"
+      ],
+      "prompt_short": "Halftone Glitch Trump Collage",
+      "prompt_short_zh": "Halftone Glitch Trump Collage",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-008",
+      "title": "Exploded Burger Anatomy",
+      "title_zh": "Exploded Burger Anatomy",
+      "tags": [
+        "color:white",
+        "color:red",
+        "color:green",
+        "color:yellow",
+        "color:orange",
+        "color:black"
+      ],
+      "prompt_short": "Exploded Burger Anatomy",
+      "prompt_short_zh": "Exploded Burger Anatomy",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-009",
+      "title": "The Weeping Jester Sketch",
+      "title_zh": "The Weeping Jester Sketch",
+      "tags": [
+        "subject:melancholic_clown",
+        "composition:slightly_low_angle",
+        "color:monochrome",
+        "color:red",
+        "color:black",
+        "color:white"
+      ],
+      "prompt_short": "The Weeping Jester Sketch",
+      "prompt_short_zh": "The Weeping Jester Sketch",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-010",
+      "title": "Zoro: The Demon of Wano",
+      "title_zh": "Zoro: The Demon of Wano",
+      "tags": [
+        "subject:a high-intensity, cinematic close-up portrait of roronoa zoro from the anime one",
+        "subject:roronoa zoro",
+        "color:green",
+        "color:emerald",
+        "color:neon",
+        "color:violet",
+        "color:magenta",
+        "color:purple"
+      ],
+      "prompt_short": "A high-intensity, cinematic close-up portrait of Roronoa Zoro from the anime One Piece, depicted in a semi-realistic digital art style. The character is encompassed by a chaotic swirl of spiritual ene",
+      "prompt_short_zh": "A high-intensity, cinematic close-up portrait of Roronoa Zoro from the anime One Piece, depicted in a semi-realistic digital art style. The character is encompassed by a chaotic swirl of spiritual ene",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-011",
+      "title": "WhatsApp Chat Bubble Date",
+      "title_zh": "WhatsApp Chat Bubble Date",
+      "tags": [
+        "color:green",
+        "color:pastel",
+        "color:black",
+        "color:blue",
+        "color:cyan"
+      ],
+      "prompt_short": "WhatsApp Chat Bubble Date",
+      "prompt_short_zh": "WhatsApp Chat Bubble Date",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-012",
+      "title": "LeBron James Mosaic Silhouette",
+      "title_zh": "LeBron James Mosaic Silhouette",
+      "tags": [
+        "style:sports graphic design",
+        "style:grunge aesthetic",
+        "style:photo manipulation",
+        "style:mosaic art",
+        "style:tribute poster",
+        "style:editorial illustration",
+        "color:white",
+        "color:purple",
+        "color:gold"
+      ],
+      "prompt_short": "LeBron James Mosaic Silhouette",
+      "prompt_short_zh": "LeBron James Mosaic Silhouette",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-013",
+      "title": "Pink Strawberry Liqueur Garden Scene",
+      "title_zh": "Pink Strawberry Liqueur Garden Scene",
+      "tags": [
+        "subject:balilleys strawberry cream liqueur (ai interpretation)",
+        "color:gold",
+        "color:red",
+        "color:pink",
+        "color:pastel"
+      ],
+      "prompt_short": "Pink Strawberry Liqueur Garden Scene",
+      "prompt_short_zh": "Pink Strawberry Liqueur Garden Scene",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-014",
+      "title": "Midnight Apres-Ski Editorial",
+      "title_zh": "Midnight Apres-Ski Editorial",
+      "tags": [
+        "color:white"
+      ],
+      "prompt_short": "Midnight Apres-Ski Editorial",
+      "prompt_short_zh": "Midnight Apres-Ski Editorial",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-015",
+      "title": "Cartographic Walking Man Collage",
+      "title_zh": "Cartographic Walking Man Collage",
+      "tags": [
+        "color:blue",
+        "color:white"
+      ],
+      "prompt_short": "Cartographic Walking Man Collage",
+      "prompt_short_zh": "Cartographic Walking Man Collage",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-016",
+      "title": "Blue-Skinned Ceramic Monarch",
+      "title_zh": "Blue-Skinned Ceramic Monarch",
+      "tags": [
+        "color:blue",
+        "color:cobalt",
+        "color:black",
+        "color:white"
+      ],
+      "prompt_short": "Blue-Skinned Ceramic Monarch",
+      "prompt_short_zh": "Blue-Skinned Ceramic Monarch",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-017",
+      "title": "Stillness in Motion Portrait",
+      "title_zh": "Stillness in Motion Portrait",
+      "tags": [
+        "color:black",
+        "color:red"
+      ],
+      "prompt_short": "Stillness in Motion Portrait",
+      "prompt_short_zh": "Stillness in Motion Portrait",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-018",
+      "title": "The Wandering Ronin Cat",
+      "title_zh": "The Wandering Ronin Cat",
+      "tags": [
+        "color:black",
+        "color:red"
+      ],
+      "prompt_short": "The Wandering Ronin Cat",
+      "prompt_short_zh": "The Wandering Ronin Cat",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-019",
+      "title": "Hokusai Sunset Spa",
+      "title_zh": "Hokusai Sunset Spa",
+      "tags": [
+        "subject:interior visualization",
+        "theme:serene",
+        "theme:warm",
+        "theme:meditative",
+        "theme:ethereal",
+        "theme:spa-like",
+        "composition:wide-angle",
+        "composition:eye-level",
+        "color:red",
+        "color:gold",
+        "color:blue",
+        "color:indigo",
+        "color:white",
+        "color:teal",
+        "color:pink"
+      ],
+      "prompt_short": "Hokusai Sunset Spa",
+      "prompt_short_zh": "Hokusai Sunset Spa",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-020",
+      "title": "Coca-Cola Dynamic Splash Ad",
+      "title_zh": "Coca-Cola Dynamic Splash Ad",
+      "tags": [
+        "color:orange",
+        "color:black",
+        "color:red",
+        "color:gold",
+        "color:white"
+      ],
+      "prompt_short": "Coca-Cola Dynamic Splash Ad",
+      "prompt_short_zh": "Coca-Cola Dynamic Splash Ad",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-021",
+      "title": "Curious Otter in a Pipe",
+      "title_zh": "Curious Otter in a Pipe",
+      "tags": [
+        "color:black",
+        "color:blue",
+        "color:white",
+        "color:red"
+      ],
+      "prompt_short": "Curious Otter in a Pipe",
+      "prompt_short_zh": "Curious Otter in a Pipe",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-022",
+      "title": "Orbital Oreo Construction Project",
+      "title_zh": "Orbital Oreo Construction Project",
+      "tags": [
+        "color:red",
+        "color:gold"
+      ],
+      "prompt_short": "Orbital Oreo Construction Project",
+      "prompt_short_zh": "Orbital Oreo Construction Project",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-023",
+      "title": "Lazy Morning Mirror Selfie",
+      "title_zh": "Lazy Morning Mirror Selfie",
+      "tags": [],
+      "prompt_short": " \"subject\": {\n    \"description\": \"20yo woman sitting on bedroom floor taking mirror selfie, lazy morning energy, effortlessly pretty in loungewear\",\n    \"setting_rules\": \"bedroom floor, full-length mi",
+      "prompt_short_zh": " \"subject\": {\n    \"description\": \"20yo woman sitting on bedroom floor taking mirror selfie, lazy morning energy, effortlessly pretty in loungewear\",\n    \"setting_rules\": \"bedroom floor, full-length mi",
+      "source": "imagejson.org",
+      "category": "text prompt"
+    },
+    {
+      "id": "ij-024",
+      "title": "Vintage Gold Sequin Glamour",
+      "title_zh": "Vintage Gold Sequin Glamour",
+      "tags": [
+        "color:gold",
+        "color:red"
+      ],
+      "prompt_short": "Vintage Gold Sequin Glamour",
+      "prompt_short_zh": "Vintage Gold Sequin Glamour",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-025",
+      "title": "Emerald Noir Jazz Singer",
+      "title_zh": "Emerald Noir Jazz Singer",
+      "tags": [
+        "color:green",
+        "color:emerald",
+        "color:black"
+      ],
+      "prompt_short": "Emerald Noir Jazz Singer",
+      "prompt_short_zh": "Emerald Noir Jazz Singer",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-026",
+      "title": "Tech Giants Edible Logos",
+      "title_zh": "Tech Giants Edible Logos",
+      "tags": [
+        "color:blue",
+        "color:green",
+        "color:yellow",
+        "color:red",
+        "color:black",
+        "color:white"
+      ],
+      "prompt_short": "Tech Giants Edible Logos",
+      "prompt_short_zh": "Tech Giants Edible Logos",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-027",
+      "title": "Crimson Silhouette Dance",
+      "title_zh": "Crimson Silhouette Dance",
+      "tags": [
+        "composition:side view",
+        "composition:wide",
+        "color:red",
+        "color:gold",
+        "color:coral",
+        "color:blue"
+      ],
+      "prompt_short": "Crimson Silhouette Dance",
+      "prompt_short_zh": "Crimson Silhouette Dance",
+      "source": "imagejson.org",
+      "category": "Digital illustration mimicking traditional paper c"
+    },
+    {
+      "id": "ij-028",
+      "title": "Live-Action One Piece Devil Fruit User",
+      "title_zh": "Live-Action One Piece Devil Fruit User",
+      "tags": [],
+      "prompt_short": "Live-Action One Piece Devil Fruit User",
+      "prompt_short_zh": "Live-Action One Piece Devil Fruit User",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-029",
+      "title": "Ghibli Style White Wizard",
+      "title_zh": "Ghibli Style White Wizard",
+      "tags": [
+        "color:white"
+      ],
+      "prompt_short": "Ghibli Style White Wizard",
+      "prompt_short_zh": "Ghibli Style White Wizard",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-030",
+      "title": "Photorealistic Musician Comic Blend",
+      "title_zh": "Photorealistic Musician Comic Blend",
+      "tags": [],
+      "prompt_short": "The central figure is a real human woman wearing a stylish polka dot dress, photographed holding or playing a musical instrument, rendered in full photorealistic photography style with vibrant color, ",
+      "prompt_short_zh": "The central figure is a real human woman wearing a stylish polka dot dress, photographed holding or playing a musical instrument, rendered in full photorealistic photography style with vibrant color, ",
+      "source": "imagejson.org",
+      "category": "text prompt"
+    },
+    {
+      "id": "ij-031",
+      "title": "Culinary Cartography Series",
+      "title_zh": "Culinary Cartography Series",
+      "tags": [
+        "color:crimson",
+        "color:yellow",
+        "color:green",
+        "color:orange",
+        "color:red",
+        "color:black"
+      ],
+      "prompt_short": "Culinary Cartography Series",
+      "prompt_short_zh": "Culinary Cartography Series",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-032",
+      "title": "Leather YouTube Emblem Patch",
+      "title_zh": "Leather YouTube Emblem Patch",
+      "tags": [
+        "color:red"
+      ],
+      "prompt_short": "Leather YouTube Emblem Patch",
+      "prompt_short_zh": "Leather YouTube Emblem Patch",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-033",
+      "title": "Tiny Explorer's Organ Journey (90s Film)",
+      "title_zh": "Tiny Explorer's Organ Journey (90s Film)",
+      "tags": [],
+      "prompt_short": "<instruction>\n**Phase 1: Identity & Scale Logic (The Tiny Explorer)**\n1.  **Analyze Input:** Deeply analyze the subject's facial features, hair, beard (if any), and exact clothing from the reference i",
+      "prompt_short_zh": "<instruction>\n**Phase 1: Identity & Scale Logic (The Tiny Explorer)**\n1.  **Analyze Input:** Deeply analyze the subject's facial features, hair, beard (if any), and exact clothing from the reference i",
+      "source": "imagejson.org",
+      "category": "text prompt"
+    },
+    {
+      "id": "ij-034",
+      "title": "Vaporwave Glitch Samurai",
+      "title_zh": "Vaporwave Glitch Samurai",
+      "tags": [
+        "composition:medium shot",
+        "color:red",
+        "color:pink",
+        "color:teal",
+        "color:pastel"
+      ],
+      "prompt_short": "Vaporwave Glitch Samurai",
+      "prompt_short_zh": "Vaporwave Glitch Samurai",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-035",
+      "title": "Elemental Polaroids Spilling Reality",
+      "title_zh": "Elemental Polaroids Spilling Reality",
+      "tags": [
+        "color:red",
+        "color:white",
+        "color:black"
+      ],
+      "prompt_short": "Elemental Polaroids Spilling Reality",
+      "prompt_short_zh": "Elemental Polaroids Spilling Reality",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-036",
+      "title": "Levitating Panettone Explosion",
+      "title_zh": "Levitating Panettone Explosion",
+      "tags": [],
+      "prompt_short": "Levitating Panettone Explosion",
+      "prompt_short_zh": "Levitating Panettone Explosion",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-037",
+      "title": "Iconic Glitch Portraits Grid",
+      "title_zh": "Iconic Glitch Portraits Grid",
+      "tags": [
+        "color:red",
+        "color:blue",
+        "color:white",
+        "color:gold",
+        "color:crimson"
+      ],
+      "prompt_short": "Iconic Glitch Portraits Grid",
+      "prompt_short_zh": "Iconic Glitch Portraits Grid",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-038",
+      "title": "Grandma's Quantum Commute",
+      "title_zh": "Grandma's Quantum Commute",
+      "tags": [
+        "color:blue",
+        "color:white",
+        "color:silver",
+        "color:neon",
+        "color:red",
+        "color:indigo"
+      ],
+      "prompt_short": "Grandma's Quantum Commute",
+      "prompt_short_zh": "Grandma's Quantum Commute",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-039",
+      "title": "The Squeak of Doom",
+      "title_zh": "The Squeak of Doom",
+      "tags": [],
+      "prompt_short": "The Squeak of Doom",
+      "prompt_short_zh": "The Squeak of Doom",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-040",
+      "title": "Neon Baroque Necromancy from Above",
+      "title_zh": "Neon Baroque Necromancy from Above",
+      "tags": [
+        "color:blue",
+        "color:neon",
+        "color:red",
+        "color:yellow",
+        "color:gold",
+        "color:green",
+        "color:white",
+        "color:pink",
+        "color:black"
+      ],
+      "prompt_short": "Neon Baroque Necromancy from Above",
+      "prompt_short_zh": "Neon Baroque Necromancy from Above",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-041",
+      "title": "Rococo Tides: The Woven Axe Silhouette",
+      "title_zh": "Rococo Tides: The Woven Axe Silhouette",
+      "tags": [
+        "color:pink",
+        "color:pastel",
+        "color:blue",
+        "color:white",
+        "color:gold"
+      ],
+      "prompt_short": "Rococo Tides: The Woven Axe Silhouette",
+      "prompt_short_zh": "Rococo Tides: The Woven Axe Silhouette",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-042",
+      "title": "Titan of the Halftone Occult",
+      "title_zh": "Titan of the Halftone Occult",
+      "tags": [
+        "color:blue",
+        "color:green",
+        "color:magenta"
+      ],
+      "prompt_short": "Titan of the Halftone Occult",
+      "prompt_short_zh": "Titan of the Halftone Occult",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-043",
+      "title": "Dimensional Heli-Boarder",
+      "title_zh": "Dimensional Heli-Boarder",
+      "tags": [
+        "color:black"
+      ],
+      "prompt_short": "Dimensional Heli-Boarder",
+      "prompt_short_zh": "Dimensional Heli-Boarder",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-044",
+      "title": "Esoteric Wrench-Art Fusion Logo",
+      "title_zh": "Esoteric Wrench-Art Fusion Logo",
+      "tags": [
+        "theme:logo typography",
+        "theme:esoteric symbolism"
+      ],
+      "prompt_short": "Esoteric Wrench-Art Fusion Logo",
+      "prompt_short_zh": "Esoteric Wrench-Art Fusion Logo",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-045",
+      "title": "Velocity in the Neural Net",
+      "title_zh": "Velocity in the Neural Net",
+      "tags": [
+        "composition:3-point perspective with a low camera angle, looki"
+      ],
+      "prompt_short": "Velocity in the Neural Net",
+      "prompt_short_zh": "Velocity in the Neural Net",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-046",
+      "title": "Bauhaus Rococo Shadow Distortion",
+      "title_zh": "Bauhaus Rococo Shadow Distortion",
+      "tags": [
+        "color:red",
+        "color:blue",
+        "color:yellow",
+        "color:cobalt",
+        "color:green",
+        "color:black",
+        "color:gold",
+        "color:pastel"
+      ],
+      "prompt_short": "Bauhaus Rococo Shadow Distortion",
+      "prompt_short_zh": "Bauhaus Rococo Shadow Distortion",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-047",
+      "title": "Voxel Nocturnal Code Lab",
+      "title_zh": "Voxel Nocturnal Code Lab",
+      "tags": [
+        "lighting:multiple wax candles placed unevenly on the desk surface",
+        "color:red",
+        "color:amber",
+        "color:green",
+        "color:black",
+        "color:cyan"
+      ],
+      "prompt_short": "Voxel Nocturnal Code Lab",
+      "prompt_short_zh": "Voxel Nocturnal Code Lab",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-048",
+      "title": "Winter Architectural Blueprint",
+      "title_zh": "Winter Architectural Blueprint",
+      "tags": [
+        "color:gold"
+      ],
+      "prompt_short": "Winter Architectural Blueprint",
+      "prompt_short_zh": "Winter Architectural Blueprint",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-049",
+      "title": "Floating Chrome Ballet Flats",
+      "title_zh": "Floating Chrome Ballet Flats",
+      "tags": [
+        "composition:low angle",
+        "color:blue",
+        "color:white",
+        "color:silver",
+        "color:red"
+      ],
+      "prompt_short": "Floating Chrome Ballet Flats",
+      "prompt_short_zh": "Floating Chrome Ballet Flats",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-050",
+      "title": "Retro 90s Anime Teal Hair Girl",
+      "title_zh": "Retro 90s Anime Teal Hair Girl",
+      "tags": [
+        "composition:slightly_three_quarter_view",
+        "composition:shallow depth of field",
+        "color:red",
+        "color:gold",
+        "color:pink",
+        "color:green",
+        "color:teal",
+        "color:crimson"
+      ],
+      "prompt_short": "Retro 90s Anime Teal Hair Girl",
+      "prompt_short_zh": "Retro 90s Anime Teal Hair Girl",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-051",
+      "title": "The Flying Pink Refrigerator",
+      "title_zh": "The Flying Pink Refrigerator",
+      "tags": [
+        "subject:retro-style refrigerator",
+        "color:pink",
+        "color:pastel",
+        "color:red",
+        "color:purple",
+        "color:gold",
+        "color:cyan"
+      ],
+      "prompt_short": "The Flying Pink Refrigerator",
+      "prompt_short_zh": "The Flying Pink Refrigerator",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-052",
+      "title": "The Pale Stalker of the Dune Sea",
+      "title_zh": "The Pale Stalker of the Dune Sea",
+      "tags": [
+        "color:white"
+      ],
+      "prompt_short": "The Pale Stalker of the Dune Sea",
+      "prompt_short_zh": "The Pale Stalker of the Dune Sea",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-053",
+      "title": "Stippled Sunset & Abyss",
+      "title_zh": "Stippled Sunset & Abyss",
+      "tags": [
+        "composition:cross-section view showing both above and below th",
+        "color:black",
+        "color:orange",
+        "color:coral",
+        "color:blue",
+        "color:teal"
+      ],
+      "prompt_short": "Stippled Sunset & Abyss",
+      "prompt_short_zh": "Stippled Sunset & Abyss",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-054",
+      "title": "Porcelain Cyborg Profile",
+      "title_zh": "Porcelain Cyborg Profile",
+      "tags": [
+        "color:blue",
+        "color:cobalt",
+        "color:white",
+        "color:silver"
+      ],
+      "prompt_short": "Porcelain Cyborg Profile",
+      "prompt_short_zh": "Porcelain Cyborg Profile",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-055",
+      "title": "Crimson Gothic Demoness",
+      "title_zh": "Crimson Gothic Demoness",
+      "tags": [
+        "color:red"
+      ],
+      "prompt_short": "Crimson Gothic Demoness",
+      "prompt_short_zh": "Crimson Gothic Demoness",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-056",
+      "title": "Jelly Skeleton Toy Figure",
+      "title_zh": "Jelly Skeleton Toy Figure",
+      "tags": [],
+      "prompt_short": "Turn this figure into a minimalistic glossy translucent toy figure made of jelly with the skeleton inside visible, keeping its physical and colour details, extremely detailed texture, product photosho",
+      "prompt_short_zh": "Turn this figure into a minimalistic glossy translucent toy figure made of jelly with the skeleton inside visible, keeping its physical and colour details, extremely detailed texture, product photosho",
+      "source": "imagejson.org",
+      "category": "text prompt"
+    },
+    {
+      "id": "ij-057",
+      "title": "BOIN Vozai Media Projector",
+      "title_zh": "BOIN Vozai Media Projector",
+      "tags": [
+        "color:red"
+      ],
+      "prompt_short": "BOIN Vozai Media Projector",
+      "prompt_short_zh": "BOIN Vozai Media Projector",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-058",
+      "title": "Crimson Cinematic Quartet",
+      "title_zh": "Crimson Cinematic Quartet",
+      "tags": [
+        "color:gold",
+        "color:white",
+        "color:red",
+        "color:silver"
+      ],
+      "prompt_short": "Crimson Cinematic Quartet",
+      "prompt_short_zh": "Crimson Cinematic Quartet",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-059",
+      "title": "Knitted Shinobi Winter Ramen Break",
+      "title_zh": "Knitted Shinobi Winter Ramen Break",
+      "tags": [
+        "color:red",
+        "color:orange",
+        "color:white"
+      ],
+      "prompt_short": "Knitted Shinobi Winter Ramen Break",
+      "prompt_short_zh": "Knitted Shinobi Winter Ramen Break",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-060",
+      "title": "Urban Surveillance Overlay",
+      "title_zh": "Urban Surveillance Overlay",
+      "tags": [
+        "color:red",
+        "color:orange",
+        "color:white",
+        "color:black"
+      ],
+      "prompt_short": "Urban Surveillance Overlay",
+      "prompt_short_zh": "Urban Surveillance Overlay",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-061",
+      "title": "Lego Horror Movie Set",
+      "title_zh": "Lego Horror Movie Set",
+      "tags": [],
+      "prompt_short": "Lego Horror Movie Set",
+      "prompt_short_zh": "Lego Horror Movie Set",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-062",
+      "title": "Geometric Lavor Gin Still Life",
+      "title_zh": "Geometric Lavor Gin Still Life",
+      "tags": [
+        "color:blue",
+        "color:orange",
+        "color:green"
+      ],
+      "prompt_short": "Geometric Lavor Gin Still Life",
+      "prompt_short_zh": "Geometric Lavor Gin Still Life",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-063",
+      "title": "Retro Pop-Art Christmas Grid",
+      "title_zh": "Retro Pop-Art Christmas Grid",
+      "tags": [
+        "color:teal"
+      ],
+      "prompt_short": "Retro Pop-Art Christmas Grid",
+      "prompt_short_zh": "Retro Pop-Art Christmas Grid",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-064",
+      "title": "Isometric Miniature McDonald's",
+      "title_zh": "Isometric Miniature McDonald's",
+      "tags": [
+        "color:silver",
+        "color:black",
+        "color:red",
+        "color:yellow",
+        "color:white"
+      ],
+      "prompt_short": "Isometric Miniature McDonald's",
+      "prompt_short_zh": "Isometric Miniature McDonald's",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-065",
+      "title": "Student Character Concept Sheet",
+      "title_zh": "Student Character Concept Sheet",
+      "tags": [
+        "color:blue",
+        "color:white",
+        "color:black",
+        "color:red",
+        "color:pink",
+        "color:pastel"
+      ],
+      "prompt_short": "Student Character Concept Sheet",
+      "prompt_short_zh": "Student Character Concept Sheet",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-066",
+      "title": "The Great Ice Cream Heist",
+      "title_zh": "The Great Ice Cream Heist",
+      "tags": [
+        "color:blue",
+        "color:cobalt",
+        "color:pink",
+        "color:red"
+      ],
+      "prompt_short": "The Great Ice Cream Heist",
+      "prompt_short_zh": "The Great Ice Cream Heist",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-067",
+      "title": "Giantess of Shibuya Crossing",
+      "title_zh": "Giantess of Shibuya Crossing",
+      "tags": [
+        "color:pink",
+        "color:white",
+        "color:pastel",
+        "color:purple",
+        "color:green",
+        "color:yellow",
+        "color:blue"
+      ],
+      "prompt_short": "Giantess of Shibuya Crossing",
+      "prompt_short_zh": "Giantess of Shibuya Crossing",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-068",
+      "title": "Robotic Arm Control Dashboard",
+      "title_zh": "Robotic Arm Control Dashboard",
+      "tags": [],
+      "prompt_short": "Robotic Arm Control Dashboard",
+      "prompt_short_zh": "Robotic Arm Control Dashboard",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-069",
+      "title": "Fisheye Night Market Collage",
+      "title_zh": "Fisheye Night Market Collage",
+      "tags": [],
+      "prompt_short": "Fisheye Night Market Collage",
+      "prompt_short_zh": "Fisheye Night Market Collage",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-070",
+      "title": "The Sentient Sketch",
+      "title_zh": "The Sentient Sketch",
+      "tags": [
+        "composition:close-up",
+        "composition:eye-level",
+        "composition:shallow depth of field",
+        "color:green",
+        "color:red",
+        "color:black",
+        "color:yellow",
+        "color:teal",
+        "color:white"
+      ],
+      "prompt_short": "The Sentient Sketch",
+      "prompt_short_zh": "The Sentient Sketch",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-071",
+      "title": "The Clockwork Virtuoso",
+      "title_zh": "The Clockwork Virtuoso",
+      "tags": [
+        "color:red",
+        "color:silver"
+      ],
+      "prompt_short": "The Clockwork Virtuoso",
+      "prompt_short_zh": "The Clockwork Virtuoso",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-072",
+      "title": "Pastel Crochet Night Cream Mobile",
+      "title_zh": "Pastel Crochet Night Cream Mobile",
+      "tags": [
+        "subject:a whimsical, tactile still life composition featuring handcrafted fiber art repr",
+        "color:pink",
+        "color:white",
+        "color:blue",
+        "color:green",
+        "color:gold"
+      ],
+      "prompt_short": "A whimsical, tactile still life composition featuring handcrafted fiber art representations of skincare products and celestial elements. The scene is styled like a hanging mobile or a playful product ",
+      "prompt_short_zh": "A whimsical, tactile still life composition featuring handcrafted fiber art representations of skincare products and celestial elements. The scene is styled like a hanging mobile or a playful product ",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-073",
+      "title": "Celestial Indigo Elephant",
+      "title_zh": "Celestial Indigo Elephant",
+      "tags": [
+        "color:red"
+      ],
+      "prompt_short": "Celestial Indigo Elephant",
+      "prompt_short_zh": "Celestial Indigo Elephant",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-074",
+      "title": "Pop Culture Micro-Domes",
+      "title_zh": "Pop Culture Micro-Domes",
+      "tags": [],
+      "prompt_short": "Pop Culture Micro-Domes",
+      "prompt_short_zh": "Pop Culture Micro-Domes",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-075",
+      "title": "90s Hacker HQ CRT Monitor",
+      "title_zh": "90s Hacker HQ CRT Monitor",
+      "tags": [
+        "color:black",
+        "color:white",
+        "color:blue"
+      ],
+      "prompt_short": "90s Hacker HQ CRT Monitor",
+      "prompt_short_zh": "90s Hacker HQ CRT Monitor",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-076",
+      "title": "Amber Phosphor JSON Glitch",
+      "title_zh": "Amber Phosphor JSON Glitch",
+      "tags": [
+        "color:orange",
+        "color:black",
+        "color:amber",
+        "color:red",
+        "color:monochrome"
+      ],
+      "prompt_short": "Amber Phosphor JSON Glitch",
+      "prompt_short_zh": "Amber Phosphor JSON Glitch",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-077",
+      "title": "Isometric City Weather Scene",
+      "title_zh": "Isometric City Weather Scene",
+      "tags": [],
+      "prompt_short": "Present a clear, 45° top-down isometric miniature 3D cartoon scene of [CITY], featuring its most iconic landmarks and architectural elements. Use soft, refined textures with realistic PBR materials an",
+      "prompt_short_zh": "Present a clear, 45° top-down isometric miniature 3D cartoon scene of [CITY], featuring its most iconic landmarks and architectural elements. Use soft, refined textures with realistic PBR materials an",
+      "source": "imagejson.org",
+      "category": "text prompt"
+    },
+    {
+      "id": "ij-078",
+      "title": "Hollywood Invasion Collage",
+      "title_zh": "Hollywood Invasion Collage",
+      "tags": [
+        "color:orange",
+        "color:red",
+        "color:black",
+        "color:white"
+      ],
+      "prompt_short": "Hollywood Invasion Collage",
+      "prompt_short_zh": "Hollywood Invasion Collage",
+      "source": "imagejson.org",
+      "category": "Photomontage combining black and white street phot"
+    },
+    {
+      "id": "ij-079",
+      "title": "Pop-Art Sweets Monster Portrait",
+      "title_zh": "Pop-Art Sweets Monster Portrait",
+      "tags": [],
+      "prompt_short": "Use the uploaded photo. \nDo NOT alter the person’s real appearance — keep the person’s face, body, clothing, colors, and texture completely photorealistic. \nDo NOT change the background perspective. \n",
+      "prompt_short_zh": "Use the uploaded photo. \nDo NOT alter the person’s real appearance — keep the person’s face, body, clothing, colors, and texture completely photorealistic. \nDo NOT change the background perspective. \n",
+      "source": "imagejson.org",
+      "category": "text prompt"
+    },
+    {
+      "id": "ij-080",
+      "title": "1999 Japanese Classroom Flash Selfie",
+      "title_zh": "1999 Japanese Classroom Flash Selfie",
+      "tags": [
+        "color:black",
+        "color:white"
+      ],
+      "prompt_short": "1999 Japanese Classroom Flash Selfie",
+      "prompt_short_zh": "1999 Japanese Classroom Flash Selfie",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-081",
+      "title": "Circuit Board Anime Aesthetics",
+      "title_zh": "Circuit Board Anime Aesthetics",
+      "tags": [],
+      "prompt_short": "Circuit Board Anime Aesthetics",
+      "prompt_short_zh": "Circuit Board Anime Aesthetics",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-082",
+      "title": "Papercut St. Nicholas Night",
+      "title_zh": "Papercut St. Nicholas Night",
+      "tags": [
+        "style:paper collage, mixed media, stop-motion animation aesthetic.",
+        "subject:saint nicholas / sinterklaas",
+        "color:black"
+      ],
+      "prompt_short": "Papercut St. Nicholas Night",
+      "prompt_short_zh": "Papercut St. Nicholas Night",
+      "source": "imagejson.org",
+      "category": "Paper collage, mixed media, stop-motion animation "
+    },
+    {
+      "id": "ij-083",
+      "title": "Winking Cat Peek-a-Boo Portrait",
+      "title_zh": "Winking Cat Peek-a-Boo Portrait",
+      "tags": [
+        "composition:eye-level",
+        "color:pink",
+        "color:coral",
+        "color:blue",
+        "color:red",
+        "color:green"
+      ],
+      "prompt_short": "Winking Cat Peek-a-Boo Portrait",
+      "prompt_short_zh": "Winking Cat Peek-a-Boo Portrait",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-084",
+      "title": "Cinematic Contact Sheet Generator",
+      "title_zh": "Cinematic Contact Sheet Generator",
+      "tags": [],
+      "prompt_short": "{<instruction>\nAnalyze the entire composition of the input image. Identify ALL key subjects present (whether it's a single person, a group/couple, a vehicle, or a specific object) and their spatial re",
+      "prompt_short_zh": "{<instruction>\nAnalyze the entire composition of the input image. Identify ALL key subjects present (whether it's a single person, a group/couple, a vehicle, or a specific object) and their spatial re",
+      "source": "imagejson.org",
+      "category": "text prompt"
+    },
+    {
+      "id": "ij-085",
+      "title": "Vintage Uniformed Twins",
+      "title_zh": "Vintage Uniformed Twins",
+      "tags": [
+        "composition:eye_level",
+        "composition:shallow depth of field",
+        "color:red",
+        "color:gold"
+      ],
+      "prompt_short": "Vintage Uniformed Twins",
+      "prompt_short_zh": "Vintage Uniformed Twins",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-086",
+      "title": "Gangster Hamster with Sunglasses",
+      "title_zh": "Gangster Hamster with Sunglasses",
+      "tags": [
+        "color:red",
+        "color:green",
+        "color:black",
+        "color:orange",
+        "color:white",
+        "color:gold"
+      ],
+      "prompt_short": "Gangster Hamster with Sunglasses",
+      "prompt_short_zh": "Gangster Hamster with Sunglasses",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-087",
+      "title": "The Aviary Keeper Portrait",
+      "title_zh": "The Aviary Keeper Portrait",
+      "tags": [
+        "subject:a hyper-realistic, whimsical portrait of a young woman with a vintage aesthetic,",
+        "color:gold",
+        "color:red",
+        "color:white",
+        "color:blue",
+        "color:pink"
+      ],
+      "prompt_short": "A hyper-realistic, whimsical portrait of a young woman with a vintage aesthetic, looking directly at the viewer while two small chickens perch on her shoulders and pigeons fly in the background agains",
+      "prompt_short_zh": "A hyper-realistic, whimsical portrait of a young woman with a vintage aesthetic, looking directly at the viewer while two small chickens perch on her shoulders and pigeons fly in the background agains",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-088",
+      "title": "le labo",
+      "title_zh": "le labo",
+      "tags": [
+        "composition:intimate and personal",
+        "color:red"
+      ],
+      "prompt_short": "le labo",
+      "prompt_short_zh": "le labo",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-089",
+      "title": "Gucci Paper-Cut Digital Collage Portrait",
+      "title_zh": "Gucci Paper-Cut Digital Collage Portrait",
+      "tags": [
+        "style:paper-cut style with gucci color",
+        "composition:flat, multi-layered",
+        "color:red"
+      ],
+      "prompt_short": "Gucci Paper-Cut Digital Collage Portrait",
+      "prompt_short_zh": "Gucci Paper-Cut Digital Collage Portrait",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-090",
+      "title": "Coca-Cola Can",
+      "title_zh": "Coca-Cola Can",
+      "tags": [
+        "style:coca-cola",
+        "color:gold",
+        "color:black"
+      ],
+      "prompt_short": "Coca-Cola Can",
+      "prompt_short_zh": "Coca-Cola Can",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-091",
+      "title": "McDonald's Food Neon Plastic Render",
+      "title_zh": "McDonald's Food Neon Plastic Render",
+      "tags": [
+        "style:mcdonald food",
+        "color:neon",
+        "color:magenta",
+        "color:teal",
+        "color:orange"
+      ],
+      "prompt_short": "McDonald's Food Neon Plastic Render",
+      "prompt_short_zh": "McDonald's Food Neon Plastic Render",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-092",
+      "title": "Lego-Style Image with Studio Lighting Effects",
+      "title_zh": "Lego-Style Image with Studio Lighting Effects",
+      "tags": [
+        "style:lego",
+        "color:green",
+        "color:purple",
+        "color:teal",
+        "color:blue"
+      ],
+      "prompt_short": "Lego-Style Image with Studio Lighting Effects",
+      "prompt_short_zh": "Lego-Style Image with Studio Lighting Effects",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-093",
+      "title": "Knitted Yarn Art with  and Studio Lighting",
+      "title_zh": "Knitted Yarn Art with  and Studio Lighting",
+      "tags": [
+        "style:digital art",
+        "color:teal",
+        "color:green"
+      ],
+      "prompt_short": "Knitted Yarn Art with  and Studio Lighting",
+      "prompt_short_zh": "Knitted Yarn Art with  and Studio Lighting",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-094",
+      "title": "Stylized Digital Art with Soft Studio Lighting",
+      "title_zh": "Stylized Digital Art with Soft Studio Lighting",
+      "tags": [
+        "style:stylized digital art",
+        "color:white"
+      ],
+      "prompt_short": "Stylized Digital Art with Soft Studio Lighting",
+      "prompt_short_zh": "Stylized Digital Art with Soft Studio Lighting",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-095",
+      "title": "Glamorous Product Photo with Pink Glitter",
+      "title_zh": "Glamorous Product Photo with Pink Glitter",
+      "tags": [
+        "style:glamorous product photography",
+        "color:pink",
+        "color:silver",
+        "color:white"
+      ],
+      "prompt_short": "Glamorous Product Photo with Pink Glitter",
+      "prompt_short_zh": "Glamorous Product Photo with Pink Glitter",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-096",
+      "title": "Stylized Metal Art with Studio Lighting",
+      "title_zh": "Stylized Metal Art with Studio Lighting",
+      "tags": [
+        "style:stylized digital art",
+        "color:red",
+        "color:blue",
+        "color:black"
+      ],
+      "prompt_short": "Stylized Metal Art with Studio Lighting",
+      "prompt_short_zh": "Stylized Metal Art with Studio Lighting",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-097",
+      "title": "Contemporary Still Life with Glossy Resin",
+      "title_zh": "Contemporary Still Life with Glossy Resin",
+      "tags": [
+        "style:contemporary still life",
+        "color:pink",
+        "color:blue",
+        "color:white"
+      ],
+      "prompt_short": "Contemporary Still Life with Glossy Resin",
+      "prompt_short_zh": "Contemporary Still Life with Glossy Resin",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-098",
+      "title": "Abstract Digital Light Trails with Intense Bloom",
+      "title_zh": "Abstract Digital Light Trails with Intense Bloom",
+      "tags": [
+        "style:abstract digital art",
+        "color:red",
+        "color:green",
+        "color:blue",
+        "color:black"
+      ],
+      "prompt_short": "Abstract Digital Light Trails with Intense Bloom",
+      "prompt_short_zh": "Abstract Digital Light Trails with Intense Bloom",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-099",
+      "title": "Digital Glitch Art with Dramatic Lighting",
+      "title_zh": "Digital Glitch Art with Dramatic Lighting",
+      "tags": [
+        "style:digital art, glitch art, data moshing",
+        "color:orange",
+        "color:red",
+        "color:yellow",
+        "color:teal"
+      ],
+      "prompt_short": "Digital Glitch Art with Dramatic Lighting",
+      "prompt_short_zh": "Digital Glitch Art with Dramatic Lighting",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "ij-100",
+      "title": "Cubist Geometric Mosaic with Kaleidoscopic Light",
+      "title_zh": "Cubist Geometric Mosaic with Kaleidoscopic Light",
+      "tags": [
+        "style:cubism",
+        "color:black",
+        "color:red",
+        "color:green",
+        "color:emerald"
+      ],
+      "prompt_short": "Cubist Geometric Mosaic with Kaleidoscopic Light",
+      "prompt_short_zh": "Cubist Geometric Mosaic with Kaleidoscopic Light",
+      "source": "imagejson.org",
+      "category": "mixed"
+    },
+    {
+      "id": "p001",
+      "title": "Cozy Cat Watercolor",
+      "title_zh": "温馨猫咪水彩",
+      "tags": [
+        "subject:cat",
+        "style:watercolor",
+        "mood:warm",
+        "lighting:natural"
+      ],
+      "prompt_short": "a cozy cat, watercolor style, warm mood, natural light",
+      "prompt_short_zh": "一只温馨的猫咪，水彩风格，温暖氛围，自然光"
+    },
+    {
+      "id": "p002",
+      "title": "Portrait Photography",
+      "title_zh": "人像摄影",
+      "tags": [
+        "subject:person",
+        "style:photography",
+        "composition:close_up",
+        "lighting:golden_hour"
+      ],
+      "prompt_short": "portrait photography, close-up, golden hour lighting",
+      "prompt_short_zh": "人像摄影，特写，黄金时刻光线"
+    },
+    {
+      "id": "p003",
+      "title": "Digital Art Landscape",
+      "title_zh": "数字艺术风景",
+      "tags": [
+        "subject:landscape",
+        "style:digital_art",
+        "mood:peaceful",
+        "color_palette:warm"
+      ],
+      "prompt_short": "digital art landscape, peaceful mood, warm palette",
+      "prompt_short_zh": "数字艺术风景，宁静氛围，暖色调"
+    },
+    {
+      "id": "p-005",
+      "title": "Balcony Cat Afternoon Sun",
+      "title_zh": "阳台猫咪午后阳光",
+      "tags": [
+        "subject:cat",
+        "style:photography",
+        "mood:warm",
+        "lighting:natural",
+        "background:indoor",
+        "composition:close_up",
+        "color_palette:warm"
+      ],
+      "prompt_short": "A cat lounging on a sunny balcony enjoying warm afternoon sunlight, photorealistic",
+      "prompt_short_zh": "一只猫慵懒地趴在阳台上，享受着午后温暖的阳光"
+    },
+    {
+      "id": "p-006",
+      "title": "Anime Fighting Cats",
+      "title_zh": "动漫打架猫",
+      "tags": [
+        "subject:cat",
+        "style:illustration",
+        "mood:energetic"
+      ],
+      "prompt_short": "Two cats fighting in anime style, dynamic pose, energetic mood, traditional Japanese garden background",
+      "prompt_short_zh": "日本动漫风格两只猫打架，动态姿势，传统日式花园背景"
+    },
+    {
+      "id": "p-007",
+      "title": "Asian Woman Dancing at Home",
+      "title_zh": "亚洲女性在家跳舞",
+      "tags": [
+        "subject:person",
+        "style:photography",
+        "mood:energetic",
+        "background:indoor"
+      ],
+      "prompt_short": "Asian beauty dancing energetically in front of mirror, photorealistic photography, home interior",
+      "prompt_short_zh": "亚洲美女在镜子前热舞，写实摄影风格，家庭室内背景"
+    }
+  ]
+}

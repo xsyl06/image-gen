@@ -14,7 +14,8 @@ import sys
 from pathlib import Path
 
 # Add engine directory to path
-ENGINE_DIR = Path(__file__).parent.parent / "engine"
+ENGINE_DIR = Path(__file__).parent / "engine"
+print(str(ENGINE_DIR))
 sys.path.insert(0, str(ENGINE_DIR))
 
 from kg.engine import PromptKG

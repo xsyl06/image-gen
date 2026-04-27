@@ -415,7 +415,7 @@ if i == cfg["max_iterations"] and evaluation["weighted_score"] < cfg["score_thre
 
 ## Configuration Reference
 
-See `engine/config.json` for configurable parameters:
+See `scripts/engine/config.json` for configurable parameters:
 
 - `comfyui_host` / `comfyui_port`: ComfyUI server address
 - `output_dir`: Image output directory
@@ -429,4 +429,4 @@ See `engine/config.json` for configurable parameters:
 
 - `install-guide.md`: ComfyUI installation instructions
 - `prompt-schema.md`: JSON Prompt 14-dimension schema details
-- `engine/kg/engine.py`: KG engine API documentation
+- `scripts/engine/kg/engine.py`: KG engine API documentation

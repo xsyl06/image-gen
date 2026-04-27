@@ -363,7 +363,7 @@ Restart ComfyUI and access Manager via browser interface.
 
 After successful installation:
 
-1. Configure image-gen skill: Edit `engine/config.json` with your ComfyUI settings
+1. Configure image-gen skill: Edit `scripts/engine/config.json` with your ComfyUI settings
 2. Load a workflow template: Use default or custom ComfyUI workflows
 3. Test generation: Run `/img "test prompt"` to verify pipeline
 4. Explore models: Download additional models based on your needs

@@ -12,16 +12,17 @@ The project uses only Python standard library — zero external dependencies for
 
 ```
 image-gen/
-├── scripts/image-gen.py          # CLI entry point
-├── engine/
-│   ├── comfyui.py                # ComfyUI HTTP client (submit/poll/download)
-│   ├── json_prompt.py            # JSON prompt schema + converter to text
-│   ├── config.json               # Configuration (host, port, vision model, thresholds)
-│   ├── kg/
-│   │   ├── engine.py             # PromptKG — knowledge graph for prompt entities
-│   │   └── data/
-│   │       ├── prompt-graph.json # Entity definitions + co-occurrence data
-│   │       └── extensions.json   # Additional entity data
+├── scripts/
+│   ├── image-gen.py          # CLI entry point
+│   └── engine/
+│       ├── comfyui.py                # ComfyUI HTTP client (submit/poll/download)
+│       ├── json_prompt.py            # JSON prompt schema + converter to text
+│       ├── config.json               # Configuration (host, port, vision model, thresholds)
+│       ├── kg/
+│       │   ├── engine.py             # PromptKG — knowledge graph for prompt entities
+│       │   └── data/
+│       │       ├── prompt-graph.json # Entity definitions + co-occurrence data
+│       │       └── extensions.json   # Additional entity data
 └── references/
     ├── install-guide.md          # ComfyUI installation instructions
     ├── prompt-schema.md          # 14-dimension JSON prompt schema docs
@@ -40,7 +41,7 @@ python scripts/image-gen.py "a cat" --config custom.json
 
 Key functions: `extract_seed_entities()` (keyword-based intent parsing), `assemble_json_prompt()`, `run_generation()`.
 
-### `engine/kg/engine.py` — Prompt Knowledge Graph
+### `scripts/engine/kg/engine.py` — Prompt Knowledge Graph
 
 The `PromptKG` class provides entity recommendation based on seed entities using co-occurrence statistics.
 
@@ -52,7 +53,7 @@ Primary API:
 - `kg.info(entity)` — Entity details + top relations
 - `kg.neighbors(entity, category, top_n)` — Co-occurring entities
 
-### `engine/json_prompt.py` — Structured Prompt Schema
+### `scripts/engine/json_prompt.py` — Structured Prompt Schema
 
 Defines 14-dimension JSON prompt schema (`JSON_PROMPT_SCHEMA`) and converts to text:
 
@@ -60,7 +61,7 @@ Defines 14-dimension JSON prompt schema (`JSON_PROMPT_SCHEMA`) and converts to t
 - `validate_json_prompt(json_prompt)` → list of validation issues
 - Supports Chinese typography DSL (`typography_layout` field) and confrontation composition (`confrontation` field)
 
-### `engine/comfyui.py` — ComfyUI HTTP Client
+### `scripts/engine/comfyui.py` — ComfyUI HTTP Client
 
 Stdlib-only HTTP client for ComfyUI server:
 
@@ -73,7 +74,7 @@ Stdlib-only HTTP client for ComfyUI server:
 
 ## Configuration
 
-Edit `engine/config.json`:
+Edit `scripts/engine/config.json`:
 - `comfyui_host` / `comfyui_port` — ComfyUI server (default: `127.0.0.1:8188`)
 - `output_dir` — Image output directory (default: `~/image-gen-output`)
 - `vision_model` — Vision model for evaluation (uses OpenAI-compatible API)
@@ -84,6 +85,6 @@ Edit `engine/config.json`:
 
 - **Zero external dependencies**: All modules use only Python stdlib (`urllib`, `json`, `pathlib`, etc.)
 - **Prompt flow**: Natural language → seed entities → KG skeleton → JSON prompt (14 dims) → text prompt → ComfyUI
-- **KG data**: Entities and co-occurrence data stored as JSON files in `engine/kg/data/`
-- **Extensible**: Extensions can be merged via `extensions.json`; templates loaded from `engine/templates/` directory
+- **KG data**: Entities and co-occurrence data stored as JSON files in `scripts/engine/kg/data/`
+- **Extensible**: Extensions can be merged via `extensions.json`; templates loaded from `scripts/engine/templates/` directory
 - The CLI's `extract_seed_entities()` uses simple keyword matching — a full implementation would use LLM-based intent parsing

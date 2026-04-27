@@ -5,6 +5,7 @@ import sys, json
 from pathlib import Path
 
 ENGINE_DIR = Path(__file__).parent / "engine"
+print(str(ENGINE_DIR))
 sys.path.insert(0, str(ENGINE_DIR))
 
 from comfyui import describe_image

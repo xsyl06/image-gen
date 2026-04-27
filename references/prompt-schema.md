@@ -663,4 +663,4 @@ print(issues)
 
 - `pipeline.md`: Complete generation pipeline documentation
 - `install-guide.md`: ComfyUI installation
-- KG engine: `engine/kg/engine.py` for skeleton and recommendation API
+- KG engine: `scripts/engine/kg/engine.py` for skeleton and recommendation API
