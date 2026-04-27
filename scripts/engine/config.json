@@ -2,10 +2,10 @@
   "comfyui_host": "127.0.0.1",
   "comfyui_port": 8188,
   "output_dir": "~/image-gen-output",
-  "vision_api_url": "https://openai.ai/v1/chat/completions",
-  "vision_model": "gpt-5.4",
-  "vision_api_key": "youApiKey",
+  "vision_api_url": "https://coding.dashscope.aliyuncs.com/v1/chat/completions",
+  "vision_model": "qwen3.6-plus",
+  "vision_api_key": "sk-sp-59c9819a117a490d934b982d0097c0fd",
   "max_iterations": 3,
   "score_threshold": 8,
-  "default_workflow": "workflows/ernie_image_gguf.json"
+  "default_workflow": "workflows/image_z_image_gguf.json"
 }

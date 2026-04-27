@@ -5,7 +5,9 @@ the gear icon → "Save (API format)". They are placed in
 engine/workflows/ and loaded by name.
 """
 
+import copy
 import json
+import random
 from pathlib import Path
 
 WORKFLOWS_DIR = Path(__file__).parent / "workflows"
@@ -61,24 +63,35 @@ def list_workflows():
     ])
 
 
+DEFAULT_NEGATIVE = "blurry, distorted, ugly, watermark, low quality, deformed, bad anatomy,underexposed, grainy shadows, loss of detail in dark areas,deformed face, extra eyes, fused fingers,Misplaced Chinese characters, mixed use of traditional characters, pinyin notation, and character overlapping"
+
+
 def inject_prompts(workflow, positive, negative=None):
     """Inject positive and negative prompts into a ComfyUI workflow.
 
-    Finds CLIPTextEncode nodes and replaces their text inputs.
-    First one found = positive, second one = negative.
+    Strategy:
+    1. Find CLIPTextEncode nodes — first = positive, second = negative
+    2. If no second CLIPTextEncode found, trace KSampler negative input
+       to its source node and replace accordingly
+    3. If negative is empty/unset, use DEFAULT_NEGATIVE
 
     Args:
         workflow: Workflow dict from load_workflow()
         positive: Positive prompt text
-        negative: Negative prompt text (optional)
+        negative: Negative prompt text (optional, defaults to DEFAULT_NEGATIVE)
 
     Returns:
         Modified workflow dict (deep copy, original unchanged)
     """
-    import copy
     wf = copy.deepcopy(workflow)
 
+    if not negative:
+        negative = DEFAULT_NEGATIVE
+
     positive_injected = False
+    negative_injected = False
+
+    # Phase 1: Inject into CLIPTextEncode nodes
     for node_id, node in wf.items():
         if not isinstance(node, dict):
             continue
@@ -87,7 +100,60 @@ def inject_prompts(workflow, positive, negative=None):
             if not positive_injected:
                 inputs["text"] = positive
                 positive_injected = True
-            elif negative:
+            elif not negative_injected:
                 inputs["text"] = negative
+                negative_injected = True
+
+    # Phase 2: If negative not injected, trace KSampler negative inputs
+    if not negative_injected:
+        for _, node in wf.items():
+            if not isinstance(node, dict):
+                continue
+            ct = node.get("class_type", "")
+            if ct in ("KSampler", "KSamplerAdvanced", "SamplerCustomAdvanced"):
+                neg_input = node.get("inputs", {}).get("negative")
+                if neg_input and isinstance(neg_input, list):
+                    source_node_id = str(neg_input[0])
+                    _inject_negative_to_node(wf, source_node_id, negative)
+                    negative_injected = True
+                    break
+
+        # Phase 3: Last resort — set negative on all CLIPTextEncode nodes
+        # that already have the positive prompt (they might be used for both)
+        if not negative_injected:
+            for _, node in wf.items():
+                if node.get("class_type") == "CLIPTextEncode":
+                    inputs = node.get("inputs", {})
+                    if inputs.get("text") == positive:
+                        # This node was set as positive, leave it
+                        pass
+                    else:
+                        inputs["text"] = negative
+                        negative_injected = True
+
+    # Phase 4: Randomize seed for KSampler nodes
+    for node_id, node in wf.items():
+        if not isinstance(node, dict):
+            continue
+        ct = node.get("class_type", "")
+        if ct in ("KSampler", "KSamplerAdvanced", "SamplerCustomAdvanced"):
+            inputs = node.get("inputs", {})
+            if "seed" in inputs:
+                inputs["seed"] = random.randint(1, 999999999999999)
 
     return wf
+
+
+def _inject_negative_to_node(wf, node_id, negative):
+    """Inject negative prompt into a specific node by ID.
+
+    Handles CLIPTextEncode (replace text) and ConditioningZeroOut
+    (skip — zero-out nodes don't need prompt text).
+    """
+    target = wf.get(node_id)
+    if not target or not isinstance(target, dict):
+        return
+    ct = target.get("class_type", "")
+    if ct == "CLIPTextEncode":
+        target.get("inputs", {})["text"] = negative
+    # ConditioningZeroOut / other conditioning nodes: no text to replace

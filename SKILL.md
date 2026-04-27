@@ -177,7 +177,7 @@ All commands accept `--config <path>` to override `engine/config.json`.
 | Cannot connect to ComfyUI | Start: `python main.py --port 8188` |
 | Vision API not configured | Skip evaluation, set up `vision_model` in `engine/config.json` |
 | Quality degrades after multiple runs | Run `free-memory --unload` between generations |
-| No entities found | Default to `["subject:cat"]` and ask for clarification |
+| No entities found | Pipeline extracts subject keywords from user input directly |
 
 ---
 

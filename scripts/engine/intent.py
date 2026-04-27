@@ -37,14 +37,13 @@ def _load_catalog():
 # ── LLM-based extraction ─────────────────────────────────
 
 _SYSTEM_PROMPT = """You extract image generation intent into structured tags.
-Return a JSON array of entity tags matching these categories:
-subject, style, mood, composition, lighting, background, color_palette, genre
+Available categories: subject, style, mood, composition, lighting, background, color_palette, color, genre, technique, texture, theme
 
 Rules:
-- Only return tags that exist in the catalog below, or construct new ones as category:value
-- If the user's description matches a known entity, use that exact tag
+- Match known entities from the catalog below — use the EXACT tag shown
+- If the user's entity is NOT in the catalog, construct a tag as category:value using the category from the list above
+- Always return all detectable entities — never omit unknown ones
 - Return ONLY a JSON array, no explanation
-- If no entities can be extracted, return an empty array
 
 Known entities:
 {catalog}
@@ -103,6 +102,7 @@ def extract_seed_entities_llm(user_intent, cfg):
     """Extract seed entities using LLM.
 
     Falls back to keyword-based extraction if the API call fails.
+    If both return empty, extracts a subject keyword from user input.
 
     Args:
         user_intent: Natural language description
@@ -136,7 +136,10 @@ def extract_seed_entities_llm(user_intent, cfg):
     except Exception:
         pass  # Fall through to keyword fallback
 
-    return _keyword_fallback(user_intent)
+    seeds = _keyword_fallback(user_intent)
+    if not seeds:
+        seeds = [_extract_subject_fallback(user_intent)]
+    return seeds
 
 
 # ── Keyword fallback ──────────────────────────────────────
@@ -208,4 +211,94 @@ def _keyword_fallback(user_intent):
             seen.add(s)
             unique.append(s)
 
-    return unique if unique else ["subject:cat"]
+    return unique
+
+
+# ── Fallback extraction ───────────────────────────────────
+
+# English stop words — only removed when input is primarily English
+_EN_STOP_WORDS = {
+    "a", "an", "the", "of", "in", "on", "at", "to", "for", "is", "it",
+    "that", "with", "by", "from", "and", "or", "but", "not", "this",
+    "some", "very", "so", "just", "like", "have", "has", "be", "my",
+    "your", "his", "her", "its", "our", "their", "what", "which", "who",
+    "would", "could", "should", "will", "shall", "may", "might",
+    "i", "you", "he", "she", "we", "they", "me", "him", "them",
+    "one", "make", "want", "need", "see", "look", "get", "give",
+}
+
+# Chinese measure words / function words to strip from the front
+# These appear in patterns like "一只狐狸", "画一张城市"
+_CN_PREFIXES = [
+    "一只", "一幅", "一张", "一条", "一朵", "一头", "一匹", "一个", "一些",
+    "只", "幅", "张", "条", "朵", "头", "匹", "个", "些",
+    "这", "那", "此",
+]
+
+# Chinese particles to strip (NOT subject words like 人/猫/狗)
+_CN_PARTICLES = ["的", "了", "着", "过", "呢", "啊", "吧", "嘛"]
+
+
+def _extract_subject_fallback(user_intent):
+    """Extract a subject keyword from user input when all else fails.
+
+    Uses language-aware extraction: English words are split on spaces after
+    stop word removal, while Chinese text strips measure words and particles
+    to reveal the core subject noun.
+    """
+    text = user_intent.strip()
+    if not text:
+        return "subject:unknown"
+
+    # Detect if input is primarily Chinese
+    has_cjk = any('一' <= c <= '鿿' for c in text)
+
+    if has_cjk:
+        return _extract_chinese_subject(text)
+    else:
+        return _extract_english_subject(text.lower())
+
+
+def _extract_chinese_subject(text):
+    """Extract subject from Chinese text by stripping measure words and particles."""
+    # Strip leading measure words: "一只狐狸" → "狐狸"
+    for prefix in _CN_PREFIXES:
+        if text.startswith(prefix):
+            text = text[len(prefix):]
+            break
+
+    # Strip trailing particles: "狐狸啊" → "狐狸"
+    for particle in _CN_PARTICLES:
+        if text.endswith(particle):
+            text = text[:-len(particle)]
+            break
+
+    # Remove "的" from middle: "银色的猫" → "银色猫"
+    text = text.replace("的", "")
+
+    # Remove common verb prefixes that aren't the subject
+    for verb in ["画", "生成", "创建", "做", "画一个", "画一张"]:
+        if text.startswith(verb):
+            text = text[len(verb):]
+            break
+
+    text = text.strip()
+    if text:
+        return f"subject:{text}"
+    return f"subject:{text.strip()}"
+
+
+def _extract_english_subject(text):
+    """Extract subject from English text by removing stop words."""
+    # Remove multi-word stop phrases first
+    for sw in ["in the", "on the", "at the"]:
+        text = text.replace(sw, " ")
+
+    # Remove single-word stop words
+    words = text.split()
+    filtered = [w for w in words if w not in _EN_STOP_WORDS]
+
+    if filtered:
+        return f"subject:{' '.join(filtered)}"
+    # Absolute last resort
+    return f"subject:{text.strip()}"

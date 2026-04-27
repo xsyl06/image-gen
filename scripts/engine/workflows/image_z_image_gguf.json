@@ -1,0 +1,140 @@
+{
+  "9": {
+    "inputs": {
+      "filename_prefix": "z-image\\ComfyUI-2026-04-27",
+      "images": [
+        "99",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "95": {
+    "inputs": {
+      "text": "A cheerful clown performing circus tricks, riding a small unicycle while juggling three bright red apples in the air, exaggerated smiling face with colorful makeup, wearing oversized colorful costume with polka dots and ruffled collar, colorful illustration, vibrant cartoon style, detailed and expressive, medium shot, focus on the clown on unicycle, stage spotlights lighting, from top, dramatic, warm color temperature, outdoor, circus tent, A circus performance stage with red and white striped tent ceiling, spotlights shining down, wooden circular stage floor, dominant colors: red, yellow, blue, white, vibrant color scheme, bright and cheerful palette mood, Joyful, entertaining, lively circus performance atmosphere, fun and playful.realistic style",
+      "clip": [
+        "98",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "96": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "空Latent图像（SD3）"
+    }
+  },
+  "97": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "加载VAE"
+    }
+  },
+  "98": {
+    "inputs": {
+      "clip_name": "qwen_3_4b.safetensors",
+      "type": "lumina2",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "加载CLIP"
+    }
+  },
+  "99": {
+    "inputs": {
+      "samples": [
+        "102",
+        0
+      ],
+      "vae": [
+        "97",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "100": {
+    "inputs": {
+      "shift": 3,
+      "model": [
+        "104",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingAuraFlow",
+    "_meta": {
+      "title": "采样算法（AuraFlow）"
+    }
+  },
+  "101": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "98",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Negative Prompt)"
+    }
+  },
+  "102": {
+    "inputs": {
+      "seed": 0,
+      "steps": 40,
+      "cfg": 5,
+      "sampler_name": "res_multistep",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "100",
+        0
+      ],
+      "positive": [
+        "95",
+        0
+      ],
+      "negative": [
+        "101",
+        0
+      ],
+      "latent_image": [
+        "96",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "104": {
+    "inputs": {
+      "unet_name": "z-image-Q8_0.gguf"
+    },
+    "class_type": "UnetLoaderGGUF",
+    "_meta": {
+      "title": "Unet Loader (GGUF)"
+    }
+  }
+}
