@@ -6,6 +6,7 @@ Usage:
 """
 
 import json
+import os
 import re
 import urllib.request
 from pathlib import Path
@@ -28,11 +29,11 @@ def get_vision_config():
     if isinstance(model, dict):
         base_url = model.get("base_url", "")
         model_name = model.get("model", "qwen3.6-plus")
-        api_key = model.get("api_key_env", "")
+        api_key = model.get("api_key_env", "") or os.environ.get("VISION_API_KEY", "")
     else:
         base_url = cfg.get("vision_api_url", "")
         model_name = model
-        api_key = cfg.get("vision_api_key", "")
+        api_key = cfg.get("vision_api_key", "") or os.environ.get("VISION_API_KEY", "")
 
     if not base_url or not api_key:
         raise ValueError("Vision API not configured. Check engine/config.json")

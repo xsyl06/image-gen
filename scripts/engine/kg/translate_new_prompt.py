@@ -5,8 +5,10 @@ Called by kg_update.py via subprocess.Popen.
 Arg: JSON payload string
 """
 import json
+import os
 import re
 import sys
+import tempfile
 from pathlib import Path
 
 GRAPH_PATH = Path(__file__).parent / "data" / "prompt_graph.json"
@@ -22,11 +24,11 @@ def call_llm(prompt_text):
     model = cfg.get("vision_model", "qwen3.6-plus")
     if isinstance(model, dict):
         base_url = model.get("base_url", "")
-        api_key = model.get("api_key_env", "")
+        api_key = model.get("api_key_env", "") or os.environ.get("VISION_API_KEY", "")
         model_name = model.get("model", "qwen3.6-plus")
     else:
         base_url = cfg.get("vision_api_url", "")
-        api_key = cfg.get("vision_api_key", "")
+        api_key = cfg.get("vision_api_key", "") or os.environ.get("VISION_API_KEY", "")
         model_name = model
     if not base_url or not api_key:
         return None
@@ -102,8 +104,19 @@ def main():
         prompt_index[index]["title_zh"] = title_zh
         prompt_index[index]["prompt_short_zh"] = prompt_zh
 
-        with open(graph_path, "w", encoding="utf-8") as f:
-            json.dump(graph, f, ensure_ascii=False, indent=2)
+        # Atomic write to prevent race condition
+        dir_path = graph_path.parent
+        fd, tmp_path = tempfile.mkstemp(dir=str(dir_path), suffix=".tmp", prefix=".kg_")
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8") as f:
+                json.dump(graph, f, ensure_ascii=False, indent=2)
+            os.replace(tmp_path, str(graph_path))
+        except Exception:
+            try:
+                os.unlink(tmp_path)
+            except OSError:
+                pass
+            raise
 
 
 if __name__ == "__main__":

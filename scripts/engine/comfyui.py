@@ -5,6 +5,7 @@ Uses only stdlib urllib. No external dependencies.
 
 import base64
 import json
+import os
 import re
 import sys
 import time
@@ -174,7 +175,7 @@ def _call_vision_api(content_parts, prompt_text, cfg):
         raise ValueError("Vision API not configured. Set vision_api_url via: opc config --set-vision-api-url <url>")
 
     model = cfg.get("vision_model", "qwen3.5")
-    api_key = cfg.get("vision_api_key", "")
+    api_key = cfg.get("vision_api_key", "") or os.environ.get("VISION_API_KEY", "")
 
     all_content = content_parts + [{"type": "text", "text": prompt_text}]
 

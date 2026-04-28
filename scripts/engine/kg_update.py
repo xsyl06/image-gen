@@ -6,7 +6,9 @@ from the learned entity co-occurrences.
 """
 
 import json
+import os
 import sys
+import tempfile
 from itertools import combinations
 from pathlib import Path
 
@@ -92,12 +94,27 @@ def update_kg(used_entities, positive_prompt, score, threshold=8):
     if new_entities:
         _translate_entities_async(new_entities, GRAPH_PATH)
 
-    # Save if anything changed
+    # Save if anything changed — atomic write to prevent race condition
     if updated:
-        with open(GRAPH_PATH, "w", encoding="utf-8") as f:
-            json.dump(graph, f, indent=2, ensure_ascii=False)
+        _atomic_json_save(GRAPH_PATH, graph)
 
     return updated
+
+
+def _atomic_json_save(path, data):
+    """Write JSON via temp file + atomic rename to prevent race conditions."""
+    dir_path = path.parent
+    fd, tmp_path = tempfile.mkstemp(dir=str(dir_path), suffix=".tmp", prefix=".kg_")
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        os.replace(tmp_path, str(path))
+    except Exception:
+        try:
+            os.unlink(tmp_path)
+        except OSError:
+            pass
+        raise
 
 
 def _generate_title(entities):

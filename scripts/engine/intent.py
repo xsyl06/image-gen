@@ -6,6 +6,7 @@ if the model is unreachable.
 """
 
 import json
+import os
 import re
 import urllib.error
 import urllib.request
@@ -71,13 +72,13 @@ _USER_PROMPT_TEMPLATE = "Extract seed entities from: {intent}"
 
 def _call_chat_api(message, cfg):
     """Call the configured chat/vision model (OpenAI-compatible API)."""
-    vision_cfg = cfg.get("vision_model", {})
-    base_url = vision_cfg.get("base_url", "")
-    model = vision_cfg.get("model", "qwen3.6-plus")
-    api_key = vision_cfg.get("api_key_env", "")
+    # Config uses flat keys: vision_api_url, vision_model (string), vision_api_key
+    base_url = cfg.get("vision_api_url", "")
+    model = cfg.get("vision_model", "qwen3.6-plus")
+    api_key = cfg.get("vision_api_key", "") or os.environ.get("VISION_API_KEY", "")
 
     if not base_url:
-        raise ValueError("No chat API configured. Set vision_model.base_url in engine/config.json")
+        raise ValueError("No chat API configured. Set vision_api_url in engine/config.json")
 
     # Strip /v1 suffix if present, then add /chat/completions
     base = base_url.rstrip("/")

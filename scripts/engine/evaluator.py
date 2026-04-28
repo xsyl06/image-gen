@@ -100,16 +100,17 @@ def evaluate_image(image_path, user_intent, cfg):
     except Exception as e:
         print(f"Warning: Vision evaluation failed: {e}", file=sys.stderr)
         return {
-            "subject_accuracy": 5,
-            "style_fidelity": 5,
-            "mood_atmosphere": 5,
-            "composition_quality": 5,
-            "technical_quality": 5,
-            "overall_satisfaction": 5,
-            "weighted_score": 5.0,
-            "strengths": ["evaluation API unreachable"],
-            "weaknesses": ["manual evaluation required"],
+            "subject_accuracy": None,
+            "style_fidelity": None,
+            "mood_atmosphere": None,
+            "composition_quality": None,
+            "technical_quality": None,
+            "overall_satisfaction": None,
+            "weighted_score": None,
+            "strengths": ["evaluation API unreachable — manual review recommended"],
+            "weaknesses": [],
             "improved_prompt": "",
+            "_skip_auto_refinement": True,
         }
 
     # describe_image returns a dict that may have:
@@ -220,11 +221,16 @@ def run_evaluation_loop(user_intent, json_prompt, workflow, cfg, generate_fn=Non
         print(f"Score: {evaluation['weighted_score']}/{score_threshold}", file=sys.stderr)
 
         # Check threshold
-        if evaluation["weighted_score"] >= score_threshold:
+        score = evaluation.get("weighted_score")
+        if score is not None and score >= score_threshold:
             print(f"Passed threshold! Stopping iteration.", file=sys.stderr)
             break
 
         # Improve prompt
+        if evaluation.get("_skip_auto_refinement"):
+            print(f"Evaluation unavailable, stopping refinement.", file=sys.stderr)
+            break
+
         improved_text = evaluation.get("improved_prompt", "")
         if improved_text:
             print(f"Improving prompt for next iteration...", file=sys.stderr)
@@ -240,13 +246,17 @@ def run_evaluation_loop(user_intent, json_prompt, workflow, cfg, generate_fn=Non
 def _refine_prompt(json_prompt, improved_text):
     """Incorporate improved text into the JSON prompt.
 
-    The improved text is typically a full prompt string from the vision model.
-    We add it as an override to the subject field to guide the next generation.
+    Appends the improved text as subject details to preserve existing
+    structured fields (style, mood, composition, etc.).
     """
     refined = json_prompt.copy()
 
-    # Add the improved prompt as a subject override
-    refined["subject"] = improved_text
+    subject = refined.get("subject", "")
+    if isinstance(subject, dict):
+        existing = subject.get("details", "")
+        subject["details"] = f"{existing}\n{improved_text}".strip() if existing else improved_text
+    else:
+        refined["subject"] = {"main": subject, "details": improved_text}
 
     # Preserve negative constraints
     if "negative_constraints" not in refined:

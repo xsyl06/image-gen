@@ -140,8 +140,12 @@ def run_generation(user_intent, cfg, kg):
         # Step 5: Evaluate
         print(f"  Evaluating...")
         evaluation = evaluate_image(image_path, user_intent, cfg)
-        score = evaluation.get("weighted_score", 0)
-        print(f"  Score: {score}/{score_threshold}")
+        score = evaluation.get("weighted_score")
+        skip_refinement = evaluation.get("_skip_auto_refinement", False)
+        if score is not None:
+            print(f"  Score: {score}/{score_threshold}")
+        else:
+            print(f"  Score: N/A (evaluation unavailable)")
         strengths = evaluation.get("strengths", [])
         weaknesses = evaluation.get("weaknesses", [])
         if strengths:
@@ -156,16 +160,26 @@ def run_generation(user_intent, cfg, kg):
             "evaluation": evaluation,
         }
 
-        # Check threshold
-        if score >= score_threshold:
+        # Check threshold (skip if score unavailable)
+        if score is not None and score >= score_threshold:
             print(f"  Passed threshold! Stopping.")
             break
 
         # Improve prompt based on feedback
+        if skip_refinement:
+            print(f"  Evaluation unavailable, stopping refinement.")
+            break
+
         improved_text = evaluation.get("improved_prompt", "")
         if improved_text:
             print(f"  Refining prompt for next iteration...")
-            current_prompt["subject"] = improved_text
+            # Append improved text as details rather than overwriting the entire subject
+            subject = current_prompt.get("subject", "")
+            if isinstance(subject, dict):
+                existing = subject.get("details", "")
+                subject["details"] = f"{existing}\n{improved_text}".strip() if existing else improved_text
+            else:
+                current_prompt["subject"] = {"main": subject, "details": improved_text}
         else:
             print(f"  No improvement suggested, stopping.")
             break
@@ -175,7 +189,7 @@ def run_generation(user_intent, cfg, kg):
             free_memory(cfg, unload_models=True)
 
     # Step 6: KG Update
-    if best_run and best_run["score"] >= score_threshold:
+    if best_run and best_run["score"] is not None and best_run["score"] >= score_threshold:
         print(f"\n[Step 6] KG Update")
         used_entities = [s for s in seeds if ":" in s]
         if not used_entities:
