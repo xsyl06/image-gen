@@ -16,10 +16,7 @@
 **风险**: API Key 随仓库公开或共享，可能导致额度被盗用。
 
 **建议**:
-- 从 `config.json` 中删除 `vision_api_key` 字段
-- 改为从环境变量读取：`os.environ.get("VISION_API_KEY")`
-- 或将 API Key 移到 `~/.image-gen/config.json` 等用户级配置文件中
-- 在 `.gitignore` 中排除敏感配置文件
+- 先从配置文件获取，如果没有，改为从环境变量读取：`os.environ.get("VISION_API_KEY")`
 
 ---
 
@@ -86,41 +83,10 @@ Thumbs.db
 
 **建议**: 将 `.claude/settings.local.json` 加入 `.gitignore`。
 
----
-
-## 🟡 配置与一致性问题
-
-### 5. 默认 workflow 名称不一致
-
-| 位置 | 声明的默认值 |
-|------|------------|
-| `scripts/engine/config.json` | `"workflows/image_z_image_gguf.json"` |
-| `SKILL.md` 文档 Step 4c | `ernie_image_gguf.json` |
-| `scripts/image-gen-cli.py` cmd_pipeline | `workflows/ernie_image_gguf.json` |
-
-**实际文件**: 仓库中两个 workflow 都存在：
-- `scripts/engine/workflows/ernie_image_gguf.json` (9.2KB)
-- `scripts/engine/workflows/image_z_image_gguf.json` (3KB)
-
-**影响**: 不同入口使用的默认 workflow 不同，可能导致出图效果不一致。
-
-**建议**: 统一默认 workflow 名称，并在文档中保持一致。
 
 ---
 
-### 6. vision_model 不是视觉模型
-
-| 文件 | 值 | 问题 |
-|------|----|------|
-| `config.json` | `"qwen3.6-plus"` | 这是语言模型，不具备图像理解能力 |
-
-**影响**: 评估环节（evaluate）和图片描述（describe）使用语言模型无法真正"看"图片，评估质量受限。
-
-**建议**: 换用视觉模型，如 `qwen-vl-max`、`qwen2.5-vl-72b-instruct` 等支持图像输入的模型。
-
----
-
-### 7. config.json 结构与代码读取方式不匹配
+### 5. config.json 结构与代码读取方式不匹配
 
 `intent.py` 中的 `_call_chat_api` 读取配置：
 ```python
@@ -141,15 +107,14 @@ api_key = vision_cfg.get("api_key_env", "")
 
 **影响**: `base_url` 始终为空字符串，`_call_chat_api` 会抛出 `ValueError: No chat API configured`。
 
-**建议**: 二选一：
-1. 修改代码适配当前 config 结构（读 `cfg["vision_api_url"]` 和 `cfg["vision_api_key"]`）
-2. 或修改 config.json 为嵌套结构：`{ "vision_model": { "base_url": "...", "model": "...", "api_key_env": "..." } }`
+**建议**: 
+1. 阅读当前代码，检查视觉模型部分获取的是扁平结构还是字典结构，如果是字典结构，修改代码适配当前 config 结构（读 `cfg["vision_api_url"]` 和 `cfg["vision_api_key"]`）
 
 ---
 
 ## 🟡 逻辑问题
 
-### 8. Prompt 改进策略过于粗糙
+### 6. Prompt 改进策略过于粗糙
 
 | 文件 | 位置 | 问题 |
 |------|------|------|
@@ -166,7 +131,7 @@ api_key = vision_cfg.get("api_key_env", "")
 
 ---
 
-### 9. KG 翻译存在竞态风险
+### 7. KG 翻译存在竞态风险
 
 | 文件 | 问题 |
 |------|------|
@@ -184,7 +149,7 @@ api_key = vision_cfg.get("api_key_env", "")
 
 ---
 
-### 10. 评估 Fallback 阈值设置不合理
+### 8. 评估 Fallback 阈值设置不合理
 
 | 文件 | 问题 |
 |------|------|
@@ -208,7 +173,7 @@ api_key = vision_cfg.get("api_key_env", "")
 
 ## 🟢 小问题
 
-### 11. 缺少 README.md
+### 9. 缺少 README.md
 
 仓库根目录没有 `README.md`，只有面向 Agent 的 `SKILL.md` 和 `CLAUDE.md`。
 
@@ -220,35 +185,10 @@ api_key = vision_cfg.get("api_key_env", "")
 
 ---
 
-### 12. KG 实体缺少中文名称
+### 10. KG 实体缺少中文名称
 
 | 文件 | 问题 |
 |------|------|
 | `scripts/engine/kg/data/prompt_graph.json` | 大量实体 `name_zh` 字段为空或缺失 |
 
 **影响**: LLM 意图识别时的 catalog preview 包含中文提示（`tag (中文)`），缺失会降低中文输入的提取准确率。
-
----
-
-### 13. evals/evals.json 无实际测试文件
-
-| 文件 | 问题 |
-|------|------|
-| `evals/evals.json` | 6 个测试用例的 `"files": []` 全为空 |
-
-**影响**: 评估用例只有预期描述，没有实际运行结果，无法验证功能回归。
-
----
-
-## 📊 问题汇总
-
-| 级别 | 数量 | 关键词 |
-|------|------|--------|
-| 🔴 安全 | 4 | API Key 泄露、gitignore、敏感文件 |
-| 🟡 配置 | 3 | workflow 不一致、模型类型错误、配置结构不匹配 |
-| 🟡 逻辑 | 3 | prompt 改进粗糙、竞态风险、评估 fallback |
-| 🟢 小问题 | 3 | 缺少 README、中文缺失、测试文件缺失 |
-
----
-
-_由 奥龙 🐉 自动审查生成_
