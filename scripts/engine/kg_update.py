@@ -51,18 +51,27 @@ def update_kg(used_entities, positive_prompt, score, threshold=8):
         frozenset(p["tags"]) for p in graph.get("prompt_index", [])
     }
     if frozenset(used_entities) not in existing_tag_sets:
+        title = _generate_title(used_entities)
+        # Fallback to English; translated asynchronously
+        title_zh = ""
+        prompt_short_zh = ""
         entry = {
             "id": f"p-{len(graph.get('prompt_index', [])) + 1:03d}",
-            "title": _generate_title(used_entities),
-            "title_zh": "",
+            "title": title,
+            "title_zh": title_zh,
             "tags": list(used_entities),
             "prompt_short": positive_prompt[:150] if positive_prompt else "",
-            "prompt_short_zh": "",
+            "prompt_short_zh": prompt_short_zh,
         }
         graph.setdefault("prompt_index", []).append(entry)
         updated = True
 
+        # Asynchronously translate (non-blocking)
+        new_idx = len(graph["prompt_index"]) - 1
+        _translate_prompt_async(entry, GRAPH_PATH, new_idx)
+
     # 3. Ensure new entities exist in entities dict
+    new_entities = []
     for tag in used_entities:
         if tag not in graph.get("entities", {}):
             if ":" in tag:
@@ -72,10 +81,16 @@ def update_kg(used_entities, positive_prompt, score, threshold=8):
             graph.setdefault("entities", {})[tag] = {
                 "category": cat,
                 "name": name,
+                "name_zh": name,  # Fallback to English; translated asynchronously below
                 "count": 1,
             }
+            new_entities.append((tag, name))
         else:
             graph["entities"][tag]["count"] += 1
+
+    # 3b. Asynchronously translate new entity names (non-blocking)
+    if new_entities:
+        _translate_entities_async(new_entities, GRAPH_PATH)
 
     # Save if anything changed
     if updated:
@@ -94,3 +109,36 @@ def _generate_title(entities):
         else:
             parts.append(tag)
     return " ".join(parts) if parts else "Untitled"
+
+
+# ── LLM translation helpers ──────────────────────────────
+
+def _translate_entities_async(new_entities, graph_path):
+    """Launch background process to translate entity names to Chinese."""
+    import subprocess
+    script = Path(__file__).parent / "kg" / "translate_new_entities.py"
+    if script.exists():
+        args = [str(script)] + [f"{tag}={name}" for tag, name in new_entities]
+        subprocess.Popen(
+            [sys.executable] + args,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+
+
+def _translate_prompt_async(entry, graph_path, index):
+    """Launch background process to translate a prompt_index entry."""
+    import subprocess
+    script = Path(__file__).parent / "kg" / "translate_new_prompt.py"
+    if script.exists():
+        payload = json.dumps({
+            "title": entry["title"],
+            "prompt": entry["prompt_short"],
+            "graph_path": str(graph_path),
+            "index": index,
+        })
+        subprocess.Popen(
+            [sys.executable, str(script), payload],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )

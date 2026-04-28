@@ -173,152 +173,182 @@
     "subject:a cinematic, atmospheric science fiction scene depicting a solitary figure stand": {
       "category": "subject",
       "name": "A cinematic, atmospheric science fiction scene depicting a solitary figure stand",
-      "count": 1
+      "count": 1,
+      "name_zh": "电影感氛围科幻场景，描绘孤独站立的身影"
     },
     "color:cyan": {
       "category": "color",
       "name": "cyan",
-      "count": 4
+      "count": 4,
+      "name_zh": "cyan"
     },
     "color:monochrome": {
       "category": "color",
       "name": "monochrome",
-      "count": 3
+      "count": 3,
+      "name_zh": "monochrome"
     },
     "color:yellow": {
       "category": "color",
       "name": "yellow",
-      "count": 9
+      "count": 9,
+      "name_zh": "yellow"
     },
     "color:orange": {
       "category": "color",
       "name": "orange",
-      "count": 12
+      "count": 12,
+      "name_zh": "orange"
     },
     "subject:melancholic_clown": {
       "category": "subject",
       "name": "melancholic_clown",
-      "count": 1
+      "count": 1,
+      "name_zh": "忧郁小丑"
     },
     "composition:slightly_low_angle": {
       "category": "composition",
       "name": "slightly_low_angle",
-      "count": 1
+      "count": 1,
+      "name_zh": "微仰角"
     },
     "subject:a high-intensity, cinematic close-up portrait of roronoa zoro from the anime one": {
       "category": "subject",
       "name": "A high-intensity, cinematic close-up portrait of Roronoa Zoro from the anime One",
-      "count": 1
+      "count": 1,
+      "name_zh": "动漫《海贼王》中罗罗诺亚·索隆的高张力电影感特写肖像"
     },
     "subject:roronoa zoro": {
       "category": "subject",
       "name": "Roronoa Zoro",
-      "count": 1
+      "count": 1,
+      "name_zh": "罗罗诺亚·索隆"
     },
     "color:violet": {
       "category": "color",
       "name": "violet",
-      "count": 1
+      "count": 1,
+      "name_zh": "violet"
     },
     "color:pastel": {
       "category": "color",
       "name": "pastel",
-      "count": 8
+      "count": 8,
+      "name_zh": "pastel"
     },
     "style:sports graphic design": {
       "category": "style",
       "name": "Sports Graphic Design",
-      "count": 1
+      "count": 1,
+      "name_zh": "运动平面设计"
     },
     "style:grunge aesthetic": {
       "category": "style",
       "name": "Grunge Aesthetic",
-      "count": 1
+      "count": 1,
+      "name_zh": "粗犷美学"
     },
     "style:photo manipulation": {
       "category": "style",
       "name": "Photo Manipulation",
-      "count": 1
+      "count": 1,
+      "name_zh": "照片合成"
     },
     "style:mosaic art": {
       "category": "style",
       "name": "Mosaic Art",
-      "count": 1
+      "count": 1,
+      "name_zh": "马赛克艺术"
     },
     "style:tribute poster": {
       "category": "style",
       "name": "Tribute Poster",
-      "count": 1
+      "count": 1,
+      "name_zh": "致敬海报"
     },
     "style:editorial illustration": {
       "category": "style",
       "name": "Editorial Illustration",
-      "count": 1
+      "count": 1,
+      "name_zh": "刊物插画"
     },
     "subject:balilleys strawberry cream liqueur (ai interpretation)": {
       "category": "subject",
       "name": "Balilleys Strawberry Cream Liqueur (AI interpretation)",
-      "count": 1
+      "count": 1,
+      "name_zh": "百利甜草莓奶油利口酒（AI演绎）"
     },
     "color:cobalt": {
       "category": "color",
       "name": "cobalt",
-      "count": 4
+      "count": 4,
+      "name_zh": "cobalt"
     },
     "subject:interior visualization": {
       "category": "subject",
       "name": "Interior visualization",
-      "count": 1
+      "count": 1,
+      "name_zh": "室内效果图"
     },
     "theme:serene": {
       "category": "theme",
       "name": "Serene",
-      "count": 1
+      "count": 1,
+      "name_zh": "宁静"
     },
     "theme:warm": {
       "category": "theme",
       "name": "warm",
-      "count": 1
+      "count": 1,
+      "name_zh": "温暖"
     },
     "theme:meditative": {
       "category": "theme",
       "name": "meditative",
-      "count": 1
+      "count": 1,
+      "name_zh": "冥想"
     },
     "theme:ethereal": {
       "category": "theme",
       "name": "ethereal",
-      "count": 1
+      "count": 1,
+      "name_zh": "空灵"
     },
     "theme:spa-like": {
       "category": "theme",
       "name": "spa-like",
-      "count": 1
+      "count": 1,
+      "name_zh": "水疗风格"
     },
     "composition:wide-angle": {
       "category": "composition",
       "name": "wide-angle",
-      "count": 1
+      "count": 1,
+      "name_zh": "广角"
     },
     "composition:eye-level": {
       "category": "composition",
       "name": "eye-level",
-      "count": 3
+      "count": 3,
+      "name_zh": "平视"
     },
     "color:indigo": {
       "category": "color",
       "name": "indigo",
-      "count": 2
+      "count": 2,
+      "name_zh": "indigo"
     },
     "color:teal": {
       "category": "color",
       "name": "teal",
-      "count": 10
+      "count": 10,
+      "name_zh": "teal"
     },
     "composition:side view": {
       "category": "composition",
       "name": "Side view",
-      "count": 1
+      "count": 1,
+      "name_zh": "侧面视角"
     },
     "color:coral": {
       "category": "color",
@@ -473,242 +503,290 @@
     "style:cubism": {
       "category": "style",
       "name": "Cubism",
-      "count": 1
+      "count": 1,
+      "name_zh": "立体主义"
     },
     "subject:cat": {
       "category": "subject",
       "name": "猫",
-      "count": 120
+      "count": 121,
+      "name_zh": "猫"
     },
     "subject:person": {
       "category": "subject",
       "name": "人物",
-      "count": 200
+      "count": 200,
+      "name_zh": "人物"
     },
     "subject:food": {
       "category": "subject",
       "name": "美食",
-      "count": 151
+      "count": 151,
+      "name_zh": "美食"
     },
     "subject:landscape": {
       "category": "subject",
       "name": "风景",
-      "count": 100
+      "count": 100,
+      "name_zh": "风景"
     },
     "subject:animal": {
       "category": "subject",
       "name": "动物",
-      "count": 80
+      "count": 80,
+      "name_zh": "动物"
     },
     "style:watercolor": {
       "category": "style",
       "name": "水彩",
-      "count": 90
+      "count": 91,
+      "name_zh": "水彩"
     },
     "style:photography": {
       "category": "style",
       "name": "摄影",
-      "count": 181
+      "count": 181,
+      "name_zh": "摄影"
     },
     "style:digital_art": {
       "category": "style",
       "name": "数字艺术",
-      "count": 160
+      "count": 160,
+      "name_zh": "数字艺术"
     },
     "style:illustration": {
       "category": "style",
       "name": "插画",
-      "count": 140
+      "count": 140,
+      "name_zh": "插画"
     },
     "style:oil_painting": {
       "category": "style",
       "name": "油画",
-      "count": 70
+      "count": 70,
+      "name_zh": "油画"
     },
     "style:sketch": {
       "category": "style",
       "name": "素描",
-      "count": 60
+      "count": 60,
+      "name_zh": "素描"
     },
     "mood:warm": {
       "category": "mood",
       "name": "温馨",
-      "count": 130
+      "count": 130,
+      "name_zh": "温馨"
     },
     "mood:peaceful": {
       "category": "mood",
       "name": "宁静",
-      "count": 100
+      "count": 101,
+      "name_zh": "宁静"
     },
     "mood:energetic": {
       "category": "mood",
       "name": "活力",
-      "count": 80
+      "count": 80,
+      "name_zh": "活力"
     },
     "mood:mysterious": {
       "category": "mood",
       "name": "神秘",
-      "count": 60
+      "count": 60,
+      "name_zh": "神秘"
     },
     "composition:close_up": {
       "category": "composition",
       "name": "特写",
-      "count": 110
+      "count": 110,
+      "name_zh": "特写"
     },
     "composition:wide_shot": {
       "category": "composition",
       "name": "远景",
-      "count": 90
+      "count": 90,
+      "name_zh": "远景"
     },
     "composition:centered": {
       "category": "composition",
       "name": "居中构图",
-      "count": 100
+      "count": 100,
+      "name_zh": "居中构图"
     },
     "lighting:natural": {
       "category": "lighting",
       "name": "自然光",
-      "count": 140
+      "count": 140,
+      "name_zh": "自然光"
     },
     "lighting:studio": {
       "category": "lighting",
       "name": "棚拍光",
-      "count": 80
+      "count": 80,
+      "name_zh": "棚拍光"
     },
     "lighting:golden_hour": {
       "category": "lighting",
       "name": "黄金时刻",
-      "count": 70
+      "count": 70,
+      "name_zh": "黄金时刻"
     },
     "background:indoor": {
       "category": "background",
       "name": "室内",
-      "count": 120
+      "count": 120,
+      "name_zh": "室内"
     },
     "background:outdoor": {
       "category": "background",
       "name": "室外",
-      "count": 100
+      "count": 100,
+      "name_zh": "室外"
     },
     "background:abstract": {
       "category": "background",
       "name": "抽象",
-      "count": 60
+      "count": 60,
+      "name_zh": "抽象"
     },
     "color_palette:warm": {
       "category": "color_palette",
       "name": "暖色调",
-      "count": 130
+      "count": 130,
+      "name_zh": "暖色调"
     },
     "color_palette:cool": {
       "category": "color_palette",
       "name": "冷色调",
-      "count": 100
+      "count": 100,
+      "name_zh": "冷色调"
     },
     "color_palette:pastel": {
       "category": "color_palette",
       "name": "粉彩",
-      "count": 80
+      "count": 80,
+      "name_zh": "粉彩"
     },
     "genre:poster": {
       "category": "genre",
       "name": "海报",
-      "count": 90
+      "count": 90,
+      "name_zh": "海报"
     },
     "genre:infographic": {
       "category": "genre",
       "name": "信息图",
-      "count": 70
+      "count": 70,
+      "name_zh": "信息图"
     },
     "genre:cover": {
       "category": "genre",
       "name": "封面",
-      "count": 110
+      "count": 110,
+      "name_zh": "封面"
     },
     "subject:clown": {
       "category": "subject",
       "name": "clown",
-      "count": 1
+      "count": 1,
+      "name_zh": "小丑"
     },
     "subject:unicycle": {
       "category": "subject",
       "name": "unicycle",
-      "count": 1
+      "count": 1,
+      "name_zh": "独轮车"
     },
     "subject:apples": {
       "category": "subject",
       "name": "apples",
-      "count": 1
+      "count": 1,
+      "name_zh": "苹果"
     },
     "style:photorealistic": {
       "category": "style",
       "name": "photorealistic",
-      "count": 2
+      "count": 2,
+      "name_zh": "photorealistic（照片级真实感）"
     },
     "background:circus_stage": {
       "category": "background",
       "name": "circus_stage",
-      "count": 1
+      "count": 1,
+      "name_zh": "马戏团舞台"
     },
     "lighting:bright": {
       "category": "lighting",
       "name": "bright",
-      "count": 1
+      "count": 1,
+      "name_zh": "明亮"
     },
     "mood:cheerful": {
       "category": "mood",
       "name": "cheerful",
-      "count": 1
+      "count": 1,
+      "name_zh": "欢快"
     },
     "subject:一幅蝙蝠侠大战超人电影级海报图": {
       "category": "subject",
       "name": "一幅蝙蝠侠大战超人电影级海报图",
-      "count": 1
+      "count": 1,
+      "name_zh": "蝙蝠侠大战超人电影海报"
     },
     "subject:一幅水下女子照片，中国女性，褐色头发，清晰水下，水中气泡，唯美": {
       "category": "subject",
       "name": "一幅水下女子照片，中国女性，褐色头发，清晰水下，水中气泡，唯美",
-      "count": 1
+      "count": 1,
+      "name_zh": "水下中国女性照片，褐发，清澈水体，气泡，唯美"
     },
     "subject:underwater_woman": {
       "category": "subject",
       "name": "underwater_woman",
-      "count": 1
+      "count": 1,
+      "name_zh": "水下女子"
     },
     "subject:chinese_woman": {
       "category": "subject",
       "name": "chinese_woman",
-      "count": 1
+      "count": 1,
+      "name_zh": "中国女性"
     },
     "subject:brown_hair": {
       "category": "subject",
       "name": "brown_hair",
-      "count": 1
+      "count": 1,
+      "name_zh": "褐发"
     },
     "lighting:cinematic": {
       "category": "lighting",
       "name": "cinematic",
-      "count": 1
+      "count": 1,
+      "name_zh": "cinematic（电影感）"
     },
     "mood:ethereal": {
       "category": "mood",
       "name": "ethereal",
-      "count": 1
+      "count": 1,
+      "name_zh": "ethereal（空灵）"
     },
     "background:underwater": {
       "category": "background",
       "name": "underwater",
-      "count": 1
+      "count": 1,
+      "name_zh": "水下"
     },
     "composition:floating_pose": {
       "category": "composition",
       "name": "floating_pose",
-      "count": 1
+      "count": 1,
+      "name_zh": "floating_pose（漂浮姿态）"
     },
     "subject:一幅泳装中国美女走秀图，女人穿着比基尼，在高楼宾馆阳台上，脚下是泳池中T台两边是泳池": {
       "category": "subject",
       "name": "一幅泳装中国美女走秀图，女人穿着比基尼，在高楼宾馆阳台上，脚下是泳池中T台两边是泳池",
-      "count": 1
+      "count": 1,
+      "name_zh": "高楼阳台泳池T台泳装中国女性走秀"
     }
   },
   "co_occurrence": {
@@ -1525,7 +1603,7 @@
       "style:paper-cut style with gucci color": 1
     },
     "subject:cat": {
-      "style:watercolor": 45,
+      "style:watercolor": 46,
       "style:illustration": 39,
       "mood:warm": 53,
       "lighting:natural": 36,
@@ -1533,11 +1611,12 @@
       "background:indoor": 1,
       "composition:close_up": 1,
       "color_palette:warm": 1,
-      "mood:energetic": 1
+      "mood:energetic": 1,
+      "mood:peaceful": 1
     },
     "style:watercolor": {
       "mood:warm": 40,
-      "mood:peaceful": 35,
+      "mood:peaceful": 36,
       "color_palette:pastel": 30,
       "subject:landscape": 25
     },
@@ -3291,6 +3370,18 @@
         "subject:一幅泳装中国美女走秀图，女人穿着比基尼，在高楼宾馆阳台上，脚下是泳池中T台两边是泳池"
       ],
       "prompt_short": "一幅泳装中国美女走秀图，女人穿着比基尼，在高楼宾馆阳台上，脚下是泳池中T台两边是泳池",
+      "prompt_short_zh": ""
+    },
+    {
+      "id": "p-113",
+      "title": "cat watercolor peaceful",
+      "title_zh": "",
+      "tags": [
+        "subject:cat",
+        "style:watercolor",
+        "mood:peaceful"
+      ],
+      "prompt_short": "a peaceful watercolor cat painting",
       "prompt_short_zh": ""
     }
   ]

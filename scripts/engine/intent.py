@@ -34,18 +34,35 @@ def _load_catalog():
             _CATEGORY_PREFIXES.setdefault(cat, []).append(tag)
 
 
+def _build_catalog_preview():
+    """Build catalog preview with Chinese names for LLM system prompt."""
+    _load_catalog()
+    items = []
+    for tag in sorted(_ENTITY_CATALOG.keys()):
+        info = _ENTITY_CATALOG[tag]
+        name_zh = info.get("name_zh", "")
+        if name_zh:
+            items.append(f"{tag} ({name_zh})")
+        else:
+            items.append(tag)
+    preview = ", ".join(items[:30])
+    if len(_ENTITY_CATALOG) > 30:
+        preview += f" ... ({len(_ENTITY_CATALOG)} total)"
+    return preview
+
+
 # ── LLM-based extraction ─────────────────────────────────
 
 _SYSTEM_PROMPT = """You extract image generation intent into structured tags.
 Available categories: subject, style, mood, composition, lighting, background, color_palette, color, genre, technique, texture, theme
 
 Rules:
-- Match known entities from the catalog below — use the EXACT tag shown
+- Match known entities from the catalog below — use the EXACT tag shown (the Chinese name in parentheses is a translation aid only, use the English tag)
 - If the user's entity is NOT in the catalog, construct a tag as category:value using the category from the list above
 - Always return all detectable entities — never omit unknown ones
 - Return ONLY a JSON array, no explanation
 
-Known entities:
+Known entities (format: tag (中文)):
 {catalog}
 """
 
@@ -113,10 +130,8 @@ def extract_seed_entities_llm(user_intent, cfg):
     """
     _load_catalog()
 
-    # Build catalog preview for the prompt
-    catalog_preview = ", ".join(sorted(_ENTITY_CATALOG.keys())[:30])
-    if len(_ENTITY_CATALOG) > 30:
-        catalog_preview += f" ... ({len(_ENTITY_CATALOG)} total)"
+    # Build catalog preview with Chinese names for better entity matching
+    catalog_preview = _build_catalog_preview()
 
     system_prompt = _SYSTEM_PROMPT.format(catalog=catalog_preview)
     user_prompt = _USER_PROMPT_TEMPLATE.format(intent=user_intent)
@@ -145,6 +160,7 @@ def extract_seed_entities_llm(user_intent, cfg):
 # ── Keyword fallback ──────────────────────────────────────
 
 _KEYWORD_MAP = {
+    # ── English ──────────────────────────────────────────────
     "cat": "subject:cat",
     "cats": "subject:cat",
     "kitten": "subject:cat",
@@ -190,6 +206,58 @@ _KEYWORD_MAP = {
     "poster": "genre:poster",
     "infographic": "genre:infographic",
     "cover": "genre:cover",
+    # ── Chinese ──────────────────────────────────────────────
+    "猫": "subject:cat",
+    "小猫": "subject:cat",
+    "人物": "subject:person",
+    "人": "subject:person",
+    "肖像": "subject:person",
+    "美食": "subject:food",
+    "食物": "subject:food",
+    "风景": "subject:landscape",
+    "动物": "subject:animal",
+    "狗": "subject:animal",
+    "鸟": "subject:animal",
+    "水彩": "style:watercolor",
+    "摄影": "style:photography",
+    "照片": "style:photography",
+    "数字艺术": "style:digital_art",
+    "插画": "style:illustration",
+    "油画": "style:oil_painting",
+    "素描": "style:sketch",
+    "温馨": "mood:warm",
+    "温暖": "mood:warm",
+    "宁静": "mood:peaceful",
+    "平静": "mood:peaceful",
+    "活力": "mood:energetic",
+    "神秘": "mood:mysterious",
+    "特写": "composition:close_up",
+    "远景": "composition:wide_shot",
+    "全景": "composition:wide_shot",
+    "居中": "composition:centered",
+    "居中构图": "composition:centered",
+    "自然光": "lighting:natural",
+    "阳光": "lighting:golden_hour",
+    "黄金时刻": "lighting:golden_hour",
+    "棚拍": "lighting:studio",
+    "室内": "background:indoor",
+    "室外": "background:outdoor",
+    "户外": "background:outdoor",
+    "抽象": "background:abstract",
+    "暖色调": "color_palette:warm",
+    "冷色调": "color_palette:cool",
+    "粉彩": "color_palette:pastel",
+    "海报": "genre:poster",
+    "信息图": "genre:infographic",
+    "封面": "genre:cover",
+    "小丑": "subject:clown",
+    "马戏团": "background:circus",
+    "水下": "background:underwater",
+    "电影感": "mood:ethereal",
+    "空灵": "mood:ethereal",
+    "马戏团": "subject:clown",
+    "明亮": "lighting:bright",
+    "欢快": "mood:cheerful",
 }
 
 

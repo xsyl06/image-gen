@@ -5,7 +5,10 @@
       "Bash(python3 \"e:/python/workspace/image-gen/scripts/engine/kg/data/merge.py\")",
       "Bash(conda activate *)",
       "Bash(python \"e:/python/workspace/image-gen/scripts/engine/kg/data/merge.py\")",
-      "Bash(python image-gen-cli.py --help)"
+      "Bash(python image-gen-cli.py --help)",
+      "Bash(python scripts/engine/kg/translate_entities.py)",
+      "Bash(python scripts/engine/kg/translate_new_entities.py \"subject:赛博朋克城市=赛博朋克城市\" \"style:像素艺术=像素艺术\")",
+      "Bash(python -c ' *)"
     ]
   }
 }

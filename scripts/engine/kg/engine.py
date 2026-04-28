@@ -102,11 +102,13 @@ class PromptKG:
         ]
 
     def search(self, keyword):
-        """Fuzzy search entities by keyword (matches tag or name)."""
+        """Fuzzy search entities by keyword (matches tag, name, or name_zh)."""
         kw = keyword.lower()
         hits = []
         for tag, info in self.entities.items():
-            if kw in tag.lower() or kw in info["name"].lower():
+            if (kw in tag.lower()
+                    or kw in info["name"].lower()
+                    or kw in info.get("name_zh", "").lower()):
                 hits.append({"entity": tag, **info})
         hits.sort(key=lambda x: -x["count"])
         return hits
