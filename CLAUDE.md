@@ -2,6 +2,18 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Environment
+The project defaults to using conda for environment control. Use `conda run -n comfyui` to execute commands in the comfyui environment:
+
+```shell
+conda run -n comfyui python scripts/image-gen.py "a cat"
+conda run -n comfyui python -c "import sys; ..."
+conda run -n comfyui python test_script.py
+```
+
+Note: `conda activate` requires `conda init` first (modifies shell profiles and is blocked by Claude Code permissions). Use `conda run -n comfyui` instead — it works without init and is the recommended approach for Claude Code.
+
+
 ## Project Overview
 
 **image-gen** is an AI image generation pipeline that transforms natural language descriptions into high-quality images through a structured 6-step process: Intent Recognition → KG Query → Prompt Generation → ComfyUI Generation → Evaluation Loop → Experience Accumulation.
