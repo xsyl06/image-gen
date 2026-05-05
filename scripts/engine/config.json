@@ -7,5 +7,5 @@
   "vision_api_key": "",
   "max_iterations": 3,
   "score_threshold": 8,
-  "default_workflow": "workflows/image_z_image_gguf.json"
+  "default_workflow": "workflows/ernie_image_gguf"
 }

@@ -402,7 +402,9 @@ def _extract_style(style) -> str:
     return ", ".join(parts)
 
 
-def _extract_composition(comp: dict) -> str:
+def _extract_composition(comp) -> str:
+    if isinstance(comp, str):
+        return comp
     parts = []
     if "framing" in comp:
         parts.append(comp["framing"])
@@ -415,7 +417,9 @@ def _extract_composition(comp: dict) -> str:
     return ", ".join(parts)
 
 
-def _extract_lighting(light: dict) -> str:
+def _extract_lighting(light) -> str:
+    if isinstance(light, str):
+        return light
     parts = []
     if "type" in light:
         parts.append(f"{light['type']} lighting")
@@ -428,7 +432,9 @@ def _extract_lighting(light: dict) -> str:
     return ", ".join(parts)
 
 
-def _extract_background(bg: dict) -> str:
+def _extract_background(bg) -> str:
+    if isinstance(bg, str):
+        return bg
     parts = []
     if "setting" in bg:
         parts.append(bg["setting"])
@@ -441,7 +447,9 @@ def _extract_background(bg: dict) -> str:
     return ", ".join(parts)
 
 
-def _extract_colors(cp: dict) -> str:
+def _extract_colors(cp) -> str:
+    if isinstance(cp, str):
+        return cp
     parts = []
     if "dominant" in cp:
         parts.append(f"dominant colors: {_fmt_list(cp['dominant'])}")
@@ -454,7 +462,9 @@ def _extract_colors(cp: dict) -> str:
     return ", ".join(parts)
 
 
-def _extract_technical(tech: dict) -> str:
+def _extract_technical(tech) -> str:
+    if isinstance(tech, str):
+        return tech
     parts = []
     if "quality" in tech:
         parts.append(tech["quality"])

@@ -19,6 +19,61 @@ For step-by-step control, see the commands below.
 
 ---
 
+## Step 0: Brainstorm & Clarify
+
+Before running the pipeline, analyze the user's description for **missing or ambiguous** visual dimensions. If the description is already rich and specific (covers style, lighting, mood, composition, color, etc.), skip this step and proceed directly to Step 1.
+
+Otherwise, follow this two-phase flow:
+
+### Phase 1: Plan Questions Internally
+
+Analyze the user's description against these dimensions:
+
+| Dimension | Key |
+|---|---|
+| Artistic style | `style` |
+| Mood / atmosphere | `mood` |
+| Lighting | `lighting` |
+| Composition | `composition` |
+| Color palette | `color_palette` |
+| Background / scene | `background` |
+| Genre / purpose | `genre` |
+| Aspect ratio | `aspect_ratio` |
+
+For each dimension that is **not mentioned or is vague**, draft a question with 3-5 concrete options. Prioritize by impact: `style` > `lighting` > `composition` > `mood` > `color_palette` > others.
+
+Plan 2-4 questions total. Do NOT show the list to the user — keep it internal.
+
+### Phase 2: Ask One by One
+
+Ask questions **one at a time**. Each question should:
+- Be short and conversational (1-2 sentences)
+- Offer 3-5 concrete options as suggestions, plus "其他（请描述）" / "Other (describe)" as the last option
+- Use the same language as the user's input
+- Wait for the user's answer before asking the next question
+
+Example flow:
+```
+Claude: 你希望什么风格？（写实摄影 / 油画 / 水彩 / 数字插画 / 其他）
+User: 写实摄影
+
+Claude: 光影偏好？（自然光 / 金色黄昏 / 棚拍灯光 / 阴天柔光 / 其他）
+User: 金色黄昏
+
+Claude: 构图呢？（特写 / 半身 / 全身 / 场景全景 / 其他）
+User: 特写
+```
+
+After all questions are answered, **merge** the user's answers into their original description to form an enhanced prompt, then proceed to Step 1.
+
+```
+Original: "一只猫"
+Answers: style=写实摄影, lighting=金色黄昏, composition=特写
+Enhanced: "一只猫，写实摄影，金色黄昏光影，特写构图"
+```
+
+---
+
 ## Step 1: Extract Seed Entities
 
 Map the user's description into KG entity tags. You can either:

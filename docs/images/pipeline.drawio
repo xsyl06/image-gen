@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-04-29T11:00:00.000Z" agent="image-gen" version="24.0.0" type="device">
+  <diagram id="pipeline" name="Image-Gen Pipeline">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title" value="&lt;b&gt;image-gen Pipeline Architecture&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="350" y="10" width="500" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Step 1: Intent Recognition -->
+        <mxCell id="step1" value="1. 意图识别&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;自然语言 → 种子实体&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=12;fontColor=#1565C0;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="100" width="150" height="70" as="geometry" />
+        </mxCell>
+        
+        <!-- Step 2: KG Query -->
+        <mxCell id="step2" value="2. KG 查询&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;PromptKG 实体推荐&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=12;fontColor=#2E7D32;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="240" y="100" width="150" height="70" as="geometry" />
+        </mxCell>
+        
+        <!-- Step 3: Prompt Generation -->
+        <mxCell id="step3" value="3. Prompt 生成&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;14维 JSON → 文本&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;fontSize=12;fontColor=#E65100;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="430" y="100" width="150" height="70" as="geometry" />
+        </mxCell>
+        
+        <!-- Step 4: ComfyUI Generation -->
+        <mxCell id="step4" value="4. ComfyUI 生成&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;工作流提交 → 图片&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#6A1B9A;fontSize=12;fontColor=#6A1B9A;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="100" width="150" height="70" as="geometry" />
+        </mxCell>
+        
+        <!-- Step 5: Evaluation Loop -->
+        <mxCell id="step5" value="5. 评估循环&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;6维打分 + 优化重试&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontSize=12;fontColor=#C62828;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="810" y="100" width="150" height="70" as="geometry" />
+        </mxCell>
+        
+        <!-- Step 6: KG Update -->
+        <mxCell id="step6" value="6. 经验积累&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;回写知识图谱&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F7FA;strokeColor=#00695C;fontSize=12;fontColor=#00695C;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="100" width="150" height="70" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrows between steps -->
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#546E7A;" edge="1" parent="1" source="step1" target="step2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#546E7A;" edge="1" parent="1" source="step2" target="step3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#546E7A;" edge="1" parent="1" source="step3" target="step4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#546E7A;" edge="1" parent="1" source="step4" target="step5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#546E7A;" edge="1" parent="1" source="step5" target="step6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Iteration loop arrow -->
+        <mxCell id="loopArrow" value="&lt;font style=&quot;font-size:10px&quot;&gt;分数 &amp;lt; 阈值?&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#C62828;dashed=1;startArrow=classic;startFill=1;strokeColor=#C62828;" edge="1" parent="1" source="step5" target="step3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="885" y="200" />
+              <mxPoint x="505" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Input -->
+        <mxCell id="input" value="📝&lt;br&gt;自然语言输入" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#9E9E9E;fontSize=11;fontColor=#666666;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="50" y="200" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="inputArrow" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#9E9E9E;startArrow=none;startFill=0;" edge="1" parent="1" source="input" target="step1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Output -->
+        <mxCell id="output" value="🖼️&lt;br&gt;生成图片" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#9E9E9E;fontSize=11;fontColor=#666666;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="200" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="outputArrow" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;strokeColor=#9E9E9E;" edge="1" parent="1" source="step6" target="output">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Legend -->
+        <mxCell id="legend" value="&lt;b&gt;图例：&lt;/b&gt;&lt;br&gt;🔵 输入处理 &lt;br&gt;🟢 知识图谱&lt;br&gt;🟠 Prompt 组装&lt;br&gt;🟣 图片生成&lt;br&gt;🔴 评估迭代&lt;br&gt;🔵 经验积累" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#BDBDBD;fontSize=10;fontColor=#666666;arcSize=6;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="280" width="160" height="110" as="geometry" />
+        </mxCell>
+        
+        <!-- Subtitle -->
+        <mxCell id="subtitle" value="零外部依赖 · 14维结构化Prompt · 自动评估迭代 · 知识图谱经验积累" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#757575;" vertex="1" parent="1">
+          <mxGeometry x="300" y="50" width="600" height="20" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

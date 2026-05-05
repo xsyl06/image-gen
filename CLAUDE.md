@@ -96,7 +96,7 @@ Edit `scripts/engine/config.json`:
 ## Architecture Notes
 
 - **Zero external dependencies**: All modules use only Python stdlib (`urllib`, `json`, `pathlib`, etc.)
-- **Prompt flow**: Natural language → seed entities → KG skeleton → JSON prompt (14 dims) → text prompt → ComfyUI
+- **Prompt flow**: Natural language → **brainstorm & clarify (Step 0)** → seed entities → KG skeleton → JSON prompt (14 dims) → text prompt → ComfyUI
 - **KG data**: Entities and co-occurrence data stored as JSON files in `scripts/engine/kg/data/`
 - **Extensible**: Extensions can be merged via `extensions.json`; templates loaded from `scripts/engine/templates/` directory
 - The CLI's `extract_seed_entities()` uses simple keyword matching — a full implementation would use LLM-based intent parsing

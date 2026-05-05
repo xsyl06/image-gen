@@ -641,7 +641,7 @@
     "background:outdoor": {
       "category": "background",
       "name": "室外",
-      "count": 100,
+      "count": 101,
       "name_zh": "室外"
     },
     "background:abstract": {
@@ -707,7 +707,7 @@
     "style:photorealistic": {
       "category": "style",
       "name": "photorealistic",
-      "count": 2,
+      "count": 3,
       "name_zh": "photorealistic（照片级真实感）"
     },
     "background:circus_stage": {
@@ -787,6 +787,24 @@
       "name": "一幅泳装中国美女走秀图，女人穿着比基尼，在高楼宾馆阳台上，脚下是泳池中T台两边是泳池",
       "count": 1,
       "name_zh": "高楼阳台泳池T台泳装中国女性走秀"
+    },
+    "subject:children": {
+      "category": "subject",
+      "name": "children",
+      "name_zh": "children",
+      "count": 1
+    },
+    "subject:playground": {
+      "category": "subject",
+      "name": "playground",
+      "name_zh": "playground",
+      "count": 1
+    },
+    "mood:joyful": {
+      "category": "mood",
+      "name": "joyful",
+      "name_zh": "joyful",
+      "count": 1
     }
   },
   "co_occurrence": {
@@ -1754,6 +1772,24 @@
     },
     "background:underwater": {
       "composition:floating_pose": 1
+    },
+    "subject:children": {
+      "subject:playground": 1,
+      "mood:joyful": 1,
+      "background:outdoor": 1,
+      "style:photorealistic": 1
+    },
+    "subject:playground": {
+      "mood:joyful": 1,
+      "background:outdoor": 1,
+      "style:photorealistic": 1
+    },
+    "mood:joyful": {
+      "background:outdoor": 1,
+      "style:photorealistic": 1
+    },
+    "background:outdoor": {
+      "style:photorealistic": 1
     }
   },
   "prompt_index": [
@@ -3382,6 +3418,20 @@
         "mood:peaceful"
       ],
       "prompt_short": "a peaceful watercolor cat painting",
+      "prompt_short_zh": ""
+    },
+    {
+      "id": "p-114",
+      "title": "children playground joyful",
+      "title_zh": "",
+      "tags": [
+        "subject:children",
+        "subject:playground",
+        "mood:joyful",
+        "background:outdoor",
+        "style:photorealistic"
+      ],
+      "prompt_short": "three children laughing and playing on a playground, one sliding down a yellow slide with hands on the sides, two sitting on swings with visible chain",
       "prompt_short_zh": ""
     }
   ]
