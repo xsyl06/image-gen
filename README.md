@@ -223,9 +223,9 @@ image-gen/
 
 | Document | Description |
 |----------|-------------|
-| [Pipeline](references/pipeline.md) | Complete 6-step pipeline walkthrough |
-| [Prompt Schema](references/prompt-schema.md) | 14-dimension JSON prompt specification |
-| [Install Guide](references/install-guide.md) | ComfyUI setup instructions |
+| [Pipeline](image-gen/references/pipeline.md) | Complete 6-step pipeline walkthrough |
+| [Prompt Schema](image-gen/references/prompt-schema.md) | 14-dimension JSON prompt specification |
+| [Install Guide](image-gen/references/install-guide.md) | ComfyUI setup instructions |
 
 ---
 

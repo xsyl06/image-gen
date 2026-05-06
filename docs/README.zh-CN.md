@@ -221,9 +221,9 @@ image-gen/
 
 | 文档 | 说明 |
 |------|------|
-| [流水线](../references/pipeline.md) | 完整 6 步流水线详解 |
-| [提示词架构](../references/prompt-schema.md) | 14 维 JSON 提示词规范 |
-| [安装指南](../references/install-guide.md) | ComfyUI 安装说明 |
+| [流水线](../image-gen/references/pipeline.md) | 完整 6 步流水线详解 |
+| [提示词架构](../image-gen/references/prompt-schema.md) | 14 维 JSON 提示词规范 |
+| [安装指南](../image-gen/references/install-guide.md) | ComfyUI 安装说明 |
 
 ---
 
