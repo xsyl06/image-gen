@@ -253,7 +253,7 @@ python main.py
 ### 4.1 克隆 image-gen 项目
 
 ```bash
-cd ~
+cd ~/.claude/skills/
 git clone https://github.com/your-username/image-gen.git
 cd image-gen
 ```
@@ -272,7 +272,7 @@ cd image-gen
   "vision_api_key": "",
   "max_iterations": 3,
   "score_threshold": 8,
-  "default_workflow": "workflows/ernie_image_gguf.json"
+  "default_workflow": "workflows/ernie_image_gguf"
 }
 ```
 

@@ -253,7 +253,7 @@ python main.py
 ### 4.1 克隆 image-gen 项目
 
 ```bash
-cd ~
+cd ~/.claude/skills/
 git clone https://github.com/your-username/image-gen.git
 cd image-gen
 ```
