@@ -23,6 +23,8 @@
 
 **image-gen** is an end-to-end image generation engine that takes a simple text description and produces refined, high-quality images. It uses a knowledge graph to enrich prompts, submits them to ComfyUI for generation, then evaluates results with a multimodal vision model and iterates until quality thresholds are met.
 
+> You need to install ComfyUI and the corresponding model in advance. For specific installation instructions, please refer to [install-guide](docs/install-guide.md)
+
 ---
 
 ## Highlights
@@ -158,7 +160,8 @@ Edit `scripts/engine/config.json`:
   "vision_model": "qwen3.6-plus",
   "vision_api_key": "",
   "max_iterations": 3,
-  "score_threshold": 8
+  "score_threshold": 8,
+  "default_workflow": "workflows/ernie_image_gguf"
 }
 ```
 

@@ -21,6 +21,8 @@
 
 **image-gen** 是一个端到端的图像生成引擎。只需一段文字描述，即可生成经过迭代优化的高质量图像。系统通过知识图谱丰富提示词，提交 ComfyUI 进行生成，并使用多模态视觉模型进行质量评估，不达阈值则自动优化重试。
 
+> 需要提前安装ComfyUI和对应模型，具体安装方法见[install-guide](install-guide.md)
+
 ---
 
 ## 核心特性
@@ -156,7 +158,8 @@ cd image-gen
   "vision_model": "qwen3.6-plus",
   "vision_api_key": "",
   "max_iterations": 3,
-  "score_threshold": 8
+  "score_threshold": 8,
+  "default_workflow": "workflows/ernie_image_gguf"
 }
 ```
 
