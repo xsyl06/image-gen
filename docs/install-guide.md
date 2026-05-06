@@ -8,13 +8,12 @@
 
 | 项目 | 要求 |
 |------|------|
-| 操作系统 | Linux (推荐 Ubuntu 22.04+) / macOS (Apple Silicon) |
+| 操作系统 | Linux (推荐 Ubuntu 22.04+) / macOS (Apple Silicon) / Windows 10 |
 | GPU | NVIDIA GPU (推荐 8GB+ 显存) 或 Apple Silicon (M1/M2/M3) |
 | Python | 3.10+ |
 | 磁盘空间 | 至少 20GB (ComfyUI + 模型) |
-| 网络 | 需要访问 GitHub 和 HuggingFace |
+| 网络 | 需要访问 GitHub 和 HuggingFace，国内可以使用相关代理 |
 
----
 
 ## 1、安装 ComfyUI
 
@@ -72,81 +71,146 @@ python main.py --version
 
 如果能正常输出版本号，说明安装成功。
 
----
 
-## 2、下载 GGUF 量化模型
+## 2、下载模型
 
-image-gen 默认使用 GGUF 格式的量化模型，这类模型体积小、推理快，适合消费级显卡。
+image-gen 使用 Comfy-Org 官方工作流作为基础，将主模型替换为 unsloth 量化版 GGUF 格式模型，体积小、推理快，适合消费级显卡。
 
-### 2.1 推荐模型
+项目提供两套工作流，按需选择：
 
-| 模型 | 用途 | 大小 | 下载链接 |
-|------|------|------|----------|
-| [Flux.1-Dev-GGUF](https://huggingface.co/city96/FLUX.1-dev-gguf) | 高质量通用 | ~12GB | 推荐 Q4_0 量化 |
-| [Stable Diffusion 1.5 GGUF](https://huggingface.co/city96/stable-diffusion-v1-5-gguf) | 快速出图 | ~2GB | 推荐 Q8_0 量化 |
-| [ERNIE-Image](https://huggingface.co/BAAI/ERNIE-Image) | 中文场景 | ~4GB | 中文文字渲染好 |
+| 工作流 | 主模型 (GGUF) | CLIP 文本编码器 | VAE | 特点 |
+|--------|---------------|----------------|-----|------|
+| ERNIE-Image | `ernie-image-Q8_0.gguf` | `ministral-3-3b.safetensors` | `flux2-vae.safetensors` | 百度出品，中文文字渲染强，适合海报、漫画 |
+| Z-Image | `z-image-Q8_0.gguf` | `qwen_3_4b.safetensors` | `ae.safetensors` | 阿里出品，风格多样，美学表现优秀 |
 
-### 2.2 下载模型（以 Flux.1-Dev 为例）
+> 💡 **工作流来源**：
+> - ERNIE-Image 工作流基于 `Comfy-Org/ERNIE-Image`：https://hf-mirror.com/Comfy-Org/ERNIE-Image
+> - Z-Image 工作流基于 `Comfy-Org/z_image`：https://hf-mirror.com/Comfy-Org/z_image
+> - 主模型由 unsloth 提供 GGUF 量化版，采用 Unsloth Dynamic 2.0 方法，关键层上浮到更高精度。
+
+### 2.1 下载 GGUF 主模型
+
+unsloth 提供多种量化等级，推荐 **Q8_0**（几乎无损）或 **Q4_0**（省显存）：
+
+**ERNIE-Image GGUF：**
 
 ```bash
 cd ~/ComfyUI/models/unet
 
-# 使用 huggingface-cli（需要先安装 pip install huggingface-hub）
-huggingface-cli download city96/FLUX.1-dev-gguf \
-  flux1-dev-Q4_0.gguf \
+# Q8_0 量化（推荐，质量最佳）
+huggingface-cli download unsloth/ERNIE-Image-GGUF \
+  ernie-image-Q8_0.gguf \
   --local-dir .
-
-# 或者直接用 wget 下载
-wget https://huggingface.co/city96/FLUX.1-dev-gguf/resolve/main/flux1-dev-Q4_0.gguf
 ```
 
-> 💡 国内网络如果下载慢：
+**Z-Image GGUF：**
+
+```bash
+cd ~/ComfyUI/models/unet
+
+# Q8_0 量化（推荐）
+huggingface-cli download unsloth/Z-Image-GGUF \
+  z-image-Q8_0.gguf \
+  --local-dir .
+```
+
+> 💡 国内网络如果下载慢，使用 hf-mirror 镜像：
 > ```bash
-> # 使用 hf-mirror 镜像
 > export HF_ENDPOINT=https://hf-mirror.com
-> huggingface-cli download city96/FLUX.1-dev-gguf \
->   flux1-dev-Q4_0.gguf \
+> # 下载 ERNIE-Image GGUF
+> huggingface-cli download unsloth/ERNIE-Image-GGUF \
+>   ernie-image-Q8_0.gguf \
+>   --local-dir .
+>
+> # 下载 Z-Image GGUF
+> huggingface-cli download unsloth/Z-Image-GGUF \
+>   z-image-Q8_0.gguf \
 >   --local-dir .
 > ```
 
-### 2.3 下载 CLIP 模型（Flux 需要）
+#### 其他可选量化等级
+
+| 量化等级 | 文件大小 | 质量损失 | 推荐场景 |
+|----------|----------|----------|----------|
+| Q8_0 | ~原大小 80% | 几乎无损 | 显存充足，追求质量 |
+| Q6_K | ~原大小 65% | 轻微 | 高质量省空间 |
+| Q5_K_M | ~原大小 55% | 较小 | 平衡方案 |
+| Q4_K_M | ~原大小 45% | 可接受 | 显存有限 |
+| Q2_K | ~原大小 25% | 明显 | 仅测试用 |
+
+### 2.2 下载 CLIP 文本编码器
+
+两个工作流使用不同的 CLIP 模型：
+
+**ERNIE-Image 使用 ministral-3-3b：**
 
 ```bash
 cd ~/ComfyUI/models/clip
 
-# Flux 需要两个 CLIP 模型
-huggingface-cli download comfyanonymous/flux_text_encoders \
-  clip_l.safetensors t5xxl_fp8_e4m3fn.safetensors \
+huggingface-cli download Comfy-Org/ERNIE-Image \
+  text_encoders/ministral-3-3b.safetensors \
   --local-dir .
-
-# 或使用 hf-mirror
-HF_ENDPOINT=https://hf-mirror.com huggingface-cli download comfyanonymous/flux_text_encoders \
-  clip_l.safetensors t5xxl_fp8_e4m3fn.safetensors \
-  --local-dir .
+mv text_encoders/ministral-3-3b.safetensors .
+rm -rf text_encoders
 ```
 
-### 2.4 下载 VAE 模型
+**Z-Image 使用 qwen_3_4b：**
+
+```bash
+cd ~/ComfyUI/models/clip
+
+huggingface-cli download Comfy-Org/z_image \
+  split_files/text_encoders/qwen_3_4b.safetensors \
+  --local-dir .
+mv split_files/text_encoders/qwen_3_4b.safetensors .
+rm -rf split_files
+```
+
+### 2.3 下载 VAE 模型
+
+**ERNIE-Image 使用 flux2-vae：**
 
 ```bash
 cd ~/ComfyUI/models/vae
 
-wget https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/ae.safetensors
-
-# 或 hf-mirror
-HF_ENDPOINT=https://hf-mirror.com wget https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/ae.safetensors
+huggingface-cli download Comfy-Org/ERNIE-Image \
+  vae/flux2-vae.safetensors \
+  --local-dir .
+mv vae/flux2-vae.safetensors .
+rm -rf vae
 ```
 
-### 2.5 验证模型文件
+**Z-Image 使用 ae（FLUX 系列通用 VAE）：**
 
 ```bash
-ls -lh ~/ComfyUI/models/unet/
-ls -lh ~/ComfyUI/models/clip/
-ls -lh ~/ComfyUI/models/vae/
+cd ~/ComfyUI/models/vae
+
+huggingface-cli download Comfy-Org/z_image \
+  split_files/vae/ae.safetensors \
+  --local-dir .
+mv split_files/vae/ae.safetensors .
+rm -rf split_files
 ```
 
-确保模型文件完整（大小合理，没有损坏）。
+### 2.4 验证模型文件
 
----
+下载完成后，确认目录结构和文件完整：
+
+```bash
+# GGUF 主模型（二选一或全部下载）
+ls -lh ~/ComfyUI/models/unet/ernie-image-Q8_0.gguf
+ls -lh ~/ComfyUI/models/unet/z-image-Q8_0.gguf
+
+# CLIP 文本编码器
+ls -lh ~/ComfyUI/models/clip/ministral-3-3b.safetensors
+ls -lh ~/ComfyUI/models/clip/qwen_3_4b.safetensors
+
+# VAE
+ls -lh ~/ComfyUI/models/vae/flux2-vae.safetensors
+ls -lh ~/ComfyUI/models/vae/ae.safetensors
+```
+
+确保文件大小合理，没有损坏。
 
 ## 3、配置 ComfyUI 支持 GGUF
 
@@ -183,8 +247,6 @@ python main.py
 ```
 
 启动后访问 `http://127.0.0.1:8188` 确认服务正常。
-
----
 
 ## 4、配置 image-gen
 
@@ -230,8 +292,6 @@ cd image-gen
 ```bash
 export VISION_API_KEY="your-api-key-here"
 ```
-
----
 
 ## 5、测试运行
 
@@ -287,7 +347,6 @@ Best image: ~/image-gen-output/cli-run-001_20260429_102500_0.png
 ls -lh ~/image-gen-output/
 ```
 
----
 
 ## 6、常见问题
 
@@ -305,11 +364,16 @@ python main.py --listen 0.0.0.0 --port 8188
 
 ### Q2：模型下载太慢
 
-**使用 hf-mirror：**
+**使用 hf-mirror 镜像：**
 
 ```bash
 export HF_ENDPOINT=https://hf-mirror.com
-huggingface-cli download city96/FLUX.1-dev-gguf flux1-dev-Q4_0.gguf --local-dir .
+
+# ERNIE-Image GGUF
+huggingface-cli download unsloth/ERNIE-Image-GGUF ernie-image-Q8_0.gguf --local-dir .
+
+# Z-Image GGUF
+huggingface-cli download unsloth/Z-Image-GGUF z-image-Q8_0.gguf --local-dir .
 ```
 
 ### Q3：生成图片全黑或有噪点
@@ -340,43 +404,35 @@ python scripts/image-gen-cli.py free-memory --unload
 ```
 ~/ComfyUI/
 ├── models/
-│   ├── unet/                    # GGUF 量化模型
-│   │   └── flux1-dev-Q4_0.gguf
-│   ├── clip/                    # CLIP 文本编码器
-│   │   ├── clip_l.safetensors
-│   │   └── t5xxl_fp8_e4m3fn.safetensors
-│   ├── vae/                     # VAE 模型
-│   │   └── ae.safetensors
-│   ├── lora/                    # LoRA 适配器（可选）
-│   └── controlnet/              # ControlNet 模型（可选）
+│   ├── unet/                         # GGUF 主模型（unsloth 量化版）
+│   │   ├── ernie-image-Q8_0.gguf     #   ERNIE-Image（可选）
+│   │   └── z-image-Q8_0.gguf         #   Z-Image（可选）
+│   ├── clip/                         # CLIP 文本编码器
+│   │   ├── ministral-3-3b.safetensors #   ERNIE-Image 使用
+│   │   └── qwen_3_4b.safetensors      #   Z-Image 使用
+│   ├── vae/                          # VAE 模型
+│   │   ├── flux2-vae.safetensors      #   ERNIE-Image 使用
+│   │   └── ae.safetensors             #   Z-Image 使用
+│   ├── lora/                         # LoRA 适配器（可选）
+│   └── controlnet/                   # ControlNet 模型（可选）
 ├── custom_nodes/
-│   ├── ComfyUI-GGUF/            # GGUF 支持节点
-│   └── ComfyUI-Manager/         # 节点管理器（可选）
+│   ├── ComfyUI-GGUF/                 # GGUF 支持节点（必需）
+│   └── ComfyUI-Manager/              # 节点管理器（可选）
 ├── input/
 ├── output/
 └── main.py
 ```
 
----
-
-## 8、性能参考
-
-| 硬件配置 | 模型 | 分辨率 | 单张耗时 |
-|----------|------|--------|----------|
-| RTX 4090 (24GB) | Flux.1-Dev Q4_0 | 1024×1024 | ~15s |
-| RTX 3090 (24GB) | Flux.1-Dev Q4_0 | 1024×1024 | ~25s |
-| RTX 4060 (8GB) | SD1.5 Q8_0 | 512×512 | ~5s |
-| M2 Max (32GB) | Flux.1-Dev Q4_0 | 1024×1024 | ~60s |
-
----
-
 ## 附录：GGUF 量化等级说明
+
+unsloth 使用 Unsloth Dynamic 2.0 方法进行量化，关键层（attention、output 等）会自动上浮到更高精度，因此同等级量化下质量优于传统方法。
 
 | 量化等级 | 文件大小 | 质量损失 | 推荐场景 |
 |----------|----------|----------|----------|
-| Q8_0 | ~原大小 80% | 几乎无损 | 显存充足，追求质量 |
-| Q5_0 | ~原大小 50% | 轻微 | 平衡方案 |
-| Q4_0 | ~原大小 40% | 可接受 | 显存有限 |
+| Q8_0 | ~原大小 80% | 几乎无损 | 显存充足，追求质量（推荐） |
+| Q6_K | ~原大小 65% | 轻微 | 高质量，省空间 |
+| Q5_K_M | ~原大小 55% | 较小 | 平衡方案 |
+| Q4_K_M | ~原大小 45% | 可接受 | 显存有限 |
 | Q2_K | ~原大小 25% | 明显 | 仅测试用 |
 
-推荐：**Q4_0** 作为默认选择，在质量和速度之间取得较好平衡。
+推荐：**Q8_0** 作为默认选择，质量几乎无损；显存不足时选择 **Q4_K_M**。

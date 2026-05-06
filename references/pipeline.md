@@ -104,26 +104,20 @@ Assemble full prompt in JSON and text formats.
 
 ### Output
 
-**JSON Format (14 dimensions):**
+**JSON Format (13 dimensions):**
 ```json
 {
   "subject": "a cat reading a book",
   "style": "watercolor painting",
   "mood": "warm and cozy",
-  "composition": "centered composition",
-  "lighting": "natural window light",
-  "background": "indoor, windowsill with soft curtains",
-  "color_palette": "warm pastel tones",
-  "quality_tags": ["high quality", "detailed", "soft edges"],
-  "aspect_ratio": "3:4",
-  "resolution": "1024x1365",
-  "negative_prompt": "blurry, distorted, ugly, deformed",
-  "weight emphasis": {
-    "subject": 1.2,
-    "style": 1.1
-  },
-  "chinese_layout": null,
-  "contrast_composition": null
+  "composition": {"framing": "centered composition"},
+  "lighting": {"type": "natural window light", "quality": "soft"},
+  "background": {"setting": "indoor", "details": "windowsill with soft curtains"},
+  "color_palette": {"mood": "warm pastel tones"},
+  "technical_specs": {"quality": "high quality, detailed, soft edges"},
+  "negative_constraints": ["blurry", "distorted", "ugly", "deformed"],
+  "typography_layout": null,
+  "confrontation": null
 }
 ```
 
@@ -140,6 +134,7 @@ from json_prompt import json_prompt_to_text
 result = json_prompt_to_text(json_prompt)
 positive = result["positive"]
 negative = result["negative"]
+meta = result["meta"]
 ```
 
 ---
@@ -167,18 +162,18 @@ Submit workflow to ComfyUI server and download generated images.
 ### Process
 ```python
 from comfyui import generate_image, check_connection
+from workflow_loader import load_workflow, inject_prompts
 
 # Verify connection
 if not check_connection(cfg):
     raise ConnectionError("ComfyUI not running")
 
-# Inject prompt into workflow
-workflow = load_workflow_template(cfg.get("workflow_alias", "default"))
-workflow["nodes"]["positive_prompt"]["inputs"]["text"] = positive
-workflow["nodes"]["negative_prompt"]["inputs"]["text"] = negative
+# Load workflow and inject prompts
+workflow = load_workflow(cfg.get("default_workflow", "workflows/ernie_image_gguf"))
+prepared = inject_prompts(workflow, positive, negative)
 
 # Generate
-result = generate_image(workflow, cfg, filename_prefix="run-001")
+result = generate_image(prepared, cfg, filename_prefix="run-001")
 ```
 
 ---
@@ -206,7 +201,7 @@ def run_generation_loop(user_intent, kg, cfg):
         result = generate_image(prepared, cfg, f"run-{i:03d}")
 
         # Evaluate
-        evaluation = evaluate_image(result["filepaths"][0], user_intent, text_prompt, cfg)
+        evaluation = evaluate_image(result["filepaths"][0], user_intent, cfg)
 
         runs.append({
             "run": i,
@@ -237,21 +232,16 @@ def run_generation_loop(user_intent, kg, cfg):
 **Evaluation Output:**
 ```json
 {
-  "scores": {
-    "subject_accuracy": 9,
-    "style_fidelity": 8,
-    "mood_atmosphere": 7,
-    "composition_quality": 8,
-    "technical_quality": 9,
-    "overall_satisfaction": 8
-  },
+  "subject_accuracy": 9,
+  "style_fidelity": 8,
+  "mood_atmosphere": 7,
+  "composition_quality": 8,
+  "technical_quality": 9,
+  "overall_satisfaction": 8,
   "weighted_score": 8.3,
-  "feedback": {
-    "strengths": ["good subject rendering", "clear watercolor style"],
-    "weaknesses": ["slightly dim lighting", "background could be warmer"]
-  },
-  "improved_prompt": "a cat reading a book on windowsill, watercolor painting, warm and cozy mood, brighter natural window light, indoor background with warm tones, golden hour lighting effect, high quality, detailed",
-  "passed": true
+  "strengths": ["good subject rendering", "clear watercolor style"],
+  "weaknesses": ["slightly dim lighting", "background could be warmer"],
+  "improved_prompt": "a cat reading a book on windowsill, watercolor painting, warm and cozy mood, brighter natural window light, indoor background with warm tones, golden hour lighting effect, high quality, detailed"
 }
 ```
 
@@ -302,20 +292,18 @@ Record successful prompt combinations in the Knowledge Graph for future referenc
 
 ### Update Process
 ```python
-def update_kg_with_success(kg, prompt_entities, final_prompt, score):
-    if score >= 8.0:
-        # Increment co-occurrence counts
-        for e1, e2 in combinations(prompt_entities, 2):
-            kg.increment_co_occurrence(e1, e2)
+from kg_update import update_kg
 
-        # Add to prompt_index if novel combination
-        if not kg.find_prompts(prompt_entities):
-            kg.add_prompt_index_entry({
-                "id": generate_prompt_id(),
-                "tags": prompt_entities,
-                "prompt_short": final_prompt
-            })
+# Record a successful generation in the KG
+updated = update_kg(
+    used_entities=["subject:cat", "style:watercolor", "mood:warm", "lighting:natural"],
+    positive_prompt="a cat reading on windowsill, watercolor, warm mood, natural light",
+    score=8.3,
+    threshold=8
+)
 ```
+
+Internally, `update_kg()` increments co-occurrence counts for every entity pair using `itertools.combinations`, and appends a new entry to `prompt_index` if the combination is novel.
 
 ---
 
@@ -347,11 +335,11 @@ except RuntimeError as e:
 ### Vision API Errors
 ```python
 try:
-    evaluation = describe_image(image_path, evaluation_prompt, cfg)
+    evaluation = evaluate_image(image_path, user_intent, cfg)
 except ValueError as e:
     if "Vision API not configured" in str(e):
         print("Warning: Vision evaluation skipped (API not configured)")
-        evaluation = {"score": 5.0, "feedback": "manual_evaluation_required"}
+        evaluation = {"weighted_score": 5.0, "strengths": [], "weaknesses": ["manual evaluation required"]}
 ```
 
 ### Iteration Limit Reached

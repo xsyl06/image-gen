@@ -1,8 +1,8 @@
-# JSON Prompt Schema (14 Dimensions)
+# JSON Prompt Schema (13 Dimensions)
 
 ## Overview
 
-The image-gen skill uses a structured JSON prompt format with 14 dimensions for better generation quality compared to plain text. Each dimension aligns with KG entity categories and can be automatically assembled from skeleton output.
+The image-gen skill uses a structured JSON prompt format with 13 dimensions for better generation quality compared to plain text. Each dimension aligns with KG entity categories and can be automatically assembled from skeleton output.
 
 **Key advantages:**
 - Better control over generation parameters
@@ -31,7 +31,6 @@ All fields are optional. Use string for simple values, object for fine-grained c
 | `technical_specs` | object | Quality/rendering params | Optional |
 | `layout` | string/object | Text layout | Recommended (for text images) |
 | `negative_constraints` | list | Exclusion items | Recommended |
-| `aspect_ratio` | string | Image aspect ratio | Optional |
 
 ---
 
@@ -437,7 +436,7 @@ Technical quality and rendering specifications.
 {
   "technical_specs": {
     "quality": "high quality, detailed",
-    "resolution": "1024x1024",
+    "resolution_hint": "1024x1024",
     "sharpness": "sharp details",
     "rendering": "professional photography",
     "noise": "low noise",
@@ -448,7 +447,7 @@ Technical quality and rendering specifications.
 
 ### Common Fields
 - `quality`: General quality description
-- `resolution`: Target resolution
+- `resolution_hint`: Target resolution guidance
 - `sharpness`: Detail level
 - `rendering`: Rendering style
 - `noise`: Noise level control
@@ -486,30 +485,6 @@ Define what to avoid in generation.
 - `低质量`: Low quality (Chinese)
 - `变形`: Deformation (Chinese)
 - `文字模糊`: Blurred text (Chinese)
-
----
-
-## 14. aspect_ratio — Image Aspect Ratio
-
-### Type: `string`
-
-### Purpose
-Define image aspect ratio.
-
-### Example
-```json
-{
-  "aspect_ratio": "3:4"
-}
-```
-
-### Common Values
-- `1:1`: Square
-- `3:4`: Portrait
-- `4:3`: Landscape
-- `9:16`: Vertical (mobile)
-- `16:9`: Horizontal (desktop)
-- `2:3`: Portrait photo
 
 ---
 
@@ -564,8 +539,7 @@ Define image aspect ratio.
     "distorted",
     "ugly",
     "watermark"
-  ],
-  "aspect_ratio": "3:4"
+  ]
 }
 ```
 
