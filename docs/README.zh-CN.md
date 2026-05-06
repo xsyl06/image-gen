@@ -107,12 +107,15 @@
 
 ```bash
 # 1. 克隆仓库
-git clone git@gitee.com:xsyl06/image-gen.git ~/.claude/skills/image-gen
+git clone git@github.com:xsyl06/image-gen.git
 
-# 2. （可选）如已有 ComfyUI 工作流，可软链接或复制：
+# 2. 将技能目录复制到 ~/.claude/skills/
+cp -r image-gen/image-gen ~/.claude/skills/image-gen
+
+# 3. （可选）如已有 ComfyUI 工作流，可软链接或复制：
 #    cp -r /path/to/your/workflows ~/.claude/skills/image-gen/scripts/engine/workflows/
 
-# 3. 编辑 config.json 配置 ComfyUI 和视觉模型 API：
+# 4. 编辑 config.json 配置 ComfyUI 和视觉模型 API：
 cd ~/.claude/skills/image-gen
 # 编辑 scripts/engine/config.json（详见下方"配置"章节）
 ```
@@ -127,7 +130,7 @@ cd ~/.claude/skills/image-gen
 **项目内安装**（仅在本仓库目录下生效）：
 
 ```bash
-git clone git@gitee.com:xsyl06/image-gen.git
+git clone git@github.com:xsyl06/image-gen.git
 cd image-gen
 # 项目根目录的 SKILL.md 会在 Claude Code 打开本仓库时自动激活技能
 ```

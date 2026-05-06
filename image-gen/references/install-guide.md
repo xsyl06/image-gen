@@ -253,9 +253,12 @@ python main.py
 ### 4.1 克隆 image-gen 项目
 
 ```bash
-cd ~/.claude/skills/
-git clone https://github.com/your-username/image-gen.git
-cd image-gen
+# 克隆仓库
+git clone https://github.com/xsyl06/image-gen.git
+
+# 将技能目录复制到 ~/.claude/skills/
+cp -r image-gen/image-gen ~/.claude/skills/image-gen
+cd ~/.claude/skills/image-gen
 ```
 
 ### 4.2 编辑配置文件

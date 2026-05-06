@@ -109,12 +109,15 @@ This project is a **Claude Code skill** — once installed, Claude can orchestra
 
 ```bash
 # 1. Clone the repo
-git clone git@gitee.com:xsyl06/image-gen.git ~/.claude/skills/image-gen
+git clone git@github.com:xsyl06/image-gen.git
 
-# 2. (Optional) If you already have ComfyUI workflows, symlink or copy them:
+# 2. Copy the skill directory to ~/.claude/skills/
+cp -r image-gen/image-gen ~/.claude/skills/image-gen
+
+# 3. (Optional) If you already have ComfyUI workflows, symlink or copy them:
 #    cp -r /path/to/your/workflows ~/.claude/skills/image-gen/scripts/engine/workflows/
 
-# 3. Edit config.json with your ComfyUI and vision API settings:
+# 4. Edit config.json with your ComfyUI and vision API settings:
 cd ~/.claude/skills/image-gen
 # Edit scripts/engine/config.json (see Configuration below)
 ```
@@ -129,7 +132,7 @@ User: Generate a watercolor painting of a cat reading a book
 **Per-project install** (only active inside this repo):
 
 ```bash
-git clone git@gitee.com:xsyl06/image-gen.git
+git clone git@github.com:xsyl06/image-gen.git
 cd image-gen
 # The SKILL.md in the project root activates the skill when you open Claude Code here
 ```
