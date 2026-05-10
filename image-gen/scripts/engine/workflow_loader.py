@@ -144,6 +144,64 @@ def inject_prompts(workflow, positive, negative=None):
     return wf
 
 
+def inject_dimensions(workflow, width=None, height=None):
+    """Inject image dimensions into a ComfyUI workflow.
+
+    Handles two node patterns:
+    1. PrimitiveInt nodes with _meta.title "Width"/"Height" (ernie_image workflow)
+    2. EmptyLatentImage / EmptyFlux2LatentImage / EmptySD3LatentImage with direct inputs
+
+    Args:
+        workflow: Workflow dict from load_workflow()
+        width: Desired image width in pixels (None = keep default)
+        height: Desired image height in pixels (None = keep default)
+
+    Returns:
+        Modified workflow dict (deep copy, original unchanged)
+    """
+    if width is None and height is None:
+        return copy.deepcopy(workflow)
+
+    wf = copy.deepcopy(workflow)
+
+    # Phase 1: Try PrimitiveInt nodes (title-based matching)
+    width_set = width is None
+    height_set = height is None
+
+    for node_id, node in wf.items():
+        if not isinstance(node, dict):
+            continue
+        if node.get("class_type") != "PrimitiveInt":
+            continue
+        title = node.get("_meta", {}).get("title", "").lower()
+        if not width_set and "width" in title:
+            node["inputs"]["value"] = width
+            width_set = True
+        elif not height_set and "height" in title:
+            node["inputs"]["value"] = height
+            height_set = True
+
+    if width_set and height_set:
+        return wf
+
+    # Phase 2: Try EmptyLatentImage nodes with direct width/height inputs
+    for node_id, node in wf.items():
+        if not isinstance(node, dict):
+            continue
+        ct = node.get("class_type", "")
+        if "LatentImage" not in ct:
+            continue
+        inputs = node.get("inputs", {})
+        if not width_set and "width" in inputs and not isinstance(inputs["width"], list):
+            inputs["width"] = width
+            width_set = True
+        if not height_set and "height" in inputs and not isinstance(inputs["height"], list):
+            inputs["height"] = height
+            height_set = True
+
+    return wf
+
+
 def _inject_negative_to_node(wf, node_id, negative):
     """Inject negative prompt into a specific node by ID.
 

@@ -135,10 +135,11 @@ def cmd_list_workflows(args):
 
 
 def cmd_inject(args):
-    """Inject prompts into workflow."""
-    from workflow_loader import load_workflow, inject_prompts
+    """Inject prompts (and optionally dimensions) into workflow."""
+    from workflow_loader import load_workflow, inject_prompts, inject_dimensions
     workflow = load_workflow(args.workflow)
     wf = inject_prompts(workflow, args.positive, args.negative)
+    wf = inject_dimensions(wf, args.width, args.height)
     output_json(wf)
 
 
@@ -146,12 +147,13 @@ def cmd_generate(args):
     """Submit workflow to ComfyUI."""
     from comfyui import check_connection, generate_image
     cfg = load_config(args.config)
-    from workflow_loader import load_workflow, inject_prompts
+    from workflow_loader import load_workflow, inject_prompts, inject_dimensions
     try:
         workflow = load_workflow(args.workflow)
     except FileNotFoundError:
         error(f"Workflow not found: {args.workflow}")
     workflow = inject_prompts(workflow, args.positive, args.negative)
+    workflow = inject_dimensions(workflow, args.width, args.height)
     if not check_connection(cfg):
         error(f"Cannot connect to ComfyUI at {cfg.get('comfyui_host')}:{cfg.get('comfyui_port')}")
     result = generate_image(workflow, cfg, filename_prefix=args.prefix or "cli-gen")
@@ -236,7 +238,7 @@ def cmd_pipeline(args):
     # Step 4: ComfyUI Generation
     print("[4/6] ComfyUI Generation...", file=sys.stderr)
     from comfyui import check_connection, generate_image, free_memory
-    from workflow_loader import load_workflow, inject_prompts
+    from workflow_loader import load_workflow, inject_prompts, inject_dimensions
 
     if not check_connection(cfg):
         error(f"Cannot connect to ComfyUI at {cfg.get('comfyui_host')}:{cfg.get('comfyui_port')}")
@@ -246,6 +248,9 @@ def cmd_pipeline(args):
         base_workflow = load_workflow(workflow_name)
     except FileNotFoundError:
         error(f"Workflow not found: {workflow_name}")
+
+    # Apply dimensions once to base workflow (before iteration loop)
+    base_workflow = inject_dimensions(base_workflow, args.width, args.height)
 
     max_iterations = cfg.get("max_iterations", 3)
     score_threshold = cfg.get("score_threshold", 8)
@@ -390,6 +395,8 @@ def build_parser():
     p.add_argument("--workflow", required=True, help="Workflow name or path")
     p.add_argument("--positive", required=True, help="Positive prompt")
     p.add_argument("--negative", default=None, help="Negative prompt")
+    p.add_argument("--width", type=int, default=None, help="Image width in pixels")
+    p.add_argument("--height", type=int, default=None, help="Image height in pixels")
     p.set_defaults(func=cmd_inject)
 
     # generate
@@ -398,6 +405,8 @@ def build_parser():
     p.add_argument("--positive", required=True, help="Positive prompt")
     p.add_argument("--negative", default=None, help="Negative prompt")
     p.add_argument("--prefix", help="Output filename prefix")
+    p.add_argument("--width", type=int, default=None, help="Image width in pixels")
+    p.add_argument("--height", type=int, default=None, help="Image height in pixels")
     add_config_arg(p)
     p.set_defaults(func=cmd_generate)
 
@@ -448,6 +457,8 @@ def build_parser():
     p.add_argument("--prompt", "-p", required=True, help="User description")
     p.add_argument("--iterations", "-i", type=int, help="Max iterations (default: 3)")
     p.add_argument("--threshold", "-t", type=int, help="Score threshold (default: 8)")
+    p.add_argument("--width", type=int, default=None, help="Image width in pixels")
+    p.add_argument("--height", type=int, default=None, help="Image height in pixels")
     add_config_arg(p)
     p.set_defaults(func=cmd_pipeline)
 

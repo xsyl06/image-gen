@@ -22,7 +22,7 @@ from kg.engine import PromptKG
 from json_prompt import json_prompt_to_text
 from comfyui import check_connection, generate_image, free_memory
 from intent import extract_seed_entities_llm
-from workflow_loader import load_workflow, inject_prompts
+from workflow_loader import load_workflow, inject_prompts, inject_dimensions
 from evaluator import evaluate_image
 from kg_update import update_kg
 from prompt_assembly import assemble_json_prompt
@@ -50,7 +50,7 @@ def load_config(config_path=None):
 
 
 
-def run_generation(user_intent, cfg, kg):
+def run_generation(user_intent, cfg, kg, width=None, height=None):
     """Run the generation pipeline."""
     print(f"\n=== Image Generation Pipeline ===")
     print(f"User intent: {user_intent}")
@@ -99,6 +99,10 @@ def run_generation(user_intent, cfg, kg):
         print(f"  WARNING: {e}")
         print(f"  Using empty workflow (generation may fail)")
         base_workflow = {"prompt": positive, "negative_prompt": negative}
+
+    if width or height:
+        base_workflow = inject_dimensions(base_workflow, width, height)
+        print(f"  Dimensions: {width or '(default)'}x{height or '(default)'}")
 
     max_iterations = cfg.get("max_iterations", 3)
     score_threshold = cfg.get("score_threshold", 8)
@@ -236,6 +240,20 @@ def main():
     )
 
     parser.add_argument(
+        "--width", "-W",
+        type=int,
+        default=None,
+        help="Image width in pixels (default: use workflow setting)"
+    )
+
+    parser.add_argument(
+        "--height", "-H",
+        type=int,
+        default=None,
+        help="Image height in pixels (default: use workflow setting)"
+    )
+
+    parser.add_argument(
         "--verbose", "-v",
         action="store_true",
         help="Verbose output"
@@ -257,7 +275,7 @@ def main():
     print(f"  Categories: {kg.categories}")
 
     # Run generation
-    result = run_generation(args.prompt, cfg, kg)
+    result = run_generation(args.prompt, cfg, kg, width=args.width, height=args.height)
 
     if result and result.get("image"):
         print(f"\n=== SUCCESS ===")

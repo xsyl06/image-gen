@@ -159,8 +159,11 @@ python scripts/image-gen-cli.py convert --prompt '<json_prompt>'
 ```bash
 python scripts/image-gen-cli.py inject \
   --workflow ernie_image_gguf.json \
-  --positive "..." --negative "..."
+  --positive "..." --negative "..." \
+  --width 1024 --height 1280
 ```
+
+`--width` / `--height` are optional. Omit to use the workflow's default dimensions.
 
 List available workflows: `python scripts/image-gen-cli.py list-workflows`
 
@@ -169,11 +172,38 @@ List available workflows: `python scripts/image-gen-cli.py list-workflows`
 python scripts/image-gen-cli.py generate \
   --workflow ernie_image_gguf.json \
   --positive "..." --negative "..." \
-  --prefix my-gen
+  --prefix my-gen \
+  --width 1024 --height 1280
 # Output: {"prompt_id": "...", "filepaths": ["/path/to/image.png"]}
 ```
 
+`--width` / `--height` also apply here and are passed through automatically. Common ratios:
+
+| Ratio | Width × Height |
+|---|---|
+| 1:1 square | 1024 × 1024 |
+| 3:4 portrait | 1024 × 1360 |
+| 4:5 vertical | 1024 × 1280 |
+| 16:9 landscape | 1360 × 768 |
+
 If ComfyUI isn't running, tell the user: `python main.py --port 8188`
+
+---
+
+## Image Dimensions
+
+The pipeline and legacy CLI also accept `--width` and `--height`:
+
+```bash
+# pipeline with custom dimensions
+python scripts/image-gen-cli.py pipeline \
+  --prompt "..." --width 1024 --height 1280
+
+# legacy CLI
+python scripts/image-gen.py "..." --width 1024 --height 1280
+```
+
+Dimensions are automatically injected into the workflow, supporting both `PrimitiveInt` (ernie_image) and `EmptyLatentImage` (z_image) node patterns. Not specifying them uses each workflow's default (ernie: 848×1264, z_image: 1024×1024).
 
 ---
 
