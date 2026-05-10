@@ -54,20 +54,23 @@ def _build_catalog_preview():
 
 # ── LLM-based extraction ─────────────────────────────────
 
-_SYSTEM_PROMPT = """You extract image generation intent into structured tags.
-Available categories: subject, style, mood, composition, lighting, background, color_palette, color, genre, technique, texture, theme
+_SYSTEM_PROMPT = """你是一个图像生成意图识别专家。从用户描述中提取结构化标签。
 
-Rules:
-- Match known entities from the catalog below — use the EXACT tag shown (the Chinese name in parentheses is a translation aid only, use the English tag)
-- If the user's entity is NOT in the catalog, construct a tag as category:value using the category from the list above
-- Always return all detectable entities — never omit unknown ones
-- Return ONLY a JSON array, no explanation
+可用类别: subject, style, mood, composition, lighting, background, color_palette, color, genre, technique, texture, theme
 
-Known entities (format: tag (中文)):
+规则:
+- 仔细分析用户描述中的每一个视觉元素，确保不遗漏
+- 从下方实体目录中匹配已知实体 — 使用目录中显示的精确标签
+- 如果用户描述中的实体不在目录中，使用上述类别构造标签，值用英文小写+下划线格式（如 subject:japanese_bento, style:korean_street_fashion）
+- 必须提取所有可检测到的实体，包括：主体、风格、氛围、构图、光线、背景、色彩等
+- 中文描述要逐句分析，识别所有名词和形容词对应的视觉元素
+- 仅返回 JSON 数组，不要解释
+
+已知实体 (格式: tag (中文名)):
 {catalog}
 """
 
-_USER_PROMPT_TEMPLATE = "Extract seed entities from: {intent}"
+_USER_PROMPT_TEMPLATE = "从以下图像描述中提取所有视觉实体标签（支持中文和英文输入）:\n{intent}"
 
 
 def _call_chat_api(message, cfg):
@@ -92,7 +95,7 @@ def _call_chat_api(message, cfg):
         "messages": [
             {"role": "user", "content": message}
         ],
-        "max_tokens": 256,
+        "max_tokens": 512,
         "temperature": 0.1,
     }
 
@@ -256,9 +259,114 @@ _KEYWORD_MAP = {
     "水下": "background:underwater",
     "电影感": "mood:ethereal",
     "空灵": "mood:ethereal",
-    "马戏团": "subject:clown",
     "明亮": "lighting:bright",
     "欢快": "mood:cheerful",
+    # ── Food / 美食 ──────────────────────────────
+    "甜品": "subject:dessert",
+    "蛋糕": "subject:cake",
+    "草莓": "subject:strawberry",
+    "咖啡": "subject:coffee",
+    "下午茶": "subject:afternoon_tea",
+    "便当": "subject:bento",
+    "寿司": "subject:sushi",
+    "沙拉": "subject:salad",
+    "水果": "subject:fruit",
+    "美食摄影": "style:food_photography",
+    "ins风": "style:instagram",
+    # ── Fashion / 穿搭 ───────────────────────────
+    "穿搭": "subject:fashion",
+    "街拍": "style:street_photography",
+    "韩系": "style:korean",
+    "法式": "style:french",
+    "连衣裙": "subject:dress",
+    "西装": "subject:blazer",
+    "时尚": "style:fashion",
+    "博主": "style:influencer",
+    # ── Travel / 旅行 ────────────────────────────
+    "海岛": "subject:island",
+    "度假": "theme:vacation",
+    "沙滩": "background:beach",
+    "日落": "lighting:sunset",
+    "夕阳": "lighting:sunset",
+    "古寺": "subject:temple",
+    "红叶": "subject:autumn_leaves",
+    "枫叶": "subject:maple_leaves",
+    "鸟居": "subject:torii_gate",
+    "石灯笼": "subject:stone_lantern",
+    "秋日": "mood:autumn",
+    "京都": "background:kyoto",
+    # ── Home / 家居 ──────────────────────────────
+    "卧室": "subject:bedroom",
+    "北欧": "style:nordic",
+    "书房": "subject:study_room",
+    "书桌": "subject:desk",
+    "台灯": "subject:desk_lamp",
+    "绿植": "subject:plants",
+    "居家": "style:homestyle",
+    "简约": "style:minimalist",
+    "简洁": "style:minimalist",
+    "木质": "texture:wooden",
+    "木地板": "background:wooden_floor",
+    # ── Beauty / 美妆 ────────────────────────────
+    "护肤品": "subject:skincare",
+    "口红": "subject:lipstick",
+    "美妆": "style:beauty",
+    "精华液": "subject:serum",
+    "面霜": "subject:cream",
+    "面膜": "subject:face_mask",
+    "玫瑰花瓣": "subject:rose_petals",
+    "大理石": "background:marble",
+    "试色": "style:swatch",
+    # ── Lifestyle / 生活方式 ──────────────────────
+    "拉花": "subject:latte_art",
+    "咖啡师": "subject:barista",
+    "手账": "subject:journal",
+    "手帐": "subject:journal",
+    "马克笔": "subject:markers",
+    "胶带": "subject:washi_tape",
+    "拍立得": "subject:polaroid",
+    "治愈": "mood:healing",
+    "治愈系": "mood:healing",
+    "惬意": "mood:cozy",
+    "舒适": "mood:cozy",
+    # ── Illustration / 插画 ──────────────────────
+    "水彩插画": "style:watercolor_illustration",
+    "手绘": "style:hand_drawn",
+    "宫崎骏": "style:miyazaki",
+    "山坡": "background:hillside",
+    "木屋": "subject:cabin",
+    "风车": "subject:windmill",
+    "野花": "subject:wildflowers",
+    "樱花": "subject:cherry_blossom",
+    "清新": "mood:fresh",
+    # ── Lighting & Color ─────────────────────────
+    "侧光": "lighting:side_light",
+    "柔光": "lighting:soft_light",
+    "暖光": "lighting:warm_light",
+    "暖黄光": "lighting:warm_yellow",
+    "逆光": "lighting:backlight",
+    "暖粉": "color_palette:warm_pink",
+    "粉彩": "color_palette:pastel",
+    "碧蓝": "color:blue",
+    "金色": "color:gold",
+    # ── Composition ──────────────────────────────
+    "俯拍": "composition:top_down",
+    "平铺": "composition:flat_lay",
+    "全身照": "composition:full_body",
+    "竖版": "composition:portrait",
+    "广角": "composition:wide_angle",
+    "全景": "composition:panorama",
+    "浅景深": "technique:shallow_dof",
+    "虚化": "technique:bokeh",
+    "微距": "composition:macro",
+    # ── Other ────────────────────────────────────
+    "精致": "mood:refined",
+    "高端": "mood:premium",
+    "杂志": "style:magazine",
+    "纪实": "style:documentary",
+    "人文": "style:humanistic",
+    "慵懒": "mood:relaxed",
+    "清新": "mood:fresh",
 }
 
 

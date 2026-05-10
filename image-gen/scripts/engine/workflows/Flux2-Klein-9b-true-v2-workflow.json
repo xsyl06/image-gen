@@ -1,0 +1,165 @@
+{
+  "16": {
+    "inputs": {
+      "samples": [
+        "18",
+        0
+      ],
+      "vae": [
+        "31",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "18": {
+    "inputs": {
+      "add_noise": "enable",
+      "noise_seed": [
+        "24",
+        0
+      ],
+      "steps": 25,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "start_at_step": 0,
+      "end_at_step": 10000,
+      "return_with_leftover_noise": "disable",
+      "model": [
+        "29",
+        0
+      ],
+      "positive": [
+        "19",
+        0
+      ],
+      "negative": [
+        "33",
+        0
+      ],
+      "latent_image": [
+        "23",
+        0
+      ]
+    },
+    "class_type": "KSamplerAdvanced",
+    "_meta": {
+      "title": "K采样器（高级）"
+    }
+  },
+  "19": {
+    "inputs": {
+      "text": "这是一张极具氛围感的中近景自拍，主角为一位十六七岁的年轻中国姑娘，镜头聚焦于她的面部与上半身，构图采用经典的三分法，将人物置于画面偏左位置，右侧留白形成呼吸感。拍摄角度为平视镜头，略带轻微仰角，使人物更具亲和力与视觉冲击力。整体光线柔和均匀，为室内自然光与柔光灯结合，打在人物面部形成细腻的光影过渡，脸颊与鼻梁处有微妙高光，眼窝与唇部轮廓被柔化，营造出梦幻甜美的氛围。\n\n她头戴一顶宽檐米黄色草编帽，帽檐自然垂落，边缘有细密的编织纹理。深棕色长发微卷，自然散落在肩头，发丝间可见几缕挑染的浅金发丝。她微微侧头，目光直视镜头，眼神清澈，下巴微抬，向上撅起肉嘟嘟的小嘴唇，表情俏皮又略带慵懒。妆容精致，腮红为柔和的珊瑚粉，脸颊上点缀着小巧的粉色菱形贴纸，唇色为橘调裸色，唇形饱满。她右手比出“V”字手势，指尖轻触脸颊，指甲修剪整齐，涂有透明或淡粉色指甲油，指节自然弯曲，姿态轻松随意。她身穿无肩带服饰，露出光洁的肩颈线条，皮肤白皙细腻，锁骨清晰可见。背景为室内环境，右侧可见深色木质置物架，上面摆放着多个白色标签盒，标签上印有“02”、“22”、“18”等数字，后方墙上挂着几幅黑白装饰画，整体环境简约而有生活气息。画面氛围甜美、慵懒、时尚，充满青春少女感。",
+      "clip": [
+        "32",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "21": {
+    "inputs": {
+      "value": 768
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Width"
+    }
+  },
+  "22": {
+    "inputs": {
+      "value": 1376
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Height"
+    }
+  },
+  "23": {
+    "inputs": {
+      "width": [
+        "21",
+        0
+      ],
+      "height": [
+        "22",
+        0
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyFlux2LatentImage",
+    "_meta": {
+      "title": "空Latent图像（Flux2）"
+    }
+  },
+  "24": {
+    "inputs": {
+      "seed": -1
+    },
+    "class_type": "Seed (rgthree)",
+    "_meta": {
+      "title": "Seed (rgthree)"
+    }
+  },
+  "27": {
+    "inputs": {
+      "images": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "预览图像"
+    }
+  },
+  "29": {
+    "inputs": {
+      "unet_name": "Flux2-Klein-9B-True-v2-mxfp8mixed.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "UNet加载器"
+    }
+  },
+  "31": {
+    "inputs": {
+      "vae_name": "flux2-vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "加载VAE"
+    }
+  },
+  "32": {
+    "inputs": {
+      "clip_name": "Qwen3-8B-Q8_0.gguf",
+      "type": "flux2"
+    },
+    "class_type": "CLIPLoaderGGUF",
+    "_meta": {
+      "title": "CLIPLoader (GGUF)"
+    }
+  },
+  "33": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "32",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Nagitave Prompt)"
+    }
+  }
+}
